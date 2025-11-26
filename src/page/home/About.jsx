@@ -1,0 +1,208 @@
+import { motion } from "framer-motion";
+import {
+  FaShieldAlt,
+  FaUsers,
+  FaAward,
+  FaRocket,
+  FaCheckCircle,
+  FaHandshake,
+} from "react-icons/fa";
+import CTA from "../cta/CTA";
+
+const AboutSection = () => {
+  // Animation variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        duration: 0.8,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  const imageVariants = {
+    hidden: { opacity: 0, x: 50 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  const statsVariants = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  return (
+    <section id="about" className="py-20 ">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Section Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-4xl md:text-5xl font-bold text-black mb-4">
+            Protecting Your Digital World
+          </h2>
+          <p className="text-xl text-[#805b3a] max-w-3xl mx-auto">
+            We are a team of cybersecurity experts dedicated to safeguarding
+            businesses from evolving digital threats with cutting-edge
+            technology and unparalleled expertise.
+          </p>
+        </motion.div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* Content Side */}
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="space-y-8"
+          >
+            {/* Main Description */}
+            <motion.div variants={itemVariants} className="space-y-6">
+              <h3 className="text-3xl font-bold text-black">
+                Trusted Cybersecurity Partner Since 2015
+              </h3>
+              <p className="text-[#805b3a] text-lg leading-relaxed">
+                At CyberShield, we combine advanced technology with human
+                expertise to provide comprehensive security solutions. Our
+                mission is to create a safer digital environment for businesses
+                of all sizes.
+              </p>
+              <p className="text-[#805b3a] text-lg leading-relaxed">
+                With over 8 years of experience in the cybersecurity industry,
+                we've helped more than 500 companies protect their digital
+                assets and maintain regulatory compliance in an ever-evolving
+                threat landscape.
+              </p>
+            </motion.div>
+
+            {/* Features List */}
+            <motion.div variants={itemVariants} className="space-y-4">
+              <h4 className="text-xl font-semibold text-black mb-4">
+                Why Choose Us
+              </h4>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {[
+                  { icon: FaShieldAlt, text: "Enterprise-grade Security" },
+                  { icon: FaUsers, text: "Expert Security Team" },
+                  { icon: FaRocket, text: "24/7 Threat Monitoring" },
+                  { icon: FaHandshake, text: "Dedicated Support" },
+                ].map((feature, index) => (
+                  <motion.div
+                    key={index}
+                    whileHover={{ scale: 1.02, backgroundColor: "#f0e6d8" }}
+                    className="flex items-center space-x-3 p-3 rounded-lg border border-[#a4947d]/30 bg-white/50 transition-all duration-300"
+                  >
+                    <feature.icon className="text-[#805b3a] text-lg" />
+                    <span className="text-black font-medium">
+                      {feature.text}
+                    </span>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* Stats */}
+            <motion.div
+              variants={itemVariants}
+              className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-6"
+            >
+              {[
+                { number: "500+", label: "Clients Protected" },
+                { number: "99.9%", label: "Uptime Record" },
+                { number: "24/7", label: "Support" },
+                { number: "8+", label: "Years Experience" },
+              ].map((stat, index) => (
+                <motion.div
+                  key={index}
+                  variants={statsVariants}
+                  whileHover={{ scale: 1.05, backgroundColor: "#f0e6d8" }}
+                  className="text-center p-4 rounded-xl border border-[#a4947d]/30 bg-white/50 transition-all duration-300"
+                >
+                  <div className="text-2xl md:text-3xl font-bold text-[#805b3a] mb-1">
+                    {stat.number}
+                  </div>
+                  <div className="text-black text-sm font-medium">
+                    {stat.label}
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
+          </motion.div>
+
+          {/* Image Side */}
+          <motion.div
+            variants={imageVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="relative"
+          >
+            {/* Main Image */}
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-[#a4947d]/20">
+              <img
+                src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                alt="CyberShield Security Team"
+                className="w-full h-[600px] object-cover"
+              />
+              {/* Image overlay for better text contrast */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#805b3a]/10 to-transparent"></div>
+            </div>
+
+            {/* Background Decorative Elements */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 1 }}
+              className="absolute -top-4 -right-4 w-24 h-24 bg-[#805b3a]/20 rounded-full blur-xl"
+            ></motion.div>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 1.2 }}
+              className="absolute -bottom-4 -left-4 w-32 h-32 bg-[#a4947d]/10 rounded-full blur-xl"
+            ></motion.div>
+          </motion.div>
+        </div>
+
+        {/* Mission & Vision */}
+
+        {/* cta section  */}
+        <CTA />
+      </div>
+    </section>
+  );
+};
+
+export default AboutSection;
