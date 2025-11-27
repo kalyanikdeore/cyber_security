@@ -47,7 +47,7 @@ const ContactSection = () => {
               {
                 icon: <FiPhoneCall />,
                 title: "Call Us",
-                desc: "+91 98235 94854  |  +91 98227 46877",
+                desc: "+91 94206 91974",
                 sub: "Speak directly with our solar experts",
               },
               {
@@ -59,7 +59,7 @@ const ContactSection = () => {
               {
                 icon: <FiMapPin />,
                 title: "Visit Us",
-                desc: "Jai Hari Society, Kemps Corner, Tardeo, Mumbai, Maharashtra 400007",
+                desc: "Security District, Cyber City",
                 sub: "Schedule an office consultation",
               },
             ].map((item, index) => (

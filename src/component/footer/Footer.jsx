@@ -116,7 +116,7 @@ const Footer = () => {
             </div>
             <div className="flex items-center">
               <FaPhone className="h-5 w-5 text-[#faf6f2] mr-3" />
-              <span className="text-[#faf6f2]">+1 (555) 123-SECURE</span>
+              <span className="text-[#faf6f2]">+91 94206 91974</span>
             </div>
             <div className="flex items-center">
               <FaMapMarkerAlt className="h-5 w-5 text-[#faf6f2] mr-3" />
