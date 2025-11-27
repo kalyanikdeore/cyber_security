@@ -112,11 +112,13 @@ const Footer = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="flex items-center">
               <FaEnvelope className="h-5 w-5 text-[#faf6f2] mr-3" />
-              <span className="text-[#faf6f2]">security@cybershield.com</span>
+              <span className="text-[#faf6f2]">
+                navanveshafoundation@gmail.com
+              </span>
             </div>
             <div className="flex items-center">
               <FaPhone className="h-5 w-5 text-[#faf6f2] mr-3" />
-              <span className="text-[#faf6f2]">+91 94206 91974</span>
+              <span className="text-[#faf6f2]">+91 9600129660 </span>
             </div>
             <div className="flex items-center">
               <FaMapMarkerAlt className="h-5 w-5 text-[#faf6f2] mr-3" />

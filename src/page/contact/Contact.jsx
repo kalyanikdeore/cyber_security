@@ -47,13 +47,13 @@ const ContactSection = () => {
               {
                 icon: <FiPhoneCall />,
                 title: "Call Us",
-                desc: "+91 94206 91974",
+                desc: "+91 9600129660 ",
                 sub: "Speak directly with our solar experts",
               },
               {
                 icon: <FiMail />,
                 title: "Email Us",
-                desc: "security@cybershield.com",
+                desc: " navanveshafoundation@gmail.com",
                 sub: "Get detailed information via email",
               },
               {
