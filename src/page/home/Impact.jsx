@@ -77,21 +77,30 @@ const ImpactSection = () => {
   return (
     <section id="impact" className="py-20 ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-4xl md:text-5xl font-bold text-black mb-4">
-            Our Social Impact
+        <div className="text-center">
+          {/* Badge */}
+          <span className="inline-block px-4 py-2 bg-[#926b49]/10 border border-[#926b49]/30 rounded-full text-[#926b49] text-sm font-semibold tracking-wide mb-6">
+            Beyond Impact
+          </span>
+
+          {/* Main Heading */}
+          <h2 className="text-4xl lg:text-4xl font-bold text-gray-900 leading-tight mb-4">
+            Our Social <span className="text-[#926b49]"> Social Impact</span>
           </h2>
-          <p className="text-xl text-[#805b3a] max-w-3xl mx-auto">
+          <motion.div
+            className="h-1 w-20 bg-gradient-to-r from-[#926b49] to-[#82613e] mx-auto mb-6"
+            initial={{ width: 0 }}
+            whileInView={{ width: "5rem" }}
+            transition={{ delay: 0.3, duration: 0.5 }}
+            viewport={{ once: true }}
+          />
+
+          {/* Short Description */}
+          <p className="text-gray-600 text-lg mb-12 max-w-2xl mx-auto">
             Creating measurable change through education and awareness
             initiatives that reach across all sections of society.
           </p>
-        </motion.div>
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {outreach.map((item, index) => (

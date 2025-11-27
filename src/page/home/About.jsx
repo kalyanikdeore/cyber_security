@@ -61,23 +61,32 @@ const AboutSection = () => {
   return (
     <section id="about" className="py-20 ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-4xl md:text-5xl font-bold text-black mb-4">
-            Protecting Your Digital World
+        <div className="text-center">
+          {/* Badge */}
+          <span className="inline-block px-4 py-2 bg-[#926b49]/10 border border-[#926b49]/30 rounded-full text-[#926b49] text-sm font-semibold tracking-wide mb-6">
+            Our About Us
+          </span>
+
+          {/* Main Heading */}
+          <h2 className="text-4xl lg:text-4xl font-bold text-gray-900 leading-tight mb-4">
+            Protecting{" "}
+            <span className="text-[#926b49]">Your Digital World</span>
           </h2>
-          <p className="text-xl text-[#805b3a] max-w-3xl mx-auto">
+          <motion.div
+            className="h-1 w-20 bg-gradient-to-r from-[#926b49] to-[#82613e] mx-auto mb-6"
+            initial={{ width: 0 }}
+            whileInView={{ width: "5rem" }}
+            transition={{ delay: 0.3, duration: 0.5 }}
+            viewport={{ once: true }}
+          />
+
+          {/* Short Description */}
+          <p className="text-gray-600 text-lg mb-12 max-w-2xl mx-auto">
             We are a team of cybersecurity experts dedicated to safeguarding
             businesses from evolving digital threats with cutting-edge
             technology and unparalleled expertise.
           </p>
-        </motion.div>
+        </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Content Side */}
@@ -90,7 +99,7 @@ const AboutSection = () => {
           >
             {/* Main Description */}
             <motion.div variants={itemVariants} className="space-y-6">
-              <h3 className="text-3xl font-bold text-black">
+              <h3 className="text-2xl font-bold text-black">
                 Trusted Cybersecurity Partner Since 2015
               </h3>
               <p className="text-[#805b3a] text-lg leading-relaxed">

@@ -4,6 +4,7 @@ import AboutSection from "./About";
 import ServicesSection from "./Services";
 import TrainingSection from "./Training";
 import ImpactSection from "./Impact";
+import CTAHome from "./CTAHome";
 
 function Home() {
   return (
@@ -13,6 +14,7 @@ function Home() {
       <ServicesSection />
       <TrainingSection />
       <ImpactSection />
+      <CTAHome />
     </div>
   );
 }

@@ -6,19 +6,30 @@ const VisionMission = () => {
   return (
     <section className="w-full  py-20 relative">
       {/* Section heading */}
-      <motion.h2
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        className="text-5xl font-extrabold text-center text-[#805b3a] uppercase"
-      >
-        Vision & Mission
-      </motion.h2>
+      <div className="text-center">
+        {/* Badge */}
+        <span className="inline-block px-4 py-2 bg-[#926b49]/10 border border-[#926b49]/30 rounded-full text-[#926b49] text-sm font-semibold tracking-wide mb-6">
+          OUR VISION & MISSION
+        </span>
 
-      <p className="text-center text-[#805b3a] mt-4 text-lg max-w-2xl mx-auto">
-        Empowering the future through innovation, excellence and purpose-driven
-        growth.
-      </p>
+        {/* Main Heading */}
+        <h2 className="text-4xl lg:text-4xl font-bold text-gray-900 leading-tight mb-4">
+          Building a<span className="text-[#926b49]"> Secure Tomorrow</span>
+        </h2>
+        <motion.div
+          className="h-1 w-20 bg-gradient-to-r from-[#926b49] to-[#82613e] mx-auto mb-6"
+          initial={{ width: 0 }}
+          whileInView={{ width: "5rem" }}
+          transition={{ delay: 0.3, duration: 0.5 }}
+          viewport={{ once: true }}
+        />
+
+        {/* Short Description */}
+        <p className="text-gray-600 text-lg mb-12 max-w-2xl mx-auto">
+          Delivering comprehensive cybersecurity protection with advanced
+          monitoring and rapid threat response.
+        </p>
+      </div>
 
       {/* Vertical Line */}
       <div className="relative max-w-4xl mx-auto mt-16">
@@ -41,9 +52,9 @@ const VisionMission = () => {
               Our Vision
             </h3>
             <p className="text-[#805b3a] text-center leading-relaxed">
-              To be a global leader in shaping a skilled generation by
-              delivering advanced, future-ready solutions that inspire
-              innovation and meaningful transformation.
+              “To build a digitally empowered, skilled, and equitable society
+              where opportunities for growth and transformation are accessible
+              to all.”
             </p>
           </div>
         </motion.div>
@@ -65,9 +76,9 @@ const VisionMission = () => {
               Our Mission
             </h3>
             <p className="text-[#805b3a] text-center leading-relaxed">
-              To empower individuals and organizations through education,
-              technology, and opportunities, enabling them to achieve excellence
-              with integrity and purpose.
+              “To empower individuals and communities through technology-driven
+              education, skill development, and inclusive social initiatives
+              that create sustainable and measurable impact.”
             </p>
           </div>
         </motion.div>

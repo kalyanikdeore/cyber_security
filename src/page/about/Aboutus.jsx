@@ -1,108 +1,157 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { motion } from "framer-motion";
-import { FiShield, FiClock, FiCheckCircle } from "react-icons/fi";
+import { FiShield, FiClock } from "react-icons/fi";
 import { SiHackthebox } from "react-icons/si";
+import about from "../../assets/logo/about.jpeg";
 
 export default function AboutCyberSecurity() {
   const features = [
     {
       id: 1,
-      icon: <FiShield className="w-6 h-6" />,
+      icon: <FiShield className="w-5 h-5" />,
       title: "Zero Trust Architecture",
-      desc: "Least privilege and continuous verification to reduce attack surface.",
     },
     {
       id: 2,
-      icon: <SiHackthebox className="w-6 h-6" />,
-      title: "Threat Hunting",
-      desc: "Proactive threat discovery using telemetry and security intelligence.",
+      icon: <SiHackthebox className="w-5 h-5" />,
+      title: "Threat Hunting & Analysis",
     },
     {
       id: 3,
-      icon: <FiClock className="w-6 h-6" />,
-      title: "Incident Response",
-      desc: "Fast response restoring operations with automation and expertise.",
+      icon: <FiClock className="w-5 h-5" />,
+      title: "Real-Time Risk Monitoring",
     },
   ];
 
-  // Array of random cybersecurity images
-  const cyberSecurityImages = [
-    "https://cdn.pixabay.com/photo/2022/05/28/10/53/cyber-security-7225809_1280.png",
-    "https://cdn.pixabay.com/photo/2021/08/04/13/06/cyber-security-6521593_1280.jpg",
-    "https://cdn.pixabay.com/photo/2022/01/26/16/42/security-6969883_1280.png",
-    "https://cdn.pixabay.com/photo/2021/09/27/11/12/security-6660682_1280.png",
-    "https://cdn.pixabay.com/photo/2021/08/31/10/58/security-6588162_1280.png",
-    "https://cdn.pixabay.com/photo/2021/01/29/08/44/security-5960112_1280.png",
-    "https://cdn.pixabay.com/photo/2021/09/07/07/11/cyber-security-6602874_1280.png",
-    "https://cdn.pixabay.com/photo/2021/08/17/12/25/security-6553318_1280.png",
-  ];
+  const cyberSecurityImages = [about];
 
-  // Function to get a random image from the array
-  const getRandomImage = () => {
-    const randomIndex = Math.floor(Math.random() * cyberSecurityImages.length);
-    return cyberSecurityImages[randomIndex];
-  };
+  const randomImage = useMemo(() => {
+    return cyberSecurityImages[
+      Math.floor(Math.random() * cyberSecurityImages.length)
+    ];
+  }, []);
 
   return (
-    <section className="max-w-7xl mx-auto px-6 py-12 ">
-      <div className="grid lg:grid-cols-2 gap-12 items-center">
+    <section className="py-20 px-6">
+      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-14 items-center">
         {/* LEFT CONTENT */}
-        <div>
-          <h2 className="text-4xl font-extrabold text-[#805b3a]">
-            About Us — Cyber Security
-          </h2>
+        <motion.div
+          initial={{ opacity: 0, y: 35 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+          <motion.span
+            initial={{ opacity: 0, y: -10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4 }}
+            className="text-sm tracking-wider font-semibold bg-[#805b3a] text-white px-4 py-1 rounded-full"
+          >
+            Empower • Educate • Secure
+          </motion.span>
 
-          <p className="mt-4 text-[#805b3a] leading-relaxed">
-            We help businesses secure digital assets through modern cyber
-            defense, real-time threat monitoring, and security automation. Our
-            mission is to protect organizations from evolving cyber risks and
-            ensure digital trust.
-          </p>
+          <motion.h2
+            initial={{ opacity: 0, y: -15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-4xl font-extrabold text-[#543f29] leading-tight mt-4"
+          >
+            About Us —{" "}
+            <span className="text-[#805b3a]">Navanvesha Foundation</span>
+          </motion.h2>
+
+          <motion.div
+            initial={{ width: 0 }}
+            whileInView={{ width: "9rem" }}
+            transition={{ duration: 0.6 }}
+            className="h-1 bg-[#805b3a] mt-5 rounded-lg"
+          ></motion.div>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="mt-6 text-[#5a4733] text-lg leading-relaxed"
+          >
+            Navanvesha Foundation is a socially driven organization dedicated to
+            empowering communities through education, digital transformation,
+            cybersecurity awareness, and skills development. Our goal is to
+            build a secure digital future by spreading knowledge and creating
+            real impact.
+          </motion.p>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.75, delay: 0.3 }}
+            className="mt-5 text-[#5a4733] text-lg leading-relaxed"
+          >
+            We work to bridge technological skill gaps, support youth and
+            underprivileged groups, and provide hands-on cybersecurity training
+            for a safer digital environment.
+          </motion.p>
 
           {/* FEATURES */}
-          <div className="mt-8 grid gap-4 sm:grid-cols-2">
-            {features.map((f, i) => (
-              <motion.article
-                key={f.id}
-                initial={{ opacity: 0, x: -10 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.1 + i * 0.1 }}
-                className="flex gap-4 bg-white border border-[#a4947d] p-4 rounded-xl shadow-sm"
+          <div className="mt-10 grid gap-5 sm:grid-cols-2">
+            {features.map((feature, i) => (
+              <motion.div
+                key={feature.id}
+                initial={{ opacity: 0, x: -25 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.18, duration: 0.6 }}
+                className="flex items-center gap-4 bg-white rounded-xl border border-[#c1b6a4] shadow-md hover:shadow-2xl hover:-translate-y-1 transition-all p-4"
               >
-                <div className="p-3 rounded-lg bg-[#805b3a] text-white">
-                  {f.icon}
+                <div className="p-3 bg-[#805b3a] text-white rounded-lg shadow-md">
+                  {feature.icon}
                 </div>
-                <div>
-                  <h4 className="font-semibold text-[#805b3a]">{f.title}</h4>
-                  <p className="text-sm mt-1 text-[#805b3a]">{f.desc}</p>
-                </div>
-              </motion.article>
+                <h4 className="text-[#543f29] font-semibold text-md">
+                  {feature.title}
+                </h4>
+              </motion.div>
             ))}
           </div>
 
-          {/* CTA BUTTONS */}
-          <div className="mt-7 flex gap-4">
-            <button className="bg-[#805b3a] text-white px-6 py-3 rounded-full font-semibold shadow-md hover:bg-[#6d4d32] transition-colors">
-              Get Security Assessment
-            </button>
-            <button className="border border-[#a4947d] px-6 py-3 rounded-full font-semibold text-[#805b3a] hover:bg-white transition-colors">
-              Our Services
-            </button>
-          </div>
-        </div>
+          {/* STATS */}
+          <motion.div
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="mt-10 grid grid-cols-3 gap-5 text-center"
+          >
+            <div>
+              <h3 className="text-3xl font-bold text-[#805b3a]">10K+</h3>
+              <p className="text-sm text-[#5a4733]">Students Trained</p>
+            </div>
+            <div>
+              <h3 className="text-3xl font-bold text-[#805b3a]">120+</h3>
+              <p className="text-sm text-[#5a4733]">Workshops Conducted</p>
+            </div>
+            <div>
+              <h3 className="text-3xl font-bold text-[#805b3a]">85+</h3>
+              <p className="text-sm text-[#5a4733]">Institutions Partnered</p>
+            </div>
+          </motion.div>
+        </motion.div>
 
-        {/* RIGHT IMAGE SECTION */}
-        <div className="flex justify-center items-center">
-          <motion.img
-            key={getRandomImage()} // This ensures the image updates on re-render
-            src={getRandomImage()}
+        {/* RIGHT IMAGE */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.85 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          animate={{ y: [0, -15, 0] }}
+          className="flex justify-center"
+        >
+          <img
+            src={randomImage}
             alt="Cyber Security"
-            className="w-full max-w-md object-contain drop-shadow-2xl"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5 }}
+            className="w-full max-w-lg h-[450px] object-cover rounded-3xl border-[6px] border-[#b89d7e] shadow-[0_0_35px_#c6af93]"
           />
-        </div>
+        </motion.div>
       </div>
     </section>
   );

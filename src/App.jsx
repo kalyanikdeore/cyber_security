@@ -14,6 +14,8 @@ import Contact from "./page/contact/Contact";
 import About from "./page/about/About";
 import Recentevent from "./page/recentevent/Recentevent";
 import Futureevent from "./page/futureevent/Futureevent";
+import CloudSecurity from "./page/CloudSecurity/CloudSecurity";
+import EndpointProtection from "./page/EndpointProtection/EndpointProtection";
 
 function App() {
   const router = createBrowserRouter(
@@ -26,6 +28,8 @@ function App() {
         <Route path="contact" element={<Contact />} />
         <Route path="recent-event" element={<Recentevent />} />
         <Route path="future-event" element={<Futureevent />} />
+        <Route path="cloud-security" element={<CloudSecurity />} />
+        <Route path="Endpoint-Protection" element={<EndpointProtection />} />
       </Route>
     )
   );
