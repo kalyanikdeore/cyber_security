@@ -20,33 +20,43 @@ const Navbar = () => {
   const navItems = [
     { name: "Home", href: "/" },
     { name: "About Us", href: "/about" },
+    // { name: "Services", href: "/service" },
     {
-      name: "Our Work",
+      name: "Services",
       dropdown: [
-        { name: "Cloud Security", href: "/cloud-security", icon: <FaCloud /> },
         {
-          name: "Endpoint Protection",
-          href: "/Endpoint-Protection",
+          name: "Technology & Digital Transformation Programs",
+          href: "/technology-digital",
+          icon: <FaCloud />,
+        },
+        {
+          name: "Education & Skill Development Programs",
+          href: "/education-development",
           icon: <FaDesktop />,
         },
-        { name: "Data Encryption", href: "/encryption", icon: <FaLock /> },
-        { name: "Compliance", href: "/compliance", icon: <FaShieldVirus /> },
+        {
+          name: "Women Empowerment & Livelihood Training",
+          href: "/women-empowerment",
+          icon: <FaCloud />,
+        },
+        {
+          name: "Health, Wellness & Community Development Programs",
+          href: "/health-wellness",
+          icon: <FaDesktop />,
+        },
+        {
+          name: "Environment & Sustainability Programs",
+          href: "/environment-program",
+          icon: <FaCloud />,
+        },
+        {
+          name: "Youth Leadership & Community Engagement Programs",
+          href: "/youth-leadership",
+          icon: <FaDesktop />,
+        },
       ],
     },
-    {
-      name: "Events",
-      dropdown: [
-        { name: "Recent Event", href: "/recent-event", icon: <FaCloud /> },
-        { name: "Future Event", href: "/Future-event", icon: <FaDesktop /> },
-      ],
-    },
-    {
-      name: "Gallery",
-      dropdown: [
-        { name: "Photo Gallery", href: "/photo-gallery", icon: <FaCloud /> },
-        { name: "Event Gallery", href: "/event-gallery", icon: <FaDesktop /> },
-      ],
-    },
+    { name: "Gallery", href: "/event-gallery" },
     { name: "Contact Us", href: "/contact" },
   ];
 
@@ -73,7 +83,7 @@ const Navbar = () => {
           <div className="flex justify-between items-center h-20">
             {/* Logo */}
             <Link to="/" className="flex items-center space-x-3 cursor-pointer">
-              <img src={logo} alt="Logo" className="h-16 object-contain" />
+              <img src={logo} alt="Logo" className="h-20 w-25 object-contain" />
             </Link>
 
             {/* Desktop Menu - Align Right */}
@@ -89,7 +99,7 @@ const Navbar = () => {
                       onMouseEnter={() => setActiveDropdown(item.name)}
                       onMouseLeave={() => setActiveDropdown(null)}
                     >
-                      <button className="text-[#805b3a] font-medium flex items-center space-x-2 relative pb-1">
+                      <button className="text-[#805b3a] font-medium flex items-center space-x-2 relative pb-1 px-3 py-2 min-w-[120px] justify-center">
                         <span>{item.name}</span>
                         <motion.div
                           animate={{
@@ -109,7 +119,7 @@ const Navbar = () => {
                             animate="open"
                             exit="closed"
                             variants={dropdownVariants}
-                            className="absolute top-full left-0 mt-2 w-56 bg-[#805b3a] rounded-xl shadow-xl py-3 z-50"
+                            className="absolute top-full left-0 mt-2 w-72 bg-[#805b3a] rounded-xl shadow-xl py-3 z-50"
                           >
                             {item.dropdown.map((drop) => (
                               <Link
@@ -119,7 +129,7 @@ const Navbar = () => {
                                 onClick={() => setActiveDropdown(null)}
                               >
                                 {drop.icon}
-                                <span>{drop.name}</span>
+                                <span className="text-sm">{drop.name}</span>
                               </Link>
                             ))}
                           </motion.div>
@@ -129,7 +139,7 @@ const Navbar = () => {
                   ) : (
                     <Link
                       to={item.href}
-                      className="text-[#805b3a] font-medium relative pb-1 group"
+                      className="text-[#805b3a] font-medium relative pb-1 group px-3 py-2"
                     >
                       {item.name}
                       <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-[#805b3a] group-hover:w-full transition-all duration-300" />
@@ -141,8 +151,8 @@ const Navbar = () => {
 
             {/* CTA Button Desktop */}
             <div className="hidden md:block ml-6">
-              <button className="bg-[#805b3a] hover:bg-[#a18467] text-white px-6 py-3 rounded-xl font-semibold transition-all">
-                Free Audit
+              <button className="bg-[#805b3a] hover:bg-[#a18467] text-white px-4 py-2 rounded-xl font-semibold transition-all">
+                Enquiry Now
               </button>
             </div>
 
@@ -188,42 +198,51 @@ const Navbar = () => {
                             activeDropdown === item.name ? null : item.name
                           )
                         }
-                        className="flex justify-between items-center w-full py-3 font-semibold text-[#805b3a]"
+                        className="flex justify-between items-center w-full py-4 px-4 font-semibold text-[#805b3a] bg-white rounded-lg shadow-sm border border-gray-200 active:bg-gray-50 transition-all duration-200"
                       >
-                        {item.name}
+                        <span className="text-lg">{item.name}</span>
                         <motion.span
                           animate={{
                             rotate: activeDropdown === item.name ? 180 : 0,
                           }}
+                          transition={{ duration: 0.2 }}
                         >
                           <FaChevronDown />
                         </motion.span>
                       </button>
 
-                      {activeDropdown === item.name && (
-                        <motion.div
-                          initial={{ opacity: 0, y: -10 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          className="ml-4 space-y-2"
-                        >
-                          {item.dropdown.map((drop) => (
-                            <Link
-                              key={drop.name}
-                              to={drop.href}
-                              className="flex items-center space-x-2 py-2 text-[#805b3a] font-medium"
-                              onClick={() => setIsOpen(false)}
-                            >
-                              {drop.icon}
-                              <span>{drop.name}</span>
-                            </Link>
-                          ))}
-                        </motion.div>
-                      )}
+                      <AnimatePresence>
+                        {activeDropdown === item.name && (
+                          <motion.div
+                            initial={{ opacity: 0, height: 0 }}
+                            animate={{ opacity: 1, height: "auto" }}
+                            exit={{ opacity: 0, height: 0 }}
+                            transition={{ duration: 0.3 }}
+                            className="ml-2 mt-2 space-y-2 overflow-hidden"
+                          >
+                            {item.dropdown.map((drop) => (
+                              <Link
+                                key={drop.name}
+                                to={drop.href}
+                                className="flex items-center space-x-3 py-3 px-4 text-[#805b3a] font-medium bg-gray-50 rounded-lg border border-gray-100 active:bg-gray-100 transition-all duration-200"
+                                onClick={() => setIsOpen(false)}
+                              >
+                                <span className="text-[#805b3a]">
+                                  {drop.icon}
+                                </span>
+                                <span className="text-sm flex-1">
+                                  {drop.name}
+                                </span>
+                              </Link>
+                            ))}
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
                     </>
                   ) : (
                     <Link
                       to={item.href}
-                      className="py-3 block font-semibold text-[#805b3a]"
+                      className="py-4 px-4 block font-semibold text-[#805b3a] bg-white rounded-lg shadow-sm border border-gray-200 active:bg-gray-50 transition-all duration-200 text-lg"
                       onClick={() => setIsOpen(false)}
                     >
                       {item.name}
@@ -232,8 +251,8 @@ const Navbar = () => {
                 </div>
               ))}
 
-              <button className="bg-[#805b3a] hover:bg-[#a18467] text-white w-full py-3 rounded-xl mt-4 font-semibold">
-                Free Audit
+              <button className="bg-[#805b3a] hover:bg-[#a18467] text-white w-full py-4 rounded-xl mt-6 font-semibold text-lg active:bg-[#927153] transition-all duration-200">
+                Enquiry Now
               </button>
             </div>
           </motion.div>

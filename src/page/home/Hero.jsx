@@ -1,64 +1,70 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
-  FaShieldAlt,
-  FaLock,
-  FaCloud,
-  FaUserShield,
   FaArrowRight,
   FaPlay,
-  FaExternalLinkAlt,
+  FaGraduationCap,
+  FaLaptopCode,
+  FaHandsHelping,
+  FaLeaf,
+  FaUser,
+  FaEnvelope,
 } from "react-icons/fa";
 
 const HeroSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  // Unsplash images for cybersecurity theme
+  // Updated slides for Navanvesha Foundation
   const slides = [
     {
       image:
-        "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-      title: "Advanced Cybersecurity",
-      subtitle: "Protect Your Digital Assets",
+        "https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      title: "Navanvesha Foundation",
+      subtitle: "New Exploration, Renewed Discovery",
       description:
-        "Enterprise-grade security solutions to safeguard your business from evolving cyber threats with 24/7 monitoring.",
-      buttonText: "Get Protected",
+        "Empowering communities through technology-driven education, skill development, and inclusive social initiatives for sustainable impact.",
+      buttonText: "Join Our Mission",
+      icon: FaGraduationCap,
     },
     {
       image:
-        "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80",
-      title: "Cloud Security",
-      subtitle: "Secure Your Cloud Infrastructure",
+        "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80",
+      title: "Education & Skill Development",
+      subtitle: "Building Future Leaders",
       description:
-        "Comprehensive cloud security solutions ensuring your data remains protected across all platforms and services.",
-      buttonText: "Secure Cloud",
+        "High-impact educational interventions nurturing foundational learning, creativity, and leadership skills among children and youth.",
+      buttonText: "Explore Programs",
+      icon: FaLaptopCode,
     },
     {
       image:
-        "https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-      title: "Network Protection",
-      subtitle: "Fortify Your Digital Perimeter",
+        "https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      title: "Women Empowerment",
+      subtitle: "Creating Financial Independence",
       description:
-        "Advanced network security solutions to protect your infrastructure from unauthorized access and cyber attacks.",
-      buttonText: "Secure Network",
+        "Enabling women to gain financial independence and leadership opportunities through skill-based training and entrepreneurship development.",
+      buttonText: "Support Women",
+      icon: FaHandsHelping,
     },
     {
       image:
-        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-      title: "Data Encryption",
-      subtitle: "End-to-End Protection",
+        "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80",
+      title: "Digital Transformation",
+      subtitle: "Bridging the Digital Divide",
       description:
-        "Military-grade encryption solutions to protect your sensitive data both at rest and in transit.",
-      buttonText: "Encrypt Data",
+        "Empowering students, youth, and community members with essential digital skills for a tech-enabled future.",
+      buttonText: "Digital Literacy",
+      icon: FaLaptopCode,
     },
     {
       image:
-        "https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-      title: "Threat Intelligence",
-      subtitle: "Stay Ahead of Cyber Threats",
+        "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80",
+      title: "Environment & Sustainability",
+      subtitle: "Green Future Initiatives",
       description:
-        "Proactive threat intelligence and advanced analytics to predict and prevent security breaches before they happen.",
-      buttonText: "Learn More",
+        "Promoting environmental consciousness and sustainable practices through awareness drives and community-action programs.",
+      buttonText: "Go Green",
+      icon: FaLeaf,
     },
   ];
 
@@ -81,6 +87,21 @@ const HeroSection = () => {
 
   const goToSlide = (index) => {
     setCurrentSlide(index);
+  };
+
+  // Handle button clicks
+  const handleContactUs = () => {
+    // Redirect to contact page or scroll to contact section
+    window.location.href = "/contact";
+    // Alternatively, you can use:
+    // navigate('/contact'); if using React Router
+  };
+
+  const handleAboutUs = () => {
+    // Redirect to about page or scroll to about section
+    window.location.href = "/about";
+    // Alternatively, you can use:
+    // navigate('/about'); if using React Router
   };
 
   // Animation variants
@@ -130,20 +151,6 @@ const HeroSection = () => {
     },
   };
 
-  const featureVariants = {
-    initial: {
-      opacity: 0,
-      x: -20,
-    },
-    animate: {
-      opacity: 1,
-      x: 0,
-      transition: {
-        duration: 0.6,
-      },
-    },
-  };
-
   const buttonVariants = {
     initial: {
       opacity: 0,
@@ -164,6 +171,8 @@ const HeroSection = () => {
       },
     },
   };
+
+  const IconComponent = slides[currentSlide].icon;
 
   return (
     <section className="relative h-screen overflow-hidden">
@@ -191,6 +200,29 @@ const HeroSection = () => {
         </AnimatePresence>
       </div>
 
+      {/* Top Navigation Buttons */}
+      <div className="absolute top-8 right-8 z-30 flex gap-4">
+        {/* <motion.button
+          onClick={handleAboutUs}
+          whileHover="hover"
+          variants={buttonVariants}
+          className="bg-[#805b3a] hover:bg-[#805b3a]/90 text-[#faf6f2] px-6 py-3 rounded-xl font-semibold transition-all duration-300 shadow-lg shadow-[#805b3a]/25 flex items-center space-x-2 backdrop-blur-sm"
+        >
+          <FaUser className="text-sm" />
+          <span>About Us</span>
+        </motion.button> */}
+
+        {/* <motion.button
+          onClick={handleContactUs}
+          whileHover="hover"
+          variants={buttonVariants}
+          className="bg-[#a4947d] hover:bg-[#a4947d]/90 text-[#faf6f2] px-6 py-3 rounded-xl font-semibold transition-all duration-300 shadow-lg shadow-[#a4947d]/25 flex items-center space-x-2 backdrop-blur-sm"
+        >
+          <FaEnvelope className="text-sm" />
+          <span>Contact Us</span>
+        </motion.button> */}
+      </div>
+
       {/* Content */}
       <div className="relative z-10 h-full flex items-center">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
@@ -205,6 +237,11 @@ const HeroSection = () => {
                   animate="animate"
                   exit="exit"
                 >
+                  {/* Icon */}
+                  <motion.div variants={textVariants} className="mb-6">
+                    <IconComponent className="text-[#a4947d] text-4xl" />
+                  </motion.div>
+
                   {/* Title */}
                   <motion.h1
                     variants={textVariants}
@@ -213,7 +250,7 @@ const HeroSection = () => {
                     {slides[currentSlide].title}
                     <motion.span
                       variants={textVariants}
-                      className="block text-[#a4947d] mt-2"
+                      className="block text-[#a4947d] mt-2 text-2xl md:text-3xl lg:text-4xl"
                     >
                       {slides[currentSlide].subtitle}
                     </motion.span>
@@ -247,7 +284,7 @@ const HeroSection = () => {
                       className="border-2 border-[#a4947d] text-[#a4947d] hover:bg-[#a4947d]/20 px-8 py-4 rounded-xl font-semibold transition-all duration-300 flex items-center space-x-3 group backdrop-blur-sm"
                     >
                       <FaPlay className="text-[#a4947d]" />
-                      <span>Watch Demo</span>
+                      <span>Watch Our Story</span>
                     </motion.button>
                   </motion.div>
                 </motion.div>

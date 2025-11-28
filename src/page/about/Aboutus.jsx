@@ -9,17 +9,17 @@ export default function AboutCyberSecurity() {
     {
       id: 1,
       icon: <FiShield className="w-5 h-5" />,
-      title: "Zero Trust Architecture",
+      title: "Education & Research",
     },
     {
       id: 2,
       icon: <SiHackthebox className="w-5 h-5" />,
-      title: "Threat Hunting & Analysis",
+      title: "Technology & Innovation",
     },
     {
       id: 3,
       icon: <FiClock className="w-5 h-5" />,
-      title: "Real-Time Risk Monitoring",
+      title: "Youth Empowerment",
     },
   ];
 
@@ -58,8 +58,8 @@ export default function AboutCyberSecurity() {
             transition={{ duration: 0.6 }}
             className="text-4xl font-extrabold text-[#543f29] leading-tight mt-4"
           >
-            About Us —{" "}
-            <span className="text-[#805b3a]">Navanvesha Foundation</span>
+            About Us{" "}
+            {/* <span className="text-[#805b3a]">Navanvesha Foundation</span> */}
           </motion.h2>
 
           <motion.div
@@ -75,11 +75,10 @@ export default function AboutCyberSecurity() {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="mt-6 text-[#5a4733] text-lg leading-relaxed"
           >
-            Navanvesha Foundation is a socially driven organization dedicated to
-            empowering communities through education, digital transformation,
-            cybersecurity awareness, and skills development. Our goal is to
-            build a secure digital future by spreading knowledge and creating
-            real impact.
+            <strong>Navanvesha</strong> means "New Exploration" or "Renewed
+            Discovery." It symbolizes the spirit of curiosity, innovation, and
+            continuous learning — a bridge between traditional wisdom and modern
+            creativity.
           </motion.p>
 
           <motion.p
@@ -88,9 +87,11 @@ export default function AboutCyberSecurity() {
             transition={{ duration: 0.75, delay: 0.3 }}
             className="mt-5 text-[#5a4733] text-lg leading-relaxed"
           >
-            We work to bridge technological skill gaps, support youth and
-            underprivileged groups, and provide hands-on cybersecurity training
-            for a safer digital environment.
+            Navanvesha Foundation is a socially driven, non-profit organization
+            committed to empowering communities through education, digital
+            transformation, and sustainable development initiatives. Rooted in
+            the belief that every individual deserves appropriate knowledge to
+            grow, learn, and thrive.
           </motion.p>
 
           {/* FEATURES */}
@@ -114,27 +115,37 @@ export default function AboutCyberSecurity() {
             ))}
           </div>
 
-          {/* STATS */}
-          <motion.div
+          {/* MISSION & VISION */}
+          {/* <motion.div
             initial={{ opacity: 0, y: 25 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="mt-10 grid grid-cols-3 gap-5 text-center"
+            className="mt-10 space-y-6"
           >
-            <div>
-              <h3 className="text-3xl font-bold text-[#805b3a]">10K+</h3>
-              <p className="text-sm text-[#5a4733]">Students Trained</p>
+            <div className="bg-gradient-to-r from-[#f8f4f0] to-[#f0e6d8] p-6 rounded-xl border border-[#d4c5b0]">
+              <h3 className="text-xl font-bold text-[#805b3a] mb-2">
+                Our Mission
+              </h3>
+              <p className="text-[#5a4733]">
+                "To empower individuals and communities through
+                technology-driven education, skill development, and inclusive
+                social initiatives that create sustainable and measurable
+                impact."
+              </p>
             </div>
-            <div>
-              <h3 className="text-3xl font-bold text-[#805b3a]">120+</h3>
-              <p className="text-sm text-[#5a4733]">Workshops Conducted</p>
+
+            <div className="bg-gradient-to-r from-[#f8f4f0] to-[#f0e6d8] p-6 rounded-xl border border-[#d4c5b0]">
+              <h3 className="text-xl font-bold text-[#805b3a] mb-2">
+                Our Vision
+              </h3>
+              <p className="text-[#5a4733]">
+                "To build a digitally empowered, skilled, and equitable society
+                where opportunities for growth and transformation are accessible
+                to all."
+              </p>
             </div>
-            <div>
-              <h3 className="text-3xl font-bold text-[#805b3a]">85+</h3>
-              <p className="text-sm text-[#5a4733]">Institutions Partnered</p>
-            </div>
-          </motion.div>
+          </motion.div> */}
         </motion.div>
 
         {/* RIGHT IMAGE */}
@@ -148,7 +159,7 @@ export default function AboutCyberSecurity() {
         >
           <img
             src={randomImage}
-            alt="Cyber Security"
+            alt="Navanvesha Foundation"
             className="w-full max-w-lg h-[450px] object-cover rounded-3xl border-[6px] border-[#b89d7e] shadow-[0_0_35px_#c6af93]"
           />
         </motion.div>

@@ -6,7 +6,6 @@ import {
   FaUserGraduate,
   FaShieldAlt,
   FaBrain,
-  FaArrowRight,
 } from "react-icons/fa";
 
 const ServicesSection = () => {
@@ -15,16 +14,15 @@ const ServicesSection = () => {
       icon: FaSchool,
       title: "Technology & Digital Transformation Programs",
       description:
-        "Our Technology & Digital Transformation Programs aim to bridge the digital divide by empowering students, youth, and community members with essential digital skills.",
+        "Our Technology & Digital Transformation Programs aim to bridge the digital divide by empowering students, youth, and community members with essential digital skills. ",
       features: [
         "Digital Literacy Workshops (Basic to Advanced modules)",
         "Cyber Safety Awareness Programs",
         "Device Donation & Digital Access Support",
         "Tech for Seniors Initiative",
         "Digital Financial Awareness & Cyber Safety Program",
-        "Assistive Technology for Inclusion Program",
+        "Assistive Technology for Inclusion Program",
       ],
-      href: "/technology-digital",
     },
     {
       icon: FaBuilding,
@@ -41,7 +39,6 @@ const ServicesSection = () => {
         "STEM Clubs",
         "AI, Coding & Computational Thinking trainings",
       ],
-      href: "/education-development",
     },
     {
       icon: FaUserGraduate,
@@ -54,7 +51,6 @@ const ServicesSection = () => {
         "Self-Help Group (SHG) Strengthening",
         "Digital Skills for homemakers and Women Micro-Entrepreneurs",
       ],
-      href: "/women-empowerment",
     },
     {
       icon: FaUsers,
@@ -62,13 +58,12 @@ const ServicesSection = () => {
       description:
         "Our health and community initiatives ensure holistic development through accessible healthcare services, awareness campaigns, and community infrastructure development.",
       features: [
-        "Health Camps (General, Eye, Dental, Women's Health)",
+        "Health Camps (General, Eye, Dental, Women’s Health)",
         "Nutrition & Wellness Workshops",
         "Adolescent Health & Mental Wellness Programs",
         "Sanitation & Clean Water Awareness",
         "Community Infrastructure Support (Toilets, Purifiers, Clean Drinking Water Units)",
       ],
-      href: "/health-wellness",
     },
     {
       icon: FaShieldAlt,
@@ -82,7 +77,6 @@ const ServicesSection = () => {
         "Energy Conservation Drives",
         "Clean & Green Community Campaigns",
       ],
-      href: "/environment-program",
     },
     {
       icon: FaBrain,
@@ -90,12 +84,11 @@ const ServicesSection = () => {
       description:
         "Empowering youth to become change-makers, innovators, and community leaders through structured leadership and experiential programs.",
       features: [
-        "Leadership Workshops & Personality Development",
+        "Leadership Workshops & Personality Developmen",
         "Volunteering & Community Action Programs",
         "Innovation & Problem-Solving Challenges",
         "Soft Skills & Communication Training",
       ],
-      href: "/youth-leadership",
     },
   ];
 
@@ -142,7 +135,7 @@ const ServicesSection = () => {
                 backgroundColor: "#f0e6d8",
                 borderColor: "#805b3a",
               }}
-              className="bg-white/80 rounded-2xl p-6 border border-[#a4947d]/30 hover:shadow-xl transition-all duration-300 flex flex-col h-full"
+              className="bg-white/80 rounded-2xl p-6 border border-[#a4947d]/30 hover:shadow-xl transition-all duration-300"
             >
               <div className="w-14 h-14 bg-[#805b3a]/10 rounded-xl flex items-center justify-center mb-4">
                 <service.icon className="text-[#805b3a] text-2xl" />
@@ -153,34 +146,17 @@ const ServicesSection = () => {
               <p className="text-[#805b3a] mb-4 leading-relaxed">
                 {service.description}
               </p>
-              <div className="space-y-2 mb-6 flex-grow">
+              <div className="space-y-2">
                 {service.features.map((feature, featureIndex) => (
                   <div
                     key={featureIndex}
                     className="flex items-center space-x-2"
                   >
-                    <div className="w-2 h-2 bg-[#805b3a] rounded-full flex-shrink-0"></div>
+                    <div className="w-2 h-2 bg-[#805b3a] rounded-full"></div>
                     <span className="text-black text-sm">{feature}</span>
                   </div>
                 ))}
               </div>
-
-              {/* Updated Learn More Button */}
-              <motion.a
-                href={service.href}
-                whileHover={{ scale: 1.05, backgroundColor: "#805b3a" }}
-                whileTap={{ scale: 0.95 }}
-                className="mt-auto w-full bg-[#805b3a]/10 hover:bg-[#805b3a] text-[#805b3a] hover:text-white py-3 px-4 rounded-xl font-semibold flex items-center justify-center gap-2 transition-all duration-300 border border-[#805b3a]/30 hover:border-[#805b3a]"
-              >
-                <span>Learn More</span>
-                <motion.span
-                  initial={{ x: 0 }}
-                  whileHover={{ x: 3 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <FaArrowRight className="text-sm" />
-                </motion.span>
-              </motion.a>
             </motion.div>
           ))}
         </div>

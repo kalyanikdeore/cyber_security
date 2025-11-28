@@ -1,7 +1,7 @@
 import React from "react";
 import Ourabout from "./Ourabout";
 
-function OurWork() {
+function CloudSecurity() {
   return (
     <div>
       <Ourabout />
@@ -9,4 +9,4 @@ function OurWork() {
   );
 }
 
-export default OurWork;
+export default CloudSecurity;

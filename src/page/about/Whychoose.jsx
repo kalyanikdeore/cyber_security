@@ -16,6 +16,12 @@ import {
   Bug,
   Lock, // Added Lock import
   Award,
+  BookOpen,
+  Heart,
+  TrendingUp,
+  Zap,
+  GitBranch,
+  Target,
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
@@ -24,77 +30,77 @@ const WhyChooseUs = () => {
 
   const features = [
     {
-      icon: ShieldCheck,
-      title: "Expert Security Team",
+      icon: BookOpen,
+      title: "Holistic Development Approach",
       description:
-        "Certified cybersecurity professionals dedicated to delivering robust and trusted security solutions.",
+        "Integrated programs covering education, technology, health, and sustainability for comprehensive community transformation.",
       color: "#4DB6E2",
       gradient: "from-[#4DB6E2] to-[#2E7D32]",
     },
     {
-      icon: Network,
-      title: "Precision Threat Analysis",
+      icon: Users,
+      title: "Community-First Methodology",
       description:
-        "Advanced threat intelligence and risk assessment optimized for maximum security coverage and protection.",
+        "Grassroots initiatives designed with local participation ensuring relevance, acceptance, and sustainable impact.",
       color: "#F4C430",
       gradient: "from-[#F4C430] to-[#F28B30]",
     },
     {
-      icon: Lock, // Now properly imported
-      title: "Enterprise-grade Security",
+      icon: Heart,
+      title: "Inclusive Empowerment",
       description:
-        "Premium security tools ensuring data integrity, confidentiality, and availability with industry-leading SLAs.",
+        "Special focus on women, youth, and underprivileged communities through targeted skill development and digital inclusion programs.",
       color: "#2E7D32",
       gradient: "from-[#2E7D32] to-[#4DB6E2]",
     },
     {
-      icon: Server,
-      title: "On-premises Infrastructure",
+      icon: TrendingUp,
+      title: "Measurable Impact",
       description:
-        "Custom security infrastructure – 30% more resilient, lower latency, and engineered for compliance.",
+        "Data-driven approach with transparent reporting and continuous evaluation for optimal program effectiveness.",
       color: "#F28B30",
       gradient: "from-[#F28B30] to-[#5D4633]",
     },
     {
-      icon: Activity,
-      title: "Real-time Monitoring",
+      icon: Zap,
+      title: "Technology-Driven Solutions",
       description:
-        "24/7 security operations center with advanced SIEM dashboards and predictive threat detection alerts.",
+        "Digital literacy, smart classrooms, and tech innovation programs bridging the digital divide in communities.",
       color: "#4DB6E2",
       gradient: "from-[#4DB6E2] to-[#2E7D32]",
     },
     {
-      icon: Cpu,
-      title: "Proven Security Technologies",
+      icon: Shield,
+      title: "Sustainable Practices",
       description:
-        "From EDR to Zero Trust frameworks — cutting-edge technology securing your digital assets.",
+        "Environment-conscious initiatives combined with long-term community capacity building for lasting change.",
       color: "#F4C430",
       gradient: "from-[#F4C430] to-[#F28B30]",
     },
     {
-      icon: Database,
-      title: "Data Protection",
+      icon: GitBranch,
+      title: "Multi-Sector Partnerships",
       description:
-        "Integrated encryption solutions for secure data storage and transmission with maximum privacy.",
+        "Strong collaborations with corporates, institutions, and local partners for amplified social impact.",
       color: "#2E7D32",
       gradient: "from-[#2E7D32] to-[#4DB6E2]",
     },
     {
-      icon: Clock,
-      title: "Rapid Incident Response",
+      icon: Target,
+      title: "Future-Ready Focus",
       description:
-        "Efficient threat containment with minimal business disruption and faster security recovery.",
+        "STEM education, AI training, and sustainability programs preparing communities for tomorrow's challenges.",
       color: "#F28B30",
       gradient: "from-[#F28B30] to-[#5D4633]",
     },
   ];
 
-  // Updated stats for cybersecurity
+  // Updated stats for social impact
   const stats = [
-    { number: "100+", label: "Security Projects", color: "#F4C430" },
-    { number: "99.9%", label: "Threat Detection", color: "#4DB6E2" },
-    { number: "100%", label: "Client Satisfaction", color: "#2E7D32" },
-    { number: "24/7", label: "Security Monitoring", color: "#F28B30" },
+    { number: "6+", label: "Focus Areas", color: "#F4C430" },
+    { number: "1000+", label: "Lives Impacted", color: "#4DB6E2" },
+    { number: "50+", label: "Community Programs", color: "#2E7D32" },
+    { number: "100%", label: "Transparent Operations", color: "#F28B30" },
   ];
 
   const cardVariants = {

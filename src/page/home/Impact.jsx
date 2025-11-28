@@ -1,143 +1,105 @@
-import { motion } from "framer-motion";
-import {
-  FaChalkboardTeacher,
-  FaUserFriends,
-  FaCity,
-  FaSchool,
-  FaUniversity,
-  FaHands,
-} from "react-icons/fa";
+import React, { useState } from "react";
 
-const ImpactSection = () => {
-  const outreach = [
+const FAQSection = () => {
+  const [openIndex, setOpenIndex] = useState(null);
+
+  const toggleFAQ = (index) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
+
+  const faqs = [
     {
-      icon: FaSchool,
-      title: "School Students",
-      count: "10,000+",
-      description: "Young minds educated in digital safety and AI fundamentals",
-      programs: [
-        "Cyber Safety Workshops",
-        "AI Awareness Sessions",
-        "Digital Ethics Classes",
-      ],
+      question:
+        "What does 'Navanvesha' mean and what is the foundation's core philosophy?",
+      answer:
+        "Navanvesha means 'New Exploration' or 'Renewed Discovery' and symbolizes the spirit of curiosity, innovation, and continuous learning. Our philosophy is to build a bridge between traditional wisdom and modern creativity, empowering individuals and communities through technology-driven education and sustainable development initiatives.",
     },
     {
-      icon: FaUserFriends,
-      title: "Senior Citizens",
-      count: "5,000+",
-      description: "Elderly population empowered with digital literacy skills",
-      programs: ["Fraud Prevention", "Digital Basics", "Online Safety"],
+      question: "What are the main focus areas of Navanvesha Foundation?",
+      answer:
+        "Our primary focus areas include: Education & Research, Technology & Innovation, Social Development & Skill Growth, Sustainability & Future Studies, and Youth Empowerment & Awareness. We work across these domains to create comprehensive impact through structured programs in digital literacy, skill development, women empowerment, health initiatives, and environmental sustainability.",
     },
     {
-      icon: FaCity,
-      title: "Industry Workers",
-      count: "200+",
-      description: "Corporates and organizations trained in cybersecurity",
-      programs: [
-        "Workplace Security",
-        "Data Protection",
-        "Compliance Training",
-      ],
+      question:
+        "How does the foundation approach technology and digital transformation?",
+      answer:
+        "Our Technology & Digital Transformation Programs bridge the digital divide through Digital Literacy Workshops, Cyber Safety Awareness, Device Donation programs, Tech for Seniors initiatives, and Assistive Technology for Inclusion. We provide structured training from basic to advanced levels, ensuring communities can transition into a tech-enabled future with hands-on learning opportunities.",
     },
     {
-      icon: FaUniversity,
-      title: "Educational Institutes",
-      count: "50+",
-      description: "Colleges and universities collaborating on tech education",
-      programs: [
-        "Curriculum Development",
-        "Faculty Training",
-        "Research Projects",
-      ],
+      question:
+        "What kind of educational programs does Navanvesha Foundation offer?",
+      answer:
+        "Our Education & Skill Development Programs include Scholarships & Academic Support, Teacher Training, Career Guidance, Library Setups, Smart Classrooms, STEM Clubs, and AI/Coding trainings. We focus on improving learning outcomes through foundational learning, creativity development, and leadership skills for children and youth.",
     },
     {
-      icon: FaChalkboardTeacher,
-      title: "Workshops Conducted",
-      count: "500+",
-      description: "Interactive sessions across various digital topics",
-      programs: [
-        "Hands-on Training",
-        "Awareness Programs",
-        "Skill Development",
-      ],
-    },
-    {
-      icon: FaHands,
-      title: "Government Collaborations",
-      count: "15+",
-      description: "Partnerships with government bodies for digital inclusion",
-      programs: [
-        "Policy Initiatives",
-        "Public Campaigns",
-        "Community Outreach",
-      ],
+      question:
+        "How can corporations and individuals partner with Navanvesha Foundation?",
+      answer:
+        "We collaborate with corporates, institutions, and local partners through structured CSR programs, volunteering opportunities, and community initiatives. Partnerships can focus on specific areas like digital transformation, women empowerment, environmental sustainability, or youth development. We ensure transparency, measurable impact, and community-first approach in all collaborations.",
     },
   ];
 
   return (
-    <section id="impact" className="py-20 ">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center">
-          {/* Badge */}
-          <span className="inline-block px-4 py-2 bg-[#926b49]/10 border border-[#926b49]/30 rounded-full text-[#926b49] text-sm font-semibold tracking-wide mb-6">
-            Beyond Impact
-          </span>
-
-          {/* Main Heading */}
-          <h2 className="text-4xl lg:text-4xl font-bold text-gray-900 leading-tight mb-4">
-            Our Social <span className="text-[#926b49]"> Social Impact</span>
+    <section className="py-16 bg-gray-50">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Section Header */}
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#805b3a] mb-4">
+            Frequently Asked Questions
           </h2>
-          <motion.div
-            className="h-1 w-20 bg-gradient-to-r from-[#926b49] to-[#82613e] mx-auto mb-6"
-            initial={{ width: 0 }}
-            whileInView={{ width: "5rem" }}
-            transition={{ delay: 0.3, duration: 0.5 }}
-            viewport={{ once: true }}
-          />
-
-          {/* Short Description */}
-          <p className="text-gray-600 text-lg mb-12 max-w-2xl mx-auto">
-            Creating measurable change through education and awareness
-            initiatives that reach across all sections of society.
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            Find answers to common questions about Navanvesha Foundation's
+            mission, programs, and initiatives.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {outreach.map((item, index) => (
-            <motion.div
+        {/* FAQ Items */}
+        <div className="max-w-4xl mx-auto">
+          {faqs.map((faq, index) => (
+            <div
               key={index}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              whileHover={{
-                y: -5,
-                backgroundColor: "#f0e6d8",
-                borderColor: "#805b3a",
-              }}
-              className="bg-white/80 rounded-2xl p-6 border border-[#a4947d]/30 text-center hover:shadow-xl transition-all duration-300"
+              className="mb-4 bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg"
             >
-              <div className="w-16 h-16 bg-[#805b3a]/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <item.icon className="text-[#805b3a] text-2xl" />
-              </div>
-              <div className="text-3xl font-bold text-[#805b3a] mb-2">
-                {item.count}
-              </div>
-              <h3 className="text-xl font-bold text-black mb-2">
-                {item.title}
-              </h3>
-              <p className="text-[#805b3a] text-sm mb-4">{item.description}</p>
-              <div className="space-y-2">
-                {item.programs.map((program, programIndex) => (
-                  <span
-                    key={programIndex}
-                    className="block text-black text-xs bg-[#a4947d]/10 px-2 py-1 rounded-full"
+              <button
+                className="w-full px-6 py-4 text-left flex justify-between items-center bg-white hover:bg-gray-50 transition-colors duration-200"
+                onClick={() => toggleFAQ(index)}
+              >
+                <span className="text-lg font-semibold text-gray-800 pr-4">
+                  {faq.question}
+                </span>
+                <span
+                  className={`transform transition-transform duration-300 text-[#805b3a] ${
+                    openIndex === index ? "rotate-180" : "rotate-0"
+                  }`}
+                >
+                  <svg
+                    className="w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
                   >
-                    {program}
-                  </span>
-                ))}
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
+                </span>
+              </button>
+
+              <div
+                className={`transition-all duration-300 ease-in-out overflow-hidden ${
+                  openIndex === index
+                    ? "max-h-96 opacity-100"
+                    : "max-h-0 opacity-0"
+                }`}
+              >
+                <div className="px-6 py-4 border-t border-gray-200">
+                  <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
+                </div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
@@ -145,4 +107,4 @@ const ImpactSection = () => {
   );
 };
 
-export default ImpactSection;
+export default FAQSection;

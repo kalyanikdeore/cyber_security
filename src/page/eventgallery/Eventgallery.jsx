@@ -1,56 +1,156 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { ChevronLeft, Award, ChevronRight } from "lucide-react";
+// Cloud Security
+import confernce1 from "../../assets/logo/confernce1.jpeg";
+import confernce2 from "../../assets/logo/confernce2.jpeg";
+import cs1 from "../../assets/logo/cs1.jpeg";
+import cs2 from "../../assets/logo/cs2.jpeg";
+import cs3 from "../../assets/logo/cs3.jpeg";
+// Digital Forensics
+import df from "../../assets/logo/df.jpeg";
+import df1 from "../../assets/logo/df1.jpeg";
+import df2 from "../../assets/logo/df2.jpeg";
+import df3 from "../../assets/logo/df3.jpeg";
+// Security Awareness
+import sa from "../../assets/logo/sa.jpeg";
+import sa2 from "../../assets/logo/sa2.jpeg";
+import sa3 from "../../assets/logo/sa3.jpeg";
+// Incident Response
+import ir from "../../assets/logo/ir.png";
+import ir2 from "../../assets/logo/ir2.jpeg";
+import ir4 from "../../assets/logo/ir4.jpeg";
+// Threat Intelligence
+import ti1 from "../../assets/logo/ti1.jpeg";
+import ti2 from "../../assets/logo/ti2.jpeg";
+import ti3 from "../../assets/logo/ti3.jpeg";
+import ti4 from "../../assets/logo/ti4.jpeg";
 
 const EventGallery = () => {
-  const categories = [
-    "All",
-    "Cybersecurity",
-    "Network Security",
-    "Penetration Testing",
-  ];
-
   const items = [
+    // Threat Intelligence Items
+    {
+      id: 1,
+      category: "Threat Intelligence",
+      title: "Advanced Threat Analysis",
+      img: ti1,
+    },
+    {
+      id: 2,
+      category: "Threat Intelligence",
+      title: "Threat Intelligence Summit",
+      img: ti2,
+    },
+    {
+      id: 3,
+      category: "Threat Intelligence",
+      title: "Malware Analysis Deep Dive",
+      img: ti3,
+    },
+    {
+      id: 4,
+      category: "Threat Intelligence",
+      title: "Cyber Threat Conference",
+      img: ti4,
+    },
+    // Cloud Security Items
+    {
+      id: 5,
+      category: "Cloud Security",
+      title: "Cloud Infrastructure Protection",
+      img: cs1,
+    },
+    {
+      id: 6,
+      category: "Cloud Security",
+      title: "Cloud Security Conference",
+      img: cs2,
+    },
     {
       id: 7,
-      category: "Cybersecurity",
-      title: "Security Operations Center",
-      img: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=600&fit=crop",
+      category: "Cloud Security",
+      title: "Zero Trust Architecture",
+      img: cs3,
+    },
+    {
+      id: 8,
+      category: "Cloud Security",
+      title: "Security Conference 2024",
+      img: confernce1,
     },
     {
       id: 9,
-      category: "Network Security",
-      title: "Network Infrastructure Security",
-      img: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=600&fit=crop",
+      category: "Cloud Security",
+      title: "Cloud Security Workshop",
+      img: confernce2,
+    },
+    // Incident Response Items
+    {
+      id: 10,
+      category: "Incident Response",
+      title: "Emergency Response Training",
+      img: ir,
     },
     {
       id: 11,
-      category: "Penetration Testing",
-      title: "Vulnerability Assessment",
-      img: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=600&fit=crop",
+      category: "Incident Response",
+      title: "Incident Response Drill",
+      img: ir2,
     },
     {
+      id: 12,
+      category: "Incident Response",
+      title: "Crisis Management Drill",
+      img: ir4,
+    },
+    // Security Awareness Items
+    {
       id: 13,
-      category: "Cybersecurity",
-      title: "Cyber Defense Training",
-      img: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=600&fit=crop",
+      category: "Security Awareness",
+      title: "Phishing Simulation Workshop",
+      img: sa,
     },
     {
       id: 14,
-      category: "Network Security",
-      title: "Secure Network Architecture",
-      img: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=600&fit=crop",
+      category: "Security Awareness",
+      title: "Security Training Session",
+      img: sa2,
+    },
+    {
+      id: 15,
+      category: "Security Awareness",
+      title: "Awareness Program Launch",
+      img: sa3,
+    },
+    // Digital Forensics Items
+    {
+      id: 16,
+      category: "Digital Forensics",
+      title: "Cyber Crime Investigation",
+      img: df,
+    },
+    {
+      id: 17,
+      category: "Digital Forensics",
+      title: "Forensic Analysis Lab",
+      img: df1,
+    },
+    {
+      id: 18,
+      category: "Digital Forensics",
+      title: "Digital Evidence Workshop",
+      img: df2,
+    },
+    {
+      id: 19,
+      category: "Digital Forensics",
+      title: "Forensic Tools Training",
+      img: df3,
     },
   ];
 
-  const [selectedCategory, setSelectedCategory] = useState("All");
   const [modalData, setModalData] = useState(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
-  const filteredItems =
-    selectedCategory === "All"
-      ? items
-      : items.filter((item) => item.category === selectedCategory);
 
   // Reset current image index when modal opens
   useEffect(() => {
@@ -130,7 +230,7 @@ const EventGallery = () => {
               whileInView={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.3 }}
             >
-              Event Gallery
+              Gallery
             </motion.span>
           </motion.div>
         </motion.div>
@@ -173,31 +273,9 @@ const EventGallery = () => {
           </motion.p>
         </motion.div>
 
-        {/* Enhanced Category Buttons */}
-        <div className="flex flex-wrap justify-center gap-3 mb-16">
-          {categories.map((category) => (
-            <motion.button
-              key={category}
-              onClick={() => setSelectedCategory(category)}
-              className={`px-6 py-3 rounded-full border-2 transition-all duration-300 font-semibold transform hover:scale-105 hover:shadow-lg ${
-                selectedCategory === category
-                  ? "bg-gradient-to-r from-[#805b3a] to-[#b08d6e] text-white border-transparent shadow-lg scale-105"
-                  : "border-[#a4947d] text-[#805b3a] hover:bg-gradient-to-r hover:from-[#805b3a] hover:to-[#b08d6e] hover:text-white hover:border-transparent"
-              }`}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4 }}
-            >
-              {category}
-            </motion.button>
-          ))}
-        </div>
-
-        {/* Enhanced Gallery Grid */}
+        {/* Enhanced Gallery Grid - Showing all images */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredItems.map((item, index) => (
+          {items.map((item, index) => (
             <motion.div
               key={item.id}
               onClick={() => setModalData(item)}
@@ -224,7 +302,7 @@ const EventGallery = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
                 {/* Content Overlay */}
-                <div className="absolute bottom-0 left-0 right-0 p-6 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                {/* <div className="absolute bottom-0 left-0 right-0 p-6 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
                   <div className="text-white">
                     <span className="inline-block px-3 py-1 bg-[#805b3a] rounded-full text-sm font-medium mb-2">
                       {item.category}
@@ -233,7 +311,7 @@ const EventGallery = () => {
                       {item.title}
                     </h3>
                   </div>
-                </div>
+                </div> */}
 
                 {/* Hover Icon */}
                 <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all duration-500">
@@ -261,23 +339,7 @@ const EventGallery = () => {
           ))}
         </div>
 
-        {/* Empty State */}
-        {filteredItems.length === 0 && (
-          <motion.div
-            className="text-center py-16"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            <div className="text-6xl mb-4">🔒</div>
-            <h3 className="text-2xl font-bold text-[#805b3a] mb-2">
-              No Events Found
-            </h3>
-            <p className="text-gray-600">
-              We're preparing more amazing events in this category. Stay tuned!
-            </p>
-          </motion.div>
-        )}
+        {/* Empty State - Removed since we're always showing all images */}
       </div>
 
       {/* Enhanced Modal with Carousel */}
@@ -325,19 +387,7 @@ const EventGallery = () => {
               whileHover={{ scale: 1.1, x: -2 }}
               whileTap={{ scale: 0.9 }}
             >
-              <svg
-                className="w-6 h-6 text-gray-700"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M15 19l-7-7 7-7"
-                />
-              </svg>
+              <ChevronLeft className="w-6 h-6 text-gray-700" />
             </motion.button>
 
             <motion.button
@@ -346,19 +396,7 @@ const EventGallery = () => {
               whileHover={{ scale: 1.1, x: 2 }}
               whileTap={{ scale: 0.9 }}
             >
-              <svg
-                className="w-6 h-6 text-gray-700"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M9 5l7 7-7 7"
-                />
-              </svg>
+              <ChevronRight className="w-6 h-6 text-gray-700" />
             </motion.button>
 
             {/* Modal Content */}
@@ -376,7 +414,7 @@ const EventGallery = () => {
                 />
 
                 {/* Image Info Overlay */}
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
+                {/* <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
                   <div className="text-white">
                     <span className="inline-block px-3 py-1 bg-[#805b3a] rounded-full text-sm font-medium mb-2">
                       {items[currentImageIndex].category}
@@ -388,7 +426,7 @@ const EventGallery = () => {
                       {currentImageIndex + 1} of {items.length}
                     </p>
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
 

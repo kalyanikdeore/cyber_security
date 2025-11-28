@@ -69,8 +69,8 @@ const AboutSection = () => {
 
           {/* Main Heading */}
           <h2 className="text-4xl lg:text-4xl font-bold text-gray-900 leading-tight mb-4">
-            Protecting{" "}
-            <span className="text-[#926b49]">Your Digital World</span>
+            New Exploration{" "}
+            <span className="text-[#926b49]"> or Renewed Discovery</span>
           </h2>
           <motion.div
             className="h-1 w-20 bg-gradient-to-r from-[#926b49] to-[#82613e] mx-auto mb-6"
@@ -82,9 +82,9 @@ const AboutSection = () => {
 
           {/* Short Description */}
           <p className="text-gray-600 text-lg mb-12 max-w-2xl mx-auto">
-            We are a team of cybersecurity experts dedicated to safeguarding
-            businesses from evolving digital threats with cutting-edge
-            technology and unparalleled expertise.
+            It symbolizes the spirit of curiosity, innovation, and continuous
+            learning — a bridge between traditional wisdom and modern
+            creativity.
           </p>
         </div>
 
@@ -100,19 +100,18 @@ const AboutSection = () => {
             {/* Main Description */}
             <motion.div variants={itemVariants} className="space-y-6">
               <h3 className="text-2xl font-bold text-black">
-                Trusted Cybersecurity Partner Since 2015
+                Navanvesha Foundation is a socially driven,
               </h3>
               <p className="text-[#805b3a] text-lg leading-relaxed">
-                At CyberShield, we combine advanced technology with human
-                expertise to provide comprehensive security solutions. Our
-                mission is to create a safer digital environment for businesses
-                of all sizes.
+                non-profit organization committed to empowering communities
+                through education, digital transformation, and sustainable
+                development initiatives.
               </p>
               <p className="text-[#805b3a] text-lg leading-relaxed">
-                With over 8 years of experience in the cybersecurity industry,
-                we've helped more than 500 companies protect their digital
-                assets and maintain regulatory compliance in an ever-evolving
-                threat landscape.
+                Rooted in the belief that every individual deserves appropriate
+                knowledge to grow, learn, and thrive, the foundation designs and
+                delivers high-impact CSR programs in collaboration with
+                corporates, institutions, and local partners.
               </p>
             </motion.div>
 
@@ -205,9 +204,6 @@ const AboutSection = () => {
           </motion.div>
         </div>
 
-        {/* Mission & Vision */}
-
-        {/* cta section  */}
         <CTA />
       </div>
     </section>

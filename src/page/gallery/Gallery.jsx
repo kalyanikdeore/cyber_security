@@ -2,6 +2,23 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Award } from "lucide-react";
 
+// Cyber security
+import csg from "../../assets/logo/csg.jpeg";
+import csg2 from "../../assets/logo/csg2.jpeg";
+import csg3 from "../../assets/logo/csg3.jpeg";
+import csg4 from "../../assets/logo/csg4.jpg";
+
+// Network Security
+import ns from "../../assets/logo/ns.jpeg";
+import ns2 from "../../assets/logo/ns2.jpeg";
+import ns3 from "../../assets/logo/ns3.jpeg";
+import ns4 from "../../assets/logo/ns4.jpeg";
+
+// Penetration Testing
+import pt1 from "../../assets/logo/pt1.jpeg";
+import pt2 from "../../assets/logo/pt2.jpeg";
+import pt3 from "../../assets/logo/pt3.jpeg";
+
 const EventGallery = () => {
   const categories = [
     "All",
@@ -11,35 +28,76 @@ const EventGallery = () => {
   ];
 
   const items = [
+    // Cybersecurity
     {
-      id: 7,
+      id: 1,
       category: "Cybersecurity",
       title: "Security Operations Center",
-      img: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=600&fit=crop",
+      img: csg,
     },
     {
-      id: 9,
+      id: 2,
+      category: "Cybersecurity",
+      title: "Cyber Defense Training",
+      img: csg2,
+    },
+    {
+      id: 3,
+      category: "Cybersecurity",
+      title: "Threat Intelligence Workshop",
+      img: csg3,
+    },
+    {
+      id: 4,
+      category: "Cybersecurity",
+      title: "Incident Response Simulation",
+      img: csg4,
+    },
+
+    // Network Security
+    {
+      id: 5,
       category: "Network Security",
       title: "Network Infrastructure Security",
-      img: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=600&fit=crop",
+      img: ns,
+    },
+    {
+      id: 6,
+      category: "Network Security",
+      title: "Secure Network Architecture",
+      img: ns2,
+    },
+    {
+      id: 7,
+      category: "Network Security",
+      title: "Firewall & VPN Setup",
+      img: ns3,
+    },
+    {
+      id: 8,
+      category: "Network Security",
+      title: "Wireless Security Audit",
+      img: ns4,
+    },
+
+    // Penetration Testing
+    {
+      id: 9,
+      category: "Penetration Testing",
+      title: "Vulnerability Assessment",
+      img: pt1,
+    },
+    {
+      id: 10,
+      category: "Penetration Testing",
+      title: "Web Application Pen Testing",
+      img: pt2,
     },
     {
       id: 11,
       category: "Penetration Testing",
-      title: "Vulnerability Assessment",
-      img: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=600&fit=crop",
-    },
-    {
-      id: 13,
-      category: "Cybersecurity",
-      title: "Cyber Defense Training",
-      img: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=600&fit=crop",
-    },
-    {
-      id: 14,
-      category: "Network Security",
-      title: "Secure Network Architecture",
-      img: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=600&fit=crop",
+      title: "Network Pen Testing",
+      img: pt3,
     },
   ];
 
@@ -173,7 +231,7 @@ const EventGallery = () => {
               initial="hidden"
               animate="visible"
               exit="hidden"
-              onClick={(e) => e.stopPropagation()} // prevent modal close when clicking inside
+              onClick={(e) => e.stopPropagation()}
             >
               <button
                 onClick={() => setModalData(null)}

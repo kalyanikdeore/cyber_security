@@ -1,152 +1,147 @@
+import React from "react";
 import { motion } from "framer-motion";
 import {
-  FaLaptopCode,
-  FaShieldVirus,
-  FaUserShield,
-  FaRobot,
-  FaGraduationCap,
-  FaHandsHelping,
-} from "react-icons/fa";
+  BookOpen,
+  ShieldCheck,
+  Smartphone,
+  UserCheck,
+  CreditCard,
+  Accessibility,
+} from "lucide-react";
 
-const TrainingSection = () => {
-  const programs = [
+const TechnologyDigitalPrograms = () => {
+  const initiatives = [
     {
-      icon: FaShieldVirus,
-      title: "Cyber Security Fundamentals",
-      audience: "All Audiences",
-      duration: "2-4 Weeks",
-      focus:
-        "Basic cybersecurity principles, threat awareness, and protection strategies",
-      level: "Beginner to Intermediate",
+      id: 1,
+      title: "Digital Literacy Workshops",
+      subtitle: "Basic → Advanced modules",
+      description:
+        "Empowering students, youth, and community members with essential digital skills to bridge the digital divide.",
+      icon: BookOpen,
     },
     {
-      icon: FaRobot,
-      title: "AI & Machine Learning",
-      audience: "Students & Professionals",
-      duration: "4-8 Weeks",
-      focus:
-        "Practical AI applications, ethical considerations, and implementation",
-      level: "Intermediate to Advanced",
+      id: 2,
+      title: "Cyber Safety Awareness Programs",
+      subtitle: "Safe & Responsible Online Behavior",
+      description:
+        "Creating awareness about cyber threats and promoting safe digital practices among communities.",
+      icon: ShieldCheck,
     },
     {
-      icon: FaUserShield,
-      title: "Cyber Fraud Prevention",
-      audience: "Senior Citizens & General Public",
-      duration: "1-2 Days",
-      focus:
-        "Identifying and preventing online scams, financial fraud protection",
-      level: "Beginner",
+      id: 3,
+      title: "Device Donation & Digital Access Support",
+      subtitle: "Connecting Everyone to Technology",
+      description:
+        "Providing devices and internet access to underserved communities for digital inclusion.",
+      icon: Smartphone,
     },
     {
-      icon: FaLaptopCode,
-      title: "Digital Content Ethics",
-      audience: "Youth & Students",
-      duration: "1-3 Weeks",
-      focus:
-        "Responsible digital citizenship, copyright awareness, online behavior",
-      level: "All Levels",
+      id: 4,
+      title: "Tech for Seniors Initiative",
+      subtitle: "Digital Inclusion for All Ages",
+      description:
+        "Helping senior citizens adapt to technology with hands-on training and support.",
+      icon: UserCheck,
     },
     {
-      icon: FaGraduationCap,
-      title: "Computer Education",
-      audience: "All Age Groups",
-      duration: "Flexible",
-      focus: "Digital literacy, basic computing skills, software proficiency",
-      level: "Beginner",
+      id: 5,
+      title: "Digital Financial Awareness & Cyber Safety",
+      subtitle: "Secure Financial Literacy",
+      description:
+        "Enabling communities to manage digital finances safely and confidently.",
+      icon: CreditCard,
     },
     {
-      icon: FaHandsHelping,
-      title: "Social Welfare Tech",
-      audience: "Community Workers",
-      duration: "2-4 Weeks",
-      focus: "Using technology for social good, community digital empowerment",
-      level: "Intermediate",
+      id: 6,
+      title: "Assistive Technology for Inclusion",
+      subtitle: "Accessibility & Empowerment",
+      description:
+        "Providing tools and training for differently-abled individuals to thrive in a tech-driven world.",
+      icon: Accessibility,
     },
   ];
 
+  // Variants for cards
+  const cardVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0 },
+  };
+
   return (
-    <section id="training" className="py-20 ">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center">
-          {/* Badge */}
-          <span className="inline-block px-4 py-2 bg-[#926b49]/10 border border-[#926b49]/30 rounded-full text-[#926b49] text-sm font-semibold tracking-wide mb-6">
-            Training Programs
-          </span>
+    <section className="bg-gray-50 py-16 px-6 md:px-12">
+      <div className="max-w-7xl mx-auto text-center">
+        {/* Badge */}
+        <span className="inline-block px-4 py-2 bg-[#926b49]/10 border border-[#926b49]/30 rounded-full text-[#926b49] text-sm font-semibold tracking-wide mb-6">
+          Programs
+        </span>
 
-          {/* Main Heading */}
-          <h2 className="text-4xl lg:text-4xl font-bold text-gray-900 leading-tight mb-4">
-            Specialized{" "}
-            <span className="text-[#926b49]">Training Programs</span>
-          </h2>
-          <motion.div
-            className="h-1 w-20 bg-gradient-to-r from-[#926b49] to-[#82613e] mx-auto mb-6"
-            initial={{ width: 0 }}
-            whileInView={{ width: "5rem" }}
-            transition={{ delay: 0.3, duration: 0.5 }}
-            viewport={{ once: true }}
-          />
+        {/* Main Heading */}
+        <motion.h2
+          className="text-4xl lg:text-4xl font-bold text-gray-900 leading-tight mb-4"
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
+          Technology & Digital{" "}
+          <span className="text-[#926b49]">Transformation Programs</span>
+        </motion.h2>
 
-          {/* Short Description */}
-          <p className="text-gray-600 text-lg mb-12 max-w-2xl mx-auto">
-            Tailored educational initiatives designed to address specific needs
-            of different demographic groups in the digital landscape.
-          </p>
-        </div>
+        {/* Animated Gradient Line */}
+        <motion.div
+          className="h-1 w-20 bg-gradient-to-r from-[#926b49] to-[#82613e] mx-auto mb-6"
+          initial={{ width: 0 }}
+          whileInView={{ width: "5rem" }}
+          transition={{ delay: 0.3, duration: 0.5 }}
+          viewport={{ once: true }}
+        />
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {programs.map((program, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              whileHover={{
-                scale: 1.02,
-                backgroundColor: "#f0e6d8",
-                borderColor: "#805b3a",
-              }}
-              className="bg-white/80 rounded-2xl p-6 border border-[#a4947d]/30 hover:shadow-xl transition-all duration-300"
-            >
-              <div className="flex items-start space-x-4">
-                <div className="w-12 h-12 bg-[#805b3a]/10 rounded-xl flex items-center justify-center shrink-0">
-                  <program.icon className="text-[#805b3a] text-xl" />
+        {/* Short Description */}
+        <motion.p
+          className="text-gray-600 text-lg mb-12 max-w-3xl mx-auto"
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5, duration: 0.6 }}
+          viewport={{ once: true }}
+        >
+          Our programs aim to bridge the digital divide by empowering students,
+          youth, and community members with essential digital skills. We help
+          communities transition into a tech-enabled future through structured
+          training, access to digital tools, and hands-on learning
+          opportunities.
+        </motion.p>
+
+        {/* Initiatives Grid */}
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          {initiatives.map((item, index) => {
+            const Icon = item.icon;
+            return (
+              <motion.div
+                key={item.id}
+                className="bg-white rounded-xl shadow-lg p-6 flex flex-col items-start hover:shadow-2xl transition-shadow duration-300"
+                variants={cardVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.2 }}
+              >
+                <div className="w-10 h-10 flex items-center justify-center bg-[#c79a6c] text-white rounded-full mb-4">
+                  <Icon size={28} />
                 </div>
-                <div className="flex-1">
-                  <h3 className="text-xl font-bold text-black mb-2">
-                    {program.title}
-                  </h3>
-                  <div className="grid grid-cols-2 gap-4 mb-3">
-                    <div>
-                      <span className="text-[#805b3a] text-sm font-medium">
-                        Audience:
-                      </span>
-                      <p className="text-black text-sm">{program.audience}</p>
-                    </div>
-                    <div>
-                      <span className="text-[#805b3a] text-sm font-medium">
-                        Duration:
-                      </span>
-                      <p className="text-black text-sm">{program.duration}</p>
-                    </div>
-                    <div>
-                      <span className="text-[#805b3a] text-sm font-medium">
-                        Level:
-                      </span>
-                      <p className="text-black text-sm">{program.level}</p>
-                    </div>
-                  </div>
-                  <p className="text-[#805b3a] text-sm leading-relaxed">
-                    {program.focus}
-                  </p>
-                </div>
-              </div>
-            </motion.div>
-          ))}
+                <h3 className="text-xl font-semibold text-gray-800 mb-2">
+                  {item.title}
+                </h3>
+                <h4 className="text-[#e1a568] font-medium mb-3">
+                  {item.subtitle}
+                </h4>
+                <p className="text-gray-600">{item.description}</p>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>
   );
 };
 
-export default TrainingSection;
+export default TechnologyDigitalPrograms;
