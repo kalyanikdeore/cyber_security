@@ -1,7 +1,18 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 const CyberSecurityCTA = () => {
+  const navigate = useNavigate();
+
+  const handleViewServices = () => {
+    navigate("/technology-digital");
+  };
+
+  const handleGetInTouch = () => {
+    navigate("/contact");
+  };
+
   return (
     <section className="bg-gray-50 py-5">
       <div className="max-w-6xl mx-auto">
@@ -31,14 +42,16 @@ const CyberSecurityCTA = () => {
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <motion.button
+                onClick={handleViewServices}
                 whileHover={{ scale: 1.08 }}
                 whileTap={{ scale: 0.95 }}
                 className="bg-[#926b49] text-white py-3 px-8 rounded-lg font-semibold hover:bg-[#7a5a3d] transition-all duration-300 shadow-lg min-w-[200px]"
               >
-                Free Security Audit
+                View Our Services
               </motion.button>
 
               <motion.button
+                onClick={handleGetInTouch}
                 whileHover={{ scale: 1.08 }}
                 whileTap={{ scale: 0.95 }}
                 className="border-2 border-[#926b49] text-[#926b49] py-3 px-8 rounded-lg font-semibold hover:bg-[#926b49] hover:text-white transition-all duration-300 min-w-[200px]"

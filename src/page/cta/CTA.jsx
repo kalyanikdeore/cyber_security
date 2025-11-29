@@ -1,6 +1,13 @@
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 const CTA = () => {
+  const navigate = useNavigate();
+
+  const handleRedirect = () => {
+    navigate("/contact");
+  };
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -17,12 +24,14 @@ const CTA = () => {
           Join hundreds of satisfied clients who trust us with their
           cybersecurity needs. Let's build your digital fortress together.
         </p>
+
         <motion.button
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
+          onClick={handleRedirect}
           className="bg-[#faf6f2] text-[#805b3a] px-8 py-4 rounded-xl font-semibold text-lg shadow-2xl hover:shadow-[#805b3a]/25 transition-all duration-300 hover:bg-[#f0e6d8]"
         >
-          Start Your Security Audit
+          Book Your Free Consultation
         </motion.button>
       </div>
     </motion.div>

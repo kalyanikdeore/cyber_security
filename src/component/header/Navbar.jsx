@@ -151,9 +151,12 @@ const Navbar = () => {
 
             {/* CTA Button Desktop */}
             <div className="hidden md:block ml-6">
-              <button className="bg-[#805b3a] hover:bg-[#a18467] text-white px-4 py-2 rounded-xl font-semibold transition-all">
+              <Link
+                to="/contact"
+                className="bg-[#805b3a] hover:bg-[#a18467] text-white px-4 py-2 rounded-xl font-semibold transition-all block"
+              >
                 Enquiry Now
-              </button>
+              </Link>
             </div>
 
             {/* Mobile Hamburger */}
@@ -251,9 +254,13 @@ const Navbar = () => {
                 </div>
               ))}
 
-              <button className="bg-[#805b3a] hover:bg-[#a18467] text-white w-full py-4 rounded-xl mt-6 font-semibold text-lg active:bg-[#927153] transition-all duration-200">
+              <Link
+                to="/contact"
+                className="bg-[#805b3a] hover:bg-[#a18467] text-white w-full py-4 rounded-xl mt-6 font-semibold text-lg active:bg-[#927153] transition-all duration-200 text-center block"
+                onClick={() => setIsOpen(false)}
+              >
                 Enquiry Now
-              </button>
+              </Link>
             </div>
           </motion.div>
         )}
