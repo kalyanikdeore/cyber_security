@@ -7,6 +7,7 @@ import {
   FaPhone,
   FaMapMarkerAlt,
 } from "react-icons/fa";
+import logo from "../../assets/logo/logo.png";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();

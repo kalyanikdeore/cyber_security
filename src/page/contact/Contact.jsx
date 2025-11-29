@@ -1,9 +1,45 @@
-import React from "react";
+import React, { useState } from "react";
 import { FiPhoneCall, FiMail, FiMapPin, FiSend } from "react-icons/fi";
 import { FaFacebookF, FaInstagram, FaYoutube } from "react-icons/fa";
 import { motion } from "framer-motion";
 
 const ContactSection = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // Format the message for WhatsApp
+    const whatsappMessage = `Hello! I'm interested in your solar services.%0A%0A*Name:* ${formData.name}%0A*Email:* ${formData.email}%0A*Phone:* ${formData.phone}%0A*Message:* ${formData.message}`;
+
+    // WhatsApp API URL
+    const whatsappUrl = `https://wa.me/919600129660?text=${whatsappMessage}`;
+
+    // Open WhatsApp in a new tab
+    window.open(whatsappUrl, "_blank");
+
+    // Optional: Reset form after submission
+    setFormData({
+      name: "",
+      email: "",
+      phone: "",
+      message: "",
+    });
+  };
+
   return (
     <div className="w-full py-16">
       <div className="max-w-7xl mx-auto px-4 p-10 shadow-xl">
@@ -34,8 +70,8 @@ const ContactSection = () => {
             viewport={{ once: true }}
             className="text-gray-600 text-lg mb-12 max-w-2xl mx-auto"
           >
-            Start your solar journey with trusted experts. Reach out for any
-            inquiries.
+            Start your cyber security journey with trusted experts. Reach out
+            for any inquiries.
           </motion.p>
         </div>
 
@@ -124,25 +160,57 @@ const ContactSection = () => {
               <FiSend className="text-[#a4947d]" /> Send Message
             </h3>
 
-            <form className="space-y-5">
-              {["Full Name", "Email", "Phone"].map((label, i) => (
-                <div key={i}>
-                  <label className="font-semibold text-[#805b3a]">
-                    {label}
-                  </label>
-                  <input
-                    type="text"
-                    className="w-full border border-gray-300 rounded-lg p-3 mt-1 focus:border-[#a4947d] focus:ring-1 focus:ring-[#a4947d] transition-colors"
-                    placeholder={`Enter your ${label.toLowerCase()}`}
-                  />
-                </div>
-              ))}
+            <form className="space-y-5" onSubmit={handleSubmit}>
+              <div>
+                <label className="font-semibold text-[#805b3a]">
+                  Full Name
+                </label>
+                <input
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleInputChange}
+                  className="w-full border border-gray-300 rounded-lg p-3 mt-1 focus:border-[#a4947d] focus:ring-1 focus:ring-[#a4947d] transition-colors"
+                  placeholder="Enter your full name"
+                  required
+                />
+              </div>
+
+              <div>
+                <label className="font-semibold text-[#805b3a]">Email</label>
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleInputChange}
+                  className="w-full border border-gray-300 rounded-lg p-3 mt-1 focus:border-[#a4947d] focus:ring-1 focus:ring-[#a4947d] transition-colors"
+                  placeholder="Enter your email"
+                  required
+                />
+              </div>
+
+              <div>
+                <label className="font-semibold text-[#805b3a]">Phone</label>
+                <input
+                  type="tel"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleInputChange}
+                  className="w-full border border-gray-300 rounded-lg p-3 mt-1 focus:border-[#a4947d] focus:ring-1 focus:ring-[#a4947d] transition-colors"
+                  placeholder="Enter your phone number"
+                  required
+                />
+              </div>
 
               <div>
                 <label className="font-semibold text-[#805b3a]">Message</label>
                 <textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={handleInputChange}
                   className="w-full border border-gray-300 rounded-lg p-3 h-28 mt-1 focus:border-[#a4947d] focus:ring-1 focus:ring-[#a4947d] transition-colors"
                   placeholder="Write your message here..."
+                  required
                 />
               </div>
 
@@ -152,7 +220,7 @@ const ContactSection = () => {
                 type="submit"
                 className="w-full bg-[#805b3a] hover:bg-[#6d4d32] text-white py-3 rounded-xl font-semibold transition-all"
               >
-                Send Message
+                Send via WhatsApp
               </motion.button>
             </form>
           </motion.div>
