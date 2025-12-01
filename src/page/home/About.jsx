@@ -69,8 +69,10 @@ const AboutSection = () => {
 
           {/* Main Heading */}
           <h2 className="text-4xl lg:text-3xl font-bold text-gray-900 leading-tight mb-4">
-            Empowering Communities Through{" "}
-            <span className="text-[#926b49]">Sustainable Change</span>
+            Navanvesha means{" "}
+            <span className="text-[#926b49]">
+              “New Exploration” or “Renewed Discovery.”
+            </span>
           </h2>
           <motion.div
             className="h-1 w-20 bg-gradient-to-r from-[#926b49] to-[#82613e] mx-auto mb-6"
@@ -82,9 +84,9 @@ const AboutSection = () => {
 
           {/* Short Description */}
           <p className="text-gray-600 text-lg mb-12 max-w-2xl mx-auto">
-            Bridging traditional wisdom with modern innovation to create lasting
-            impact through education, digital transformation, and community
-            development.
+            It symbolizes the spirit of curiosity, innovation, and continuous
+            learning — a bridge between traditional wisdom and modern
+            creativity.
           </p>
         </div>
 
@@ -102,13 +104,13 @@ const AboutSection = () => {
               {/* <h3 className="text-2xl font-bold text-black">
                 Our Mission & Vision
               </h3> */}
-              <p className="text-[#805b3a] text-lg leading-relaxed">
+              <p className="text-[#805b3a] text-lg leading-relaxed text-justify">
                 Navanvesha Foundation is a socially driven, non-profit
                 organization committed to empowering communities through
                 education, digital transformation, and sustainable development
                 initiatives.
               </p>
-              <p className="text-[#805b3a] text-lg leading-relaxed">
+              <p className="text-[#805b3a] text-lg leading-relaxed text-justify">
                 Rooted in the belief that every individual deserves appropriate
                 knowledge to grow, learn, and thrive, we design and deliver
                 high-impact CSR programs in collaboration with corporates,
@@ -118,15 +120,25 @@ const AboutSection = () => {
 
             {/* Our Approach */}
             <motion.div variants={itemVariants} className="space-y-4">
-              <h4 className="text-xl font-semibold text-black mb-4">
+              <h4 className="text-xl font-semibold text-black mb-4 text-justify">
                 Our Core Focus Areas
               </h4>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {[
-                  { icon: FaGraduationCap, text: "Technology Education" },
-                  { icon: FaUsers, text: "Youth Development" },
-                  { icon: FaChartLine, text: "Sustainable Development" },
-                  { icon: FaHandshake, text: "Community Upliftment" },
+                  { icon: FaGraduationCap, text: "Education & Research" },
+                  { icon: FaUsers, text: "Technology & Innovation" },
+                  {
+                    icon: FaChartLine,
+                    text: "Social Development & Skill Growth",
+                  },
+                  {
+                    icon: FaHandshake,
+                    text: "Sustainability & Future Studies",
+                  },
+                  {
+                    icon: FaHandshake,
+                    text: "Youth Empowerment & Awareness",
+                  },
                 ].map((feature, index) => (
                   <motion.div
                     key={index}

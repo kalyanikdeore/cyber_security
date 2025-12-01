@@ -75,10 +75,13 @@ export default function AboutCyberSecurity() {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="mt-6 text-[#5a4733] text-lg leading-relaxed"
           >
-            <strong>Navanvesha</strong> means "New Exploration" or "Renewed
-            Discovery." It symbolizes the spirit of curiosity, innovation, and
-            continuous learning — a bridge between traditional wisdom and modern
-            creativity.
+            Navanvesha Foundation is a socially driven, non-profit organization
+            committed to empowering communities through education, digital
+            transformation, and sustainable development initiatives. Rooted in
+            the belief that every individual deserves appropriate knowledge to
+            grow, learn, and thrive, the foundation designs and delivers
+            high-impact CSR programs in collaboration with corporates,
+            institutions, and local partners.
           </motion.p>
 
           <motion.p
@@ -87,11 +90,36 @@ export default function AboutCyberSecurity() {
             transition={{ duration: 0.75, delay: 0.3 }}
             className="mt-5 text-[#5a4733] text-lg leading-relaxed"
           >
-            Navanvesha Foundation is a socially driven, non-profit organization
-            committed to empowering communities through education, digital
-            transformation, and sustainable development initiatives. Rooted in
-            the belief that every individual deserves appropriate knowledge to
-            grow, learn, and thrive.
+            We specialize in creating pathways for growth by bridging skill
+            gaps, supporting underprivileged communities, and fostering
+            innovation-driven learning environments. Through structured programs
+            in technology education, youth development, community upliftment,
+            and digital inclusion, Navanvesha Foundation works towards creating
+            long-term, measurable impact.
+          </motion.p>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.75, delay: 0.3 }}
+            className="mt-5 text-[#5a4733] text-lg leading-relaxed"
+          >
+            Our approach integrates capacity building, digital literacy,
+            employability enhancement, health & well-being initiatives, and
+            environmental sustainability, ensuring holistic development at the
+            grassroots level.
+          </motion.p>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.75, delay: 0.3 }}
+            className="mt-5 text-[#5a4733] text-lg leading-relaxed"
+          >
+            With a commitment to accountability, transparency, and
+            community-first action, Navanvesha Foundation continues to work
+            towards a future where innovation meets compassion, and progress is
+            shared by all.
           </motion.p>
 
           {/* FEATURES */}

@@ -18,12 +18,12 @@ const ServicesSection = () => {
         "Our Technology & Digital Transformation Programs aim to bridge the digital divide by empowering students, youth, and community members with essential digital skills.",
       features: [
         "Digital Literacy Workshops (Basic to Advanced modules)",
+        "Digital Detox",
         "Cyber Safety Awareness Programs",
         "Device Donation & Digital Access Support",
         "Tech for Seniors Initiative",
         "Digital Financial Awareness & Cyber Safety Program",
         "Assistive Technology for Inclusion Program",
-        "Digital Detox",
       ],
       href: "/technology-digital",
     },
@@ -148,10 +148,10 @@ const ServicesSection = () => {
               <div className="w-14 h-14 bg-[#805b3a]/10 rounded-xl flex items-center justify-center mb-4">
                 <service.icon className="text-[#805b3a] text-2xl" />
               </div>
-              <h3 className="text-xl font-bold text-black mb-3">
+              <h3 className="text-xl font-bold text-black mb-3 ">
                 {service.title}
               </h3>
-              <p className="text-[#805b3a] mb-4 leading-relaxed">
+              <p className="text-[#805b3a] mb-4 leading-relaxed text-justify">
                 {service.description}
               </p>
               <div className="space-y-2 mb-6 flex-grow">

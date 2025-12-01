@@ -88,7 +88,7 @@ export default function YouthLeadershipPrograms({ onCTAClick }) {
             transition={{ delay: 0.3, duration: 0.5 }}
             className="inline-block bg-gradient-to-r from-[#805B3A] to-[#A1887F] text-white text-sm font-semibold px-8 py-3 rounded-full shadow-lg border border-[#805B3A]/30 backdrop-blur-sm"
           >
-            Youth Leadership
+            Youth Leadership & Community Engagement Programs
           </motion.span>
 
           {/* Main Heading */}
@@ -96,13 +96,13 @@ export default function YouthLeadershipPrograms({ onCTAClick }) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.6 }}
-            className="text-5xl md:text-5xl font-extrabold leading-tight text-slate-900 relative"
+            className="text-5xl md:text-4xl font-extrabold leading-tight text-slate-900 relative"
           >
             <span className="bg-gradient-to-r from-[#805B3A] to-[#A1887F] bg-clip-text text-transparent">
-              Community Engagement
+              Youth Development
             </span>
             <br />
-            <span className="text-slate-800">Programs</span>
+            <span className="text-slate-800"> & Leadership Programs</span>
             <span className="absolute left-1/2 -bottom-4 w-48 h-1 bg-gradient-to-r from-[#805B3A] to-[#A1887F] transform -translate-x-1/2 rounded-full"></span>
           </motion.h2>
 
@@ -195,9 +195,9 @@ export default function YouthLeadershipPrograms({ onCTAClick }) {
             Our Key Initiatives
           </h2>
 
-          <p className="text-slate-600 max-w-2xl mx-auto mt-2 text-lg">
-            Designed to develop leadership capabilities, community engagement
-            skills, and innovative problem-solving approaches.
+          <p className="text-slate-600 max-w-5xl mx-auto mt-2 text-lg">
+            Empowering youth to become change-makers, innovators, and community
+            leaders through structured leadership and experiential programs.
           </p>
         </motion.div>
 

@@ -177,7 +177,7 @@ const FAQSection = () => {
                 animate={openIndex === index ? "open" : "closed"}
                 className="overflow-hidden"
               >
-                <div className="px-6 py-4 border-t border-gray-200">
+                <div className="px-6 py-4 border-t border-gray-200 text-justify">
                   <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
                 </div>
               </motion.div>

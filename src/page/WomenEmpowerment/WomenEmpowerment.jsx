@@ -49,7 +49,7 @@ export default function WomenEmpowermentPrograms({ onCTAClick }) {
     },
     {
       id: 3,
-      title: "Self-Help Group Strengthening",
+      title: "Self-Help Group (SHG) Strengthening",
       subtitle: "Community support networks",
       icon: Smartphone,
       description:
@@ -57,7 +57,7 @@ export default function WomenEmpowermentPrograms({ onCTAClick }) {
     },
     {
       id: 4,
-      title: "Entrepreneurship Development",
+      title: "Digital Skills for homemakers and Women Micro-Entrepreneurs",
       subtitle: "Business skills training",
       icon: UserCheck,
       description:
@@ -114,16 +114,13 @@ export default function WomenEmpowermentPrograms({ onCTAClick }) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.6 }}
-            className="text-5xl md:text-5xl font-extrabold leading-tight text-slate-900 relative"
+            className="text-5xl md:text-4xl font-extrabold leading-tight text-slate-900 relative"
           >
             <span className="bg-gradient-to-r from-[#805B3A] to-[#A1887F] bg-clip-text text-transparent">
-              Enabling Financial Independence
+              Skill-Based Empowerment
             </span>
             <br />
-            <span className="text-slate-800">
-              {" "}
-              and Leadership Opportunities
-            </span>
+            <span className="text-slate-800"> For Women's Advancement</span>
             <span className="absolute left-1/2 -bottom-4 w-48 h-1 bg-gradient-to-r from-[#805B3A] to-[#A1887F] transform -translate-x-1/2 rounded-full"></span>
           </motion.h2>
 
@@ -216,9 +213,10 @@ export default function WomenEmpowermentPrograms({ onCTAClick }) {
             Our Key Empowerment Initiatives
           </h2>
 
-          <p className="text-slate-600 max-w-2xl mx-auto mt-2 text-lg">
-            Designed to equip women with essential skills, financial knowledge,
-            and entrepreneurial capabilities for sustainable livelihoods.
+          <p className="text-slate-600 max-w-5xl mx-auto mt-2 text-lg">
+            We enable women to gain financial independence and leadership
+            opportunities through skill-based training, entrepreneurship
+            development, and community support initiatives.
           </p>
         </motion.div>
 

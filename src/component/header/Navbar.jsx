@@ -25,7 +25,7 @@ const Navbar = () => {
     { name: "Home", href: "/" },
     { name: "About Us", href: "/about" },
     {
-      name: "Program",
+      name: "Programs",
       dropdown: [
         {
           name: "Technology & Digital Transformation Programs",
@@ -84,11 +84,12 @@ const Navbar = () => {
       {/* Fixed Container for both top bar and main nav */}
       <div className="fixed w-full top-0 z-50">
         {/* Top Bar with Contact Info and Social Media */}
+        {/* Top Bar with Contact Info and Social Media - Mobile Responsive */}
         <div className="bg-[#805b3a] text-white py-2">
           <div className="max-w-7xl mx-auto px-4">
-            <div className="flex justify-between items-center">
+            <div className="flex flex-col md:flex-row justify-between md:items-center gap-3 md:gap-0 text-center md:text-left">
               {/* Left Side - Contact Info */}
-              <div className="flex items-center space-x-6 text-sm">
+              <div className="flex flex-col md:flex-row items-center justify-center md:justify-start space-y-2 md:space-y-0 md:space-x-6 text-sm">
                 <div className="flex items-center space-x-2">
                   <FaPhone className="w-3 h-3" />
                   <span>+91 9600129660</span>
@@ -99,8 +100,8 @@ const Navbar = () => {
                 </div>
               </div>
 
-              {/* Right Side - Social Media Icons */}
-              <div className="flex items-center space-x-4">
+              {/* Social Media Icons */}
+              <div className="flex items-center justify-center space-x-4">
                 <a
                   href="https://wa.me/911234567890"
                   target="_blank"

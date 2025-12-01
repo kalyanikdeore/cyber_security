@@ -76,14 +76,6 @@ export default function EnvironmentSustainabilityPrograms({ onCTAClick }) {
       description:
         "Local clean-up drives and community gardening initiatives to create cleaner, greener living spaces.",
     },
-    {
-      id: 6,
-      title: "Sustainable Practices Awareness",
-      subtitle: "Eco-friendly lifestyle",
-      icon: Accessibility,
-      description:
-        "Promoting sustainable habits like composting, water conservation, and reducing single-use plastics.",
-    },
   ];
 
   return (
@@ -119,15 +111,13 @@ export default function EnvironmentSustainabilityPrograms({ onCTAClick }) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.6 }}
-            className="text-5xl md:text-5xl font-extrabold leading-tight text-slate-900 relative"
+            className="text-5xl md:text-4xl font-extrabold leading-tight text-slate-900 relative"
           >
             <span className="bg-gradient-to-r from-[#805B3A] to-[#A1887F] bg-clip-text text-transparent">
-              Promoting Environmental
+              Environmental Consciousness
             </span>
             <br />
-            <span className="text-slate-800">
-              Consciousness and Sustainable Practices
-            </span>
+            <span className="text-slate-800"> & Sustainable Action</span>
             <span className="absolute left-1/2 -bottom-4 w-48 h-1 bg-gradient-to-r from-[#805B3A] to-[#A1887F] transform -translate-x-1/2 rounded-full"></span>
           </motion.h2>
 
@@ -138,8 +128,9 @@ export default function EnvironmentSustainabilityPrograms({ onCTAClick }) {
             transition={{ delay: 0.7, duration: 0.6 }}
             className="text-slate-600 text-xl max-w-3xl mx-auto leading-relaxed"
           >
-            We promote environmental consciousness and sustainable practices
-            through awareness
+            {" "}
+            Designed to create sustainable communities through environmental
+            awareness and actionable conservation programs.
             <span className="font-semibold text-[#805B3A]">
               {" "}
               drives and community-action programs.
@@ -220,9 +211,9 @@ export default function EnvironmentSustainabilityPrograms({ onCTAClick }) {
             Our Key Environmental Initiatives
           </h2>
 
-          <p className="text-slate-600 max-w-2xl mx-auto mt-2 text-lg">
-            Designed to create sustainable communities through environmental
-            awareness and actionable conservation programs.
+          <p className="text-slate-600 max-w-5xl mx-auto mt-2 text-lg">
+            We promote environmental consciousness and sustainable practices
+            through awareness
           </p>
         </motion.div>
 

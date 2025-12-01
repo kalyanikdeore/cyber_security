@@ -7,21 +7,30 @@ import {
   UserCheck,
   CreditCard,
   Accessibility,
+  BatteryCharging,
 } from "lucide-react";
 
 export default function TechnologyDigitalPrograms({ onCTAClick }) {
   const initiatives = [
     {
       id: 1,
-      title: "Digital Literacy Workshops",
+      title: "Digital Literacy Workshops ",
       subtitle: "Basic → Advanced modules",
       icon: BookOpen,
       description:
         "Hands-on learning paths that take learners from computer basics to practical digital skills for education and work.",
     },
     {
+      id: 7,
+      title: "Digital Detox",
+      subtitle: "Balancing digital life",
+      icon: BatteryCharging, // You might want to choose a different icon
+      description:
+        "Programs and workshops focused on mindful technology use, reducing screen time, and promoting digital wellbeing.",
+    },
+    {
       id: 2,
-      title: "Cyber Safety Awareness",
+      title: "Cyber Safety Awareness Programs",
       subtitle: "Protecting people online",
       icon: ShieldCheck,
       description:
@@ -29,7 +38,7 @@ export default function TechnologyDigitalPrograms({ onCTAClick }) {
     },
     {
       id: 3,
-      title: "Device Donation & Access",
+      title: "Device Donation & Digital Access Support",
       subtitle: "Bridging the access gap",
       icon: Smartphone,
       description:
@@ -37,7 +46,7 @@ export default function TechnologyDigitalPrograms({ onCTAClick }) {
     },
     {
       id: 4,
-      title: "Tech for Seniors",
+      title: "Tech for Seniors Initiative",
       subtitle: "Simple, patient-led learning",
       icon: UserCheck,
       description:
@@ -45,7 +54,7 @@ export default function TechnologyDigitalPrograms({ onCTAClick }) {
     },
     {
       id: 5,
-      title: "Digital Financial Awareness",
+      title: "Digital Financial Awareness & Cyber Safety Program",
       subtitle: "Safe digital transactions",
       icon: CreditCard,
       description:
@@ -53,7 +62,7 @@ export default function TechnologyDigitalPrograms({ onCTAClick }) {
     },
     {
       id: 6,
-      title: "Assistive Technology",
+      title: "Assistive Technology for Inclusion Program",
       subtitle: "Accessibility-first tools",
       icon: Accessibility,
       description:
@@ -115,7 +124,7 @@ export default function TechnologyDigitalPrograms({ onCTAClick }) {
             transition={{ delay: 0.3, duration: 0.5 }}
             className="inline-block bg-gradient-to-r from-[#805B3A] to-[#A1887F] text-white text-sm font-semibold px-8 py-3 rounded-full shadow-lg border border-[#805B3A]/30 backdrop-blur-sm"
           >
-            Technology & Digital Programs
+            Technology & Digital Transformation Programs
           </motion.span>
 
           {/* Main Heading */}
@@ -123,13 +132,15 @@ export default function TechnologyDigitalPrograms({ onCTAClick }) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.6 }}
-            className="text-5xl md:text-5 xl font-extrabold leading-tight text-slate-900 relative"
+            className="text-5xl md:text-4xl font-extrabold leading-tight text-slate-900 relative"
           >
             <span className="bg-gradient-to-r from-[#805B3A] to-[#A1887F] bg-clip-text text-transparent">
-              Empowering Communities
+              Inclusive Digital Access
             </span>
             <br />
-            <span className="text-slate-800">for a Tech-Enabled Future</span>
+            <span className="text-slate-800">
+              Transforming Lives Through Technology
+            </span>
             <span className="absolute left-1/2 -bottom-4 w-48 h-1 bg-gradient-to-r from-[#805B3A] to-[#A1887F] transform -translate-x-1/2 rounded-full"></span>
           </motion.h2>
 
@@ -222,9 +233,12 @@ export default function TechnologyDigitalPrograms({ onCTAClick }) {
             Our Key Digital Initiatives
           </h2>
 
-          <p className="text-slate-600 max-w-2xl mx-auto mt-2 text-lg">
-            Designed to equip communities with essential digital skills, cyber
-            safety, and accessible technology.
+          <p className="text-slate-600 max-w-5xl mx-auto mt-2 text-lg">
+            Our Technology & Digital Transformation Programs aim to bridge the
+            digital divide by empowering students, youth, and community members
+            with essential digital skills. We help communities transition into a
+            tech-enabled future by offering structured training, access to
+            digital tools, and hands-on learning opportunities.
           </p>
         </motion.div>
 

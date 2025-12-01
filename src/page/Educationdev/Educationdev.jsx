@@ -23,7 +23,7 @@ export default function EducationSkillDevelopment({ onCTAClick }) {
     },
     {
       id: 2,
-      title: "Teacher Training & Capacity Building",
+      title: "Teacher Training & Capacity Building programs",
       subtitle: "Empowering educators",
       icon: Users,
       description:
@@ -31,7 +31,7 @@ export default function EducationSkillDevelopment({ onCTAClick }) {
     },
     {
       id: 3,
-      title: "Career Guidance & Employability",
+      title: "Career Guidance & Employability Programs",
       subtitle: "Pathway to professional success",
       icon: Briefcase,
       description:
@@ -39,7 +39,7 @@ export default function EducationSkillDevelopment({ onCTAClick }) {
     },
     {
       id: 4,
-      title: "Reading Clubs & Learning Spaces",
+      title: "Reading Clubs, Library Setups & Learning Corners",
       subtitle: "Fostering love for learning",
       icon: BookMarked,
       description:
@@ -47,7 +47,7 @@ export default function EducationSkillDevelopment({ onCTAClick }) {
     },
     {
       id: 5,
-      title: "Educational Material Support",
+      title: "Equipment and educational material support ",
       subtitle: "Resources for effective learning",
       icon: Package,
       description:
@@ -55,7 +55,7 @@ export default function EducationSkillDevelopment({ onCTAClick }) {
     },
     {
       id: 6,
-      title: "Smart Classrooms & Digital Labs",
+      title: "Setting up Smart Classrooms & Digital Labs",
       subtitle: "Technology-enhanced learning",
       icon: MonitorCog,
       description:
@@ -71,7 +71,7 @@ export default function EducationSkillDevelopment({ onCTAClick }) {
     },
     {
       id: 8,
-      title: "AI & Computational Thinking",
+      title: "AI, Coding & Computational Thinking trainings",
       subtitle: "Future-ready skills",
       icon: Cpu,
       description:
@@ -139,13 +139,13 @@ export default function EducationSkillDevelopment({ onCTAClick }) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.6 }}
-            className="text-5xl md:text-5xl font-extrabold leading-tight text-slate-900 relative"
+            className="text-5xl md:text-4xl font-extrabold leading-tight text-slate-900 relative"
           >
             <span className="bg-gradient-to-r from-[#805B3A] to-[#A1887F] bg-clip-text text-transparent">
-              Nurturing Foundational Learning,
+              Empowering Through Education
             </span>
             <br />
-            <span className="text-slate-800"> Creativity & Leadership</span>
+            <span className="text-slate-800"> & Skill Development</span>
             <span className="absolute left-1/2 -bottom-4 w-48 h-1 bg-gradient-to-r from-[#805B3A] to-[#A1887F] transform -translate-x-1/2 rounded-full"></span>
           </motion.h2>
 
@@ -156,9 +156,8 @@ export default function EducationSkillDevelopment({ onCTAClick }) {
             transition={{ delay: 0.7, duration: 0.6 }}
             className="text-slate-600 text-xl max-w-3xl mx-auto leading-relaxed"
           >
-            Focused on improving learning outcomes through high-impact
-            educational interventions that nurture foundational learning,
-            creativity,
+            Designed to equip children and youth with essential academic
+            foundation, creative thinking, and future-ready skills.
             <span className="font-semibold text-[#805B3A]">
               {" "}
               and leadership skills among children and youth.
@@ -239,9 +238,11 @@ export default function EducationSkillDevelopment({ onCTAClick }) {
             Our Key Educational Initiatives
           </h2>
 
-          <p className="text-slate-600 max-w-2xl mx-auto mt-2 text-lg">
-            Designed to equip children and youth with essential academic
-            foundation, creative thinking, and future-ready skills.
+          <p className="text-slate-600 max-w-5xl mx-auto mt-2 text-lg">
+            Focused on improving learning outcomes, Navanvesha Foundation
+            designs high-impact educational interventions that nurture
+            foundational learning, creativity, and leadership skills among
+            children and youth.
           </p>
         </motion.div>
 

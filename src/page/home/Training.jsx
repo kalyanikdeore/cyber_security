@@ -1,15 +1,16 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom"; // If using React Router
 
 const MapSection = () => {
+  const navigate = useNavigate(); // React Router navigation hook
   const locations = [
     {
       id: 1,
       name: "Central Office",
-      address: "Nashik",
+      address: "Nashik, Maharashtra, India",
       phone: "+91 9600129660",
       email: "navanveshafoundation@gmail.com",
-
       lat: 40.7128,
       lng: -74.006,
     },
@@ -21,7 +22,22 @@ const MapSection = () => {
   // Simple iframe src without API key
   const getSimpleMapUrl = (location) => {
     const encodedQuery = encodeURIComponent(location.address);
-    return `https://maps.google.com/maps?q=Nashik,%20Maharashtra,%20India&t=&z=15&ie=UTF8&iwloc=&output=embed`;
+    return `https://maps.google.com/maps?q=${encodedQuery}&t=&z=15&ie=UTF8&iwloc=&output=embed`;
+  };
+
+  // Handle Contact Us button click
+  const handleContactUs = () => {
+    // Option 1: If using React Router
+    navigate("/contact");
+
+    // Option 2: If you want to scroll to contact section on same page
+    // const contactSection = document.getElementById("contact");
+    // if (contactSection) {
+    //   contactSection.scrollIntoView({ behavior: "smooth" });
+    // }
+
+    // Option 3: For external linking or anchor links
+    // window.location.href = "/contact"; // Change to your contact page URL
   };
 
   // Animation variants
@@ -148,146 +164,184 @@ const MapSection = () => {
           {/* Single Location Info Section */}
           <motion.div className="lg:w-1/3" variants={cardVariants}>
             <motion.div
-              className="bg-white/80 backdrop-blur-sm rounded-xl shadow-xl border border-white/20 p-6 h-full"
+              className="bg-white/80 backdrop-blur-sm rounded-xl shadow-xl border border-white/20 p-6 h-full flex flex-col"
               whileHover={{
                 y: -5,
                 boxShadow: "0 20px 40px rgba(0,0,0,0.1)",
               }}
               transition={{ type: "spring", stiffness: 300 }}
             >
+              {/* Header with icon and title */}
               <motion.div
-                className="flex items-center gap-3 mb-6"
+                className="flex items-center justify-between mb-6"
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.4, duration: 0.5 }}
                 viewport={{ once: true }}
               >
-                <div className="w-2 h-6 bg-gradient-to-b from-[#926b49] to-[#82613e] rounded-full"></div>
-                <h3 className="text-xl font-bold text-gray-800">Our Details</h3>
+                <div className="flex items-center gap-3">
+                  <div className="w-2 h-6 bg-gradient-to-b from-[#926b49] to-[#82613e] rounded-full"></div>
+                  <h3 className="text-xl font-bold text-gray-800">
+                    Our Details
+                  </h3>
+                </div>
               </motion.div>
 
               {/* Single Location Card */}
-              <div className="space-y-4">
+              <div className="space-y-4 flex-1">
                 <motion.div
-                  className="p-4 rounded-xl bg-gradient-to-r from-[#926b49]/10 to-[#82613e]/10 border-2 border-[#926b49]/20 shadow-lg"
+                  className="p-4 rounded-xl bg-gradient-to-r from-[#926b49]/10 to-[#82613e]/10 border-2 border-[#926b49]/20 shadow-lg flex-1"
                   whileHover={{ scale: 1.02 }}
                   transition={{ type: "spring", stiffness: 400 }}
                 >
-                  <div className="flex items-start justify-between">
-                    <div className="flex-1">
-                      <div className="flex items-center gap-2 mb-2">
-                        <motion.h4
-                          className="font-bold text-[#926b49] text-lg"
-                          whileHover={{ scale: 1.05 }}
+                  <div className="flex flex-col h-full">
+                    <div className="flex items-start justify-between mb-4">
+                      <div className="flex-1">
+                        <div className="flex items-center gap-2 mb-2">
+                          <motion.h4
+                            className="font-bold text-[#926b49] text-lg"
+                            whileHover={{ scale: 1.05 }}
+                          >
+                            {locations[0].name}
+                          </motion.h4>
+                          <motion.span
+                            className="px-2 py-1 bg-[#926b49]/20 text-[#926b49] text-xs rounded-full font-medium"
+                            whileHover={{ scale: 1.1 }}
+                          >
+                            Active
+                          </motion.span>
+                        </div>
+                        <motion.p
+                          className="text-gray-600 text-sm mb-4 leading-relaxed"
+                          initial={{ opacity: 0 }}
+                          whileInView={{ opacity: 1 }}
+                          transition={{ delay: 0.6 }}
+                          viewport={{ once: true }}
                         >
-                          {locations[0].name}
-                        </motion.h4>
-                        <motion.span
-                          className="px-2 py-1 bg-[#926b49]/20 text-[#926b49] text-xs rounded-full font-medium"
-                          whileHover={{ scale: 1.1 }}
-                        >
-                          Active
-                        </motion.span>
+                          {locations[0].address}
+                        </motion.p>
                       </div>
-                      <motion.p
-                        className="text-gray-600 text-sm mb-3 leading-relaxed"
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        transition={{ delay: 0.6 }}
-                        viewport={{ once: true }}
-                      >
-                        {locations[0].address}
-                      </motion.p>
-
-                      {/* Contact Information */}
                       <motion.div
-                        className="space-y-2"
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true }}
-                        variants={{
-                          hidden: { opacity: 0 },
-                          visible: {
-                            opacity: 1,
-                            transition: {
-                              staggerChildren: 0.1,
-                            },
-                          },
+                        className="p-2 rounded-lg bg-[#926b49]/20 text-[#926b49] ml-2"
+                        whileHover={{
+                          scale: 1.1,
+                          rotate: 5,
                         }}
                       >
-                        <motion.div
-                          className="flex items-center gap-2 text-xs text-gray-600"
-                          variants={itemVariants}
-                          whileHover={{ x: 5 }}
+                        <svg
+                          className="w-5 h-5"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
                         >
-                          <svg
-                            className="w-4 h-4 flex-shrink-0 text-[#926b49]"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-                            />
-                          </svg>
-                          <span>{locations[0].phone}</span>
-                        </motion.div>
-
-                        <motion.div
-                          className="flex items-center gap-2 text-xs text-gray-600"
-                          variants={itemVariants}
-                          whileHover={{ x: 5 }}
-                        >
-                          <svg
-                            className="w-4 h-4 flex-shrink-0 text-[#926b49]"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                            />
-                          </svg>
-                          <span>{locations[0].email}</span>
-                        </motion.div>
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                          />
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                          />
+                        </svg>
                       </motion.div>
                     </div>
+
+                    {/* Contact Information */}
                     <motion.div
-                      className="p-2 rounded-lg bg-[#926b49]/20 text-[#926b49]"
-                      whileHover={{
-                        scale: 1.1,
-                        rotate: 5,
+                      className="space-y-3 mt-auto"
+                      initial="hidden"
+                      whileInView="visible"
+                      viewport={{ once: true }}
+                      variants={{
+                        hidden: { opacity: 0 },
+                        visible: {
+                          opacity: 1,
+                          transition: {
+                            staggerChildren: 0.1,
+                          },
+                        },
                       }}
                     >
-                      <svg
-                        className="w-5 h-5"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
+                      <motion.div
+                        className="flex items-center gap-2 text-sm text-gray-600"
+                        variants={itemVariants}
+                        whileHover={{ x: 5 }}
                       >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                        />
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                        />
-                      </svg>
+                        <svg
+                          className="w-4 h-4 flex-shrink-0 text-[#926b49]"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                          />
+                        </svg>
+                        <span className="truncate">{locations[0].phone}</span>
+                      </motion.div>
+
+                      <motion.div
+                        className="flex items-center gap-2 text-sm text-gray-600"
+                        variants={itemVariants}
+                        whileHover={{ x: 5 }}
+                      >
+                        <svg
+                          className="w-4 h-4 flex-shrink-0 text-[#926b49]"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                          />
+                        </svg>
+                        <span className="truncate">{locations[0].email}</span>
+                      </motion.div>
                     </motion.div>
                   </div>
                 </motion.div>
               </div>
+
+              {/* Alternative: Larger Contact Us Button at Bottom */}
+              <motion.div
+                className="mt-6 pt-6 border-t border-gray-200/50"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.8 }}
+                viewport={{ once: true }}
+              >
+                <motion.button
+                  onClick={handleContactUs}
+                  className="w-full py-3 bg-gradient-to-r from-[#926b49] to-[#82613e] text-white font-semibold rounded-xl hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-3"
+                  whileHover={{ scale: 1.02, y: -2 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  <svg
+                    className="w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
+                    />
+                  </svg>
+                  Get in Touch
+                </motion.button>
+              </motion.div>
             </motion.div>
           </motion.div>
         </motion.div>

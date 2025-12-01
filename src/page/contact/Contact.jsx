@@ -42,7 +42,7 @@ const ContactSection = () => {
 
   return (
     <div className="w-full py-16">
-      <div className="max-w-7xl mx-auto px-4 p-10 shadow-xl">
+      <div className="max-w-7xl mx-auto px-4 p-10 ">
         {/* Section heading */}
         <div className="text-center">
           <motion.h2

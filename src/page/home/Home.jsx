@@ -12,7 +12,9 @@ function Home() {
       <HeroSection />
       <AboutSection />
       <ServicesSection />
+      {/* Map */}
       <TrainingSection />
+      {/* faq */}
       <ImpactSection />
       <CTAHome />
     </div>
