@@ -2,14 +2,14 @@ import React from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 
-const CyberSecurityCTA = () => {
+const NavanveshaCTA = () => {
   const navigate = useNavigate();
 
-  const handleViewServices = () => {
-    navigate("/technology-digital");
+  const handleViewPrograms = () => {
+    navigate("/programs-initiatives");
   };
 
-  const handleGetInTouch = () => {
+  const handleGetInvolved = () => {
     navigate("/contact");
   };
 
@@ -28,35 +28,36 @@ const CyberSecurityCTA = () => {
             <div className="text-center">
               {/* Heading */}
               <h2 className="text-4xl lg:text-3xl font-bold text-gray-900 leading-tight mb-6">
-                Secure Your
-                <span className="text-[#926b49]"> Digital Assets</span>
+                Empower Communities Through
+                <span className="text-[#926b49]"> Sustainable Change</span>
               </h2>
 
               {/* Description */}
               <p className="text-gray-600 text-lg mb-6 max-w-2xl mx-auto">
-                Enterprise-grade cybersecurity solutions with 24/7 monitoring
-                and rapid threat response.
+                Join us in creating lasting impact through education, digital
+                transformation, and community development initiatives that
+                bridge gaps and foster growth.
               </p>
             </div>
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <motion.button
-                onClick={handleViewServices}
+              {/* <motion.button
+                onClick={handleViewPrograms}
                 whileHover={{ scale: 1.08 }}
                 whileTap={{ scale: 0.95 }}
                 className="bg-[#926b49] text-white py-3 px-8 rounded-lg font-semibold hover:bg-[#7a5a3d] transition-all duration-300 shadow-lg min-w-[200px]"
               >
-                View Our Services
-              </motion.button>
+                View Our Programs
+              </motion.button> */}
 
               <motion.button
-                onClick={handleGetInTouch}
+                onClick={handleGetInvolved}
                 whileHover={{ scale: 1.08 }}
                 whileTap={{ scale: 0.95 }}
                 className="border-2 border-[#926b49] text-[#926b49] py-3 px-8 rounded-lg font-semibold hover:bg-[#926b49] hover:text-white transition-all duration-300 min-w-[200px]"
               >
-                Get In Touch
+                Contact Our Team
               </motion.button>
             </div>
           </div>
@@ -66,4 +67,4 @@ const CyberSecurityCTA = () => {
   );
 };
 
-export default CyberSecurityCTA;
+export default NavanveshaCTA;

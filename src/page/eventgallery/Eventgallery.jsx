@@ -254,7 +254,7 @@ const EventGallery = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
             >
-              Secure Digital Futures
+              Explore Our Gallery
             </motion.h2>
             <motion.div
               className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-[#805b3a] to-[#b08d6e] rounded-full"
@@ -269,7 +269,7 @@ const EventGallery = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.7 }}
           >
-            Explore our comprehensive cybersecurity events and training sessions
+            Explore our comprehensive cybersecurity programs
           </motion.p>
         </motion.div>
 

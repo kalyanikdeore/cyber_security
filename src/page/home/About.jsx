@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
 import {
-  FaShieldAlt,
+  FaLightbulb,
   FaUsers,
-  FaAward,
-  FaRocket,
-  FaCheckCircle,
+  FaGraduationCap,
   FaHandshake,
+  FaChartLine,
+  FaHeart,
 } from "react-icons/fa";
 import CTA from "../cta/CTA";
 
@@ -64,13 +64,13 @@ const AboutSection = () => {
         <div className="text-center">
           {/* Badge */}
           <span className="inline-block px-4 py-2 bg-[#926b49]/10 border border-[#926b49]/30 rounded-full text-[#926b49] text-sm font-semibold tracking-wide mb-6">
-            Our About Us
+            About Navanvesha Foundation
           </span>
 
           {/* Main Heading */}
-          <h2 className="text-4xl lg:text-4xl font-bold text-gray-900 leading-tight mb-4">
-            New Exploration{" "}
-            <span className="text-[#926b49]"> or Renewed Discovery</span>
+          <h2 className="text-4xl lg:text-3xl font-bold text-gray-900 leading-tight mb-4">
+            Empowering Communities Through{" "}
+            <span className="text-[#926b49]">Sustainable Change</span>
           </h2>
           <motion.div
             className="h-1 w-20 bg-gradient-to-r from-[#926b49] to-[#82613e] mx-auto mb-6"
@@ -82,9 +82,9 @@ const AboutSection = () => {
 
           {/* Short Description */}
           <p className="text-gray-600 text-lg mb-12 max-w-2xl mx-auto">
-            It symbolizes the spirit of curiosity, innovation, and continuous
-            learning — a bridge between traditional wisdom and modern
-            creativity.
+            Bridging traditional wisdom with modern innovation to create lasting
+            impact through education, digital transformation, and community
+            development.
           </p>
         </div>
 
@@ -99,33 +99,34 @@ const AboutSection = () => {
           >
             {/* Main Description */}
             <motion.div variants={itemVariants} className="space-y-6">
-              <h3 className="text-2xl font-bold text-black">
-                Navanvesha Foundation is a socially driven,
-              </h3>
+              {/* <h3 className="text-2xl font-bold text-black">
+                Our Mission & Vision
+              </h3> */}
               <p className="text-[#805b3a] text-lg leading-relaxed">
-                non-profit organization committed to empowering communities
-                through education, digital transformation, and sustainable
-                development initiatives.
+                Navanvesha Foundation is a socially driven, non-profit
+                organization committed to empowering communities through
+                education, digital transformation, and sustainable development
+                initiatives.
               </p>
               <p className="text-[#805b3a] text-lg leading-relaxed">
                 Rooted in the belief that every individual deserves appropriate
-                knowledge to grow, learn, and thrive, the foundation designs and
-                delivers high-impact CSR programs in collaboration with
-                corporates, institutions, and local partners.
+                knowledge to grow, learn, and thrive, we design and deliver
+                high-impact CSR programs in collaboration with corporates,
+                institutions, and local partners.
               </p>
             </motion.div>
 
-            {/* Features List */}
+            {/* Our Approach */}
             <motion.div variants={itemVariants} className="space-y-4">
               <h4 className="text-xl font-semibold text-black mb-4">
-                Why Choose Us
+                Our Core Focus Areas
               </h4>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {[
-                  { icon: FaShieldAlt, text: "Enterprise-grade Security" },
-                  { icon: FaUsers, text: "Expert Security Team" },
-                  { icon: FaRocket, text: "24/7 Threat Monitoring" },
-                  { icon: FaHandshake, text: "Dedicated Support" },
+                  { icon: FaGraduationCap, text: "Technology Education" },
+                  { icon: FaUsers, text: "Youth Development" },
+                  { icon: FaChartLine, text: "Sustainable Development" },
+                  { icon: FaHandshake, text: "Community Upliftment" },
                 ].map((feature, index) => (
                   <motion.div
                     key={index}
@@ -147,10 +148,10 @@ const AboutSection = () => {
               className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-6"
             >
               {[
-                { number: "500+", label: "Clients Protected" },
-                { number: "99.9%", label: "Uptime Record" },
-                { number: "24/7", label: "Support" },
-                { number: "8+", label: "Years Experience" },
+                { number: "50+", label: "CSR Programs" },
+                { number: "100K+", label: "Lives Impacted" },
+                { number: "25+", label: "Corporate Partners" },
+                { number: "15+", label: "Cities Reached" },
               ].map((stat, index) => (
                 <motion.div
                   key={index}
@@ -181,7 +182,7 @@ const AboutSection = () => {
             <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-[#a4947d]/20">
               <img
                 src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
-                alt="CyberShield Security Team"
+                alt="Navanvesha Foundation Community Empowerment"
                 className="w-full h-[600px] object-cover"
               />
               {/* Image overlay for better text contrast */}

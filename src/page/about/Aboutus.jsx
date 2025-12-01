@@ -160,7 +160,7 @@ export default function AboutCyberSecurity() {
           <img
             src={randomImage}
             alt="Navanvesha Foundation"
-            className="w-full max-w-lg h-[450px] object-cover rounded-3xl border-[6px] border-[#b89d7e] shadow-[0_0_35px_#c6af93]"
+            className="w-full max-w-lg h-[450px] object-cover rounded-3xl  shadow-[0_0_35px_#c6af93]"
           />
         </motion.div>
       </div>

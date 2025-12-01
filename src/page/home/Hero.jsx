@@ -119,7 +119,7 @@ const HeroSection = () => {
   const IconComponent = slides[currentSlide].icon;
 
   return (
-    <section className="relative h-screen overflow-hidden">
+    <section className="relative h-[79vh] min-h-[500px] max-h-[700px] overflow-hidden">
       <div className="absolute inset-0">
         <AnimatePresence mode="wait">
           <motion.div
@@ -141,9 +141,9 @@ const HeroSection = () => {
         </AnimatePresence>
       </div>
 
-      <div className="relative z-10 h-full flex items-center">
+      <div className="relative z-10 h-full flex items-center py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             <div className="text-[#faf6f2]">
               <AnimatePresence mode="wait">
                 <motion.div
@@ -153,18 +153,18 @@ const HeroSection = () => {
                   animate="animate"
                   exit="exit"
                 >
-                  <motion.div variants={textVariants} className="mb-6">
-                    <IconComponent className="text-[#a4947d] text-4xl" />
+                  <motion.div variants={textVariants} className="mb-4">
+                    <IconComponent className="text-[#a4947d] text-3xl" />
                   </motion.div>
 
                   <motion.h1
                     variants={textVariants}
-                    className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 leading-tight"
+                    className="text-3xl md:text-4xl lg:text-5xl font-bold mb-3 leading-tight"
                   >
                     {slides[currentSlide].title}
                     <motion.span
                       variants={textVariants}
-                      className="block text-[#a4947d] mt-2 text-2xl md:text-3xl lg:text-4xl"
+                      className="block text-[#a4947d] mt-1 text-lg md:text-xl lg:text-2xl"
                     >
                       {slides[currentSlide].subtitle}
                     </motion.span>
@@ -172,20 +172,20 @@ const HeroSection = () => {
 
                   <motion.p
                     variants={textVariants}
-                    className="text-xl text-[#faf6f2]/90 mb-8 leading-relaxed max-w-2xl"
+                    className="text-base md:text-lg text-[#faf6f2]/90 mb-6 leading-relaxed max-w-2xl"
                   >
                     {slides[currentSlide].description}
                   </motion.p>
 
                   <motion.div
                     variants={textVariants}
-                    className="flex flex-col sm:flex-row gap-4"
+                    className="flex flex-col sm:flex-row gap-3"
                   >
                     <motion.button
                       variants={buttonVariants}
                       whileHover="hover"
                       onClick={handleAboutUs}
-                      className="bg-gradient-to-r from-[#805b3a] to-[#a4947d] hover:from-[#805b3a]/90 hover:to-[#a4947d]/90 text-[#faf6f2] px-8 py-4 rounded-xl font-semibold transition-all duration-300 shadow-2xl shadow-[#805b3a]/25 flex items-center space-x-3 group"
+                      className="bg-gradient-to-r from-[#805b3a] to-[#a4947d] hover:from-[#805b3a]/90 hover:to-[#a4947d]/90 text-[#faf6f2] px-5 py-2.5 rounded-lg font-semibold transition-all duration-300 shadow-xl shadow-[#805b3a]/25 flex items-center space-x-2 group text-sm"
                     >
                       <span>About Us</span>
                       <FaArrowRight className="group-hover:translate-x-1 transition-transform duration-200" />
@@ -195,7 +195,7 @@ const HeroSection = () => {
                       variants={buttonVariants}
                       whileHover="hover"
                       onClick={handleContactUs}
-                      className="border-2 border-[#a4947d] text-[#a4947d] hover:bg-[#a4947d]/20 px-8 py-4 rounded-xl font-semibold transition-all duration-300 flex items-center space-x-3 group backdrop-blur-sm"
+                      className="border-2 border-[#a4947d] text-[#a4947d] hover:bg-[#a4947d]/20 px-5 py-2.5 rounded-lg font-semibold transition-all duration-300 flex items-center space-x-2 group backdrop-blur-sm text-sm"
                     >
                       <FaEnvelope className="text-[#a4947d]" />
                       <span>Get In Touch</span>
@@ -208,16 +208,16 @@ const HeroSection = () => {
         </div>
       </div>
 
-      <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 z-20">
-        <div className="flex space-x-3">
+      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-20">
+        <div className="flex space-x-2">
           {slides.map((_, index) => (
             <motion.button
               key={index}
               onClick={() => goToSlide(index)}
               whileHover={{ scale: 1.2 }}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+              className={`w-2 h-2 rounded-full transition-all duration-300 ${
                 index === currentSlide
-                  ? "bg-[#a4947d] w-8"
+                  ? "bg-[#a4947d] w-6"
                   : "bg-[#faf6f2]/50 hover:bg-[#faf6f2]/80"
               }`}
             />
@@ -228,10 +228,10 @@ const HeroSection = () => {
       <motion.button
         onClick={prevSlide}
         whileHover={{ scale: 1.1, backgroundColor: "rgba(128, 91, 58, 0.7)" }}
-        className="absolute left-4 top-1/2 transform -translate-y-1/2 z-20 text-[#faf6f2]/80 hover:text-[#faf6f2] bg-[#805b3a]/50 backdrop-blur-sm p-4 rounded-full transition-all duration-300"
+        className="absolute left-2 top-1/2 transform -translate-y-1/2 z-20 text-[#faf6f2]/80 hover:text-[#faf6f2] bg-[#805b3a]/50 backdrop-blur-sm p-2 rounded-full transition-all duration-300"
       >
         <svg
-          className="w-6 h-6"
+          className="w-4 h-4"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -248,10 +248,10 @@ const HeroSection = () => {
       <motion.button
         onClick={nextSlide}
         whileHover={{ scale: 1.1, backgroundColor: "rgba(128, 91, 58, 0.7)" }}
-        className="absolute right-4 top-1/2 transform -translate-y-1/2 z-20 text-[#faf6f2]/80 hover:text-[#faf6f2] bg-[#805b3a]/50 backdrop-blur-sm p-4 rounded-full transition-all duration-300"
+        className="absolute right-2 top-1/2 transform -translate-y-1/2 z-20 text-[#faf6f2]/80 hover:text-[#faf6f2] bg-[#805b3a]/50 backdrop-blur-sm p-2 rounded-full transition-all duration-300"
       >
         <svg
-          className="w-6 h-6"
+          className="w-4 h-4"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"

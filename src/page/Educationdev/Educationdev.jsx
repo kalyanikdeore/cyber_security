@@ -79,44 +79,146 @@ export default function EducationSkillDevelopment({ onCTAClick }) {
     },
   ];
 
+  // Define the missing functions
+  const handleExplorePrograms = () => {
+    // You can add your logic here
+    console.log("Explore Programs clicked");
+    // Or if you want to use the prop:
+    if (onCTAClick) onCTAClick();
+  };
+
+  const handleConnectWithUs = () => {
+    // You can add your logic here
+    console.log("Connect With Us clicked");
+    // Or navigate to contact section
+    const contactSection = document.getElementById("contact");
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const handleConnectWithTeam = () => {
+    // You can add your logic here
+    console.log("Connect With Team clicked");
+    // Or navigate to contact section
+    const contactSection = document.getElementById("contact");
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <section className="max-w-7xl mx-auto px-6 py-16 ">
-      {/* HERO SECTION */}
+      {/* TECHNOLOGY HERO SECTION */}
       <motion.div
         initial={{ opacity: 0, y: -40, scale: 0.95 }}
         animate={{ opacity: 1, y: 0, scale: 1 }}
         transition={{ duration: 0.6 }}
-        className="text-center space-y-6"
+        className="relative min-h-[600px] flex items-center justify-center  overflow-hidden"
       >
-        <span className="inline-block bg-[#805B3A]/15 text-[#805B3A] text-sm font-semibold px-6 py-2 rounded-full shadow-sm border border-[#805B3A]/30">
-          Education & Skill Development Programs
-        </span>
+        {/* Background decorative elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute -top-40 -right-40 w-80 h-80 bg-[#805B3A]/10 rounded-full blur-3xl"></div>
+          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-[#A1887F]/10 rounded-full blur-3xl"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-[#805B3A]/5 rounded-full blur-3xl"></div>
+        </div>
 
-        <h2 className="text-4xl md:text-4xl font-extrabold leading-tight text-slate-900 relative inline-block">
-          Nurturing Foundational Learning, Creativity & Leadership
-          <span className="absolute left-1/2 -bottom-2 w-40 h-[4px] bg-[#805B3A] transform -translate-x-1/2 rounded-full"></span>
-        </h2>
-
-        <p className="text-slate-600 text-lg max-w-3xl mx-auto">
-          Focused on improving learning outcomes through high-impact educational
-          interventions that nurture foundational learning, creativity, and
-          leadership skills among children and youth.
-        </p>
-
-        <div className="flex flex-wrap justify-center gap-4  mb-40">
-          <button
-            onClick={onCTAClick}
-            className="px-6 py-3 rounded-xl bg-[#805B3A] text-white font-semibold shadow-md hover:shadow-lg transition-all hover:bg-[#6e4d30]"
+        <div className="relative text-center space-y-8 max-w-4xl mx-auto px-6">
+          {/* Badge */}
+          <motion.span
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.3, duration: 0.5 }}
+            className="inline-block bg-gradient-to-r from-[#805B3A] to-[#A1887F] text-white text-sm font-semibold px-8 py-3 rounded-full shadow-lg border border-[#805B3A]/30 backdrop-blur-sm"
           >
-            Explore Programs
-          </button>
+            Education & Skill Development Programs
+          </motion.span>
 
-          <a
-            href="#contact"
-            className="px-6 py-3 rounded-xl border border-[#A1887F] text-[#805B3A] hover:bg-[#FAF6F2] font-medium shadow-sm transition"
+          {/* Main Heading */}
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5, duration: 0.6 }}
+            className="text-5xl md:text-5xl font-extrabold leading-tight text-slate-900 relative"
           >
-            Partner With Us
-          </a>
+            <span className="bg-gradient-to-r from-[#805B3A] to-[#A1887F] bg-clip-text text-transparent">
+              Nurturing Foundational Learning,
+            </span>
+            <br />
+            <span className="text-slate-800"> Creativity & Leadership</span>
+            <span className="absolute left-1/2 -bottom-4 w-48 h-1 bg-gradient-to-r from-[#805B3A] to-[#A1887F] transform -translate-x-1/2 rounded-full"></span>
+          </motion.h2>
+
+          {/* Description */}
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.7, duration: 0.6 }}
+            className="text-slate-600 text-xl max-w-3xl mx-auto leading-relaxed"
+          >
+            Focused on improving learning outcomes through high-impact
+            educational interventions that nurture foundational learning,
+            creativity,
+            <span className="font-semibold text-[#805B3A]">
+              {" "}
+              and leadership skills among children and youth.
+            </span>
+            .
+          </motion.p>
+
+          {/* Buttons Container */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.9, duration: 0.6 }}
+            className="flex flex-wrap justify-center gap-6 pt-6"
+          >
+            {/* About Us Button */}
+            <button
+              onClick={handleExplorePrograms}
+              className="group px-8 py-4 rounded-2xl bg-gradient-to-r from-[#805B3A] to-[#A1887F] text-white font-semibold shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:from-[#6e4d30] hover:to-[#8d756c] flex items-center gap-2"
+            >
+              <span>About Us</span>
+              <span className="group-hover:translate-x-1 transition-transform">
+                →
+              </span>
+            </button>
+
+            {/* Connect With Us Button */}
+            <button
+              onClick={handleConnectWithUs}
+              className="group px-8 py-4 rounded-2xl bg-white text-[#805B3A] font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-slate-200 hover:border-[#805B3A]/30 flex items-center gap-2"
+            >
+              <span>Connect With Us</span>
+              <span className="group-hover:rotate-12 transition-transform">
+                🤝
+              </span>
+            </button>
+          </motion.div>
+
+          {/* Stats Section */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.1, duration: 0.6 }}
+            className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-12 max-w-2xl mx-auto"
+          >
+            {[
+              { number: "50+", label: "Programs" },
+              { number: "10K+", label: "Students" },
+              { number: "95%", label: "Success Rate" },
+            ].map((stat, index) => (
+              <div
+                key={index}
+                className="text-center p-6 bg-white/50 backdrop-blur-sm rounded-2xl border border-white/60 shadow-sm hover:shadow-md transition-shadow"
+              >
+                <div className="text-2xl font-bold text-[#805B3A]">
+                  {stat.number}
+                </div>
+                <div className="text-slate-600 font-medium">{stat.label}</div>
+              </div>
+            ))}
+          </motion.div>
         </div>
       </motion.div>
 
@@ -195,6 +297,7 @@ export default function EducationSkillDevelopment({ onCTAClick }) {
           </p>
 
           <motion.button
+            onClick={handleConnectWithTeam}
             whileHover={{ scale: 1.06 }}
             whileTap={{ scale: 0.95 }}
             className="bg-white text-[#805B3A] px-10 py-4 rounded-xl font-semibold text-lg shadow-lg hover:bg-[#FAF6F2] transition-all"

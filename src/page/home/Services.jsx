@@ -23,6 +23,7 @@ const ServicesSection = () => {
         "Tech for Seniors Initiative",
         "Digital Financial Awareness & Cyber Safety Program",
         "Assistive Technology for Inclusion Program",
+        "Digital Detox",
       ],
       href: "/technology-digital",
     },
@@ -105,7 +106,7 @@ const ServicesSection = () => {
         <div className="text-center">
           {/* Badge */}
           <span className="inline-block px-4 py-2 bg-[#926b49]/10 border border-[#926b49]/30 rounded-full text-[#926b49] text-sm font-semibold tracking-wide mb-6">
-            Services
+            Programs
           </span>
 
           {/* Main Heading */}
