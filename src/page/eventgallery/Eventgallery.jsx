@@ -21,51 +21,51 @@ import ir from "../../assets/logo/ir.png";
 import ir2 from "../../assets/logo/ir2.jpeg";
 import ir4 from "../../assets/logo/ir4.jpeg";
 // Threat Intelligence
-import ti1 from "../../assets/logo/ti1.jpeg";
-import ti2 from "../../assets/logo/ti2.jpeg";
-import ti3 from "../../assets/logo/ti3.jpeg";
-import ti4 from "../../assets/logo/ti4.jpeg";
+// import ti1 from "../../assets/logo/ti1.jpeg";
+// import ti2 from "../../assets/logo/ti2.jpeg";
+// import ti3 from "../../assets/logo/ti3.jpeg";
+// import ti4 from "../../assets/logo/ti4.jpeg";
 
 const EventGallery = () => {
   const items = [
     // Threat Intelligence Items
-    {
-      id: 1,
-      category: "Threat Intelligence",
-      title: "Advanced Threat Analysis",
-      img: ti1,
-    },
-    {
-      id: 2,
-      category: "Threat Intelligence",
-      title: "Threat Intelligence Summit",
-      img: ti2,
-    },
-    {
-      id: 3,
-      category: "Threat Intelligence",
-      title: "Malware Analysis Deep Dive",
-      img: ti3,
-    },
-    {
-      id: 4,
-      category: "Threat Intelligence",
-      title: "Cyber Threat Conference",
-      img: ti4,
-    },
-    // Cloud Security Items
-    {
-      id: 5,
-      category: "Cloud Security",
-      title: "Cloud Infrastructure Protection",
-      img: cs1,
-    },
-    {
-      id: 6,
-      category: "Cloud Security",
-      title: "Cloud Security Conference",
-      img: cs2,
-    },
+    // {
+    //   id: 1,
+    //   category: "Threat Intelligence",
+    //   title: "Advanced Threat Analysis",
+    //   img: ti1,
+    // },
+    // {
+    //   id: 2,
+    //   category: "Threat Intelligence",
+    //   title: "Threat Intelligence Summit",
+    //   img: ti2,
+    // },
+    // {
+    //   id: 3,
+    //   category: "Threat Intelligence",
+    //   title: "Malware Analysis Deep Dive",
+    //   img: ti3,
+    // },
+    // {
+    //   id: 4,
+    //   category: "Threat Intelligence",
+    //   title: "Cyber Threat Conference",
+    //   img: ti4,
+    // },
+    // // Cloud Security Items
+    // {
+    //   id: 5,
+    //   category: "Cloud Security",
+    //   title: "Cloud Infrastructure Protection",
+    //   img: cs1,
+    // },
+    // {
+    //   id: 6,
+    //   category: "Cloud Security",
+    //   title: "Cloud Security Conference",
+    //   img: cs2,
+    // },
     {
       id: 7,
       category: "Cloud Security",
