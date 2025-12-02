@@ -2,7 +2,7 @@ import React, { useMemo } from "react";
 import { motion } from "framer-motion";
 import { FiShield, FiClock } from "react-icons/fi";
 import { SiHackthebox } from "react-icons/si";
-import about from "../../assets/logo/about.jpeg";
+import about2 from "../../assets/logo/about2.jpg";
 
 export default function AboutCyberSecurity() {
   const features = [
@@ -23,7 +23,7 @@ export default function AboutCyberSecurity() {
     },
   ];
 
-  const cyberSecurityImages = [about];
+  const cyberSecurityImages = [about2];
 
   const randomImage = useMemo(() => {
     return cyberSecurityImages[

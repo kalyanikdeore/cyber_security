@@ -6,23 +6,23 @@ const About = () => {
   const features = [
     {
       icon: <Lightbulb className="w-8 h-8" />,
-      title: "Innovation & Curiosity",
-      desc: "Continuous learning and modern creativity with traditional wisdom",
+      title: "Navanvesha",
+      desc: "Constant discovery in a changing threat landscape.",
     },
     {
       icon: <Users className="w-8 h-8" />,
-      title: "Inclusive Empowerment",
-      desc: "Equal opportunities through accessible education and digital inclusion",
+      title: " Empowerment",
+      desc: "Knowledge as the key to resilience and growth",
     },
     {
       icon: <Target className="w-8 h-8" />,
       title: "Sustainable Impact",
-      desc: "Long-term, measurable outcomes for lasting positive change",
+      desc: "Building skills that create lasting change.",
     },
     {
       icon: <Heart className="w-8 h-8" />,
-      title: "Community First",
-      desc: "People-centric approach with compassion and transparency",
+      title: "Collaborative Integrity",
+      desc: "Partnering with trust and shared purpose.",
     },
   ];
 
