@@ -69,10 +69,10 @@ const Footer = () => {
               </Link>
             </div>
             <p className="text-[#faf6f2] mb-4 max-w-md">
-              Rooted in the belief that every individual deserves appropriate
-              knowledge to grow, learn, and thrive, the foundation designs and
-              delivers high-impact CSR programs in collaboration with
-              corporates, institutions, and local partners.
+              Navanvesha Foundation is a socially driven, non-profit
+              organization committed to empowering communities through
+              education, digital transformation, and sustainable development
+              initiatives.
             </p>
             <div className="flex space-x-4">
               <a

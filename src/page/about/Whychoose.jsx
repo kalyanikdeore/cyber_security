@@ -31,65 +31,33 @@ const WhyChooseUs = () => {
   const features = [
     {
       icon: BookOpen,
-      title: "Holistic Development Approach",
+      title: "Mission-Driven Pedagogy",
       description:
-        "Integrated programs covering education, technology, health, and sustainability for comprehensive community transformation.",
+        "Our training is infused with our core belief in empowerment and accessibility. . We don't just teach cybersecurity; we foster a spirit of Navanvesha (Renewed Discovery)—cultivating curious, adaptive security minds ready for future challenges.",
       color: "#4DB6E2",
       gradient: "from-[#4DB6E2] to-[#2E7D32]",
     },
     {
       icon: Users,
-      title: "Community-First Methodology",
+      title: "Impact-Focused Curriculum",
       description:
-        "Grassroots initiatives designed with local participation ensuring relevance, acceptance, and sustainable impact.",
+        "Co-created with industry leaders and academic experts, our programs are designed for real-world application. We specialize in bridging the acute skill gaps in cybersecurity. ",
       color: "#F4C430",
       gradient: "from-[#F4C430] to-[#F28B30]",
     },
     {
       icon: Heart,
-      title: "Inclusive Empowerment",
+      title: "Collaborative & Inclusive Approach",
       description:
-        "Special focus on women, youth, and underprivileged communities through targeted skill development and digital inclusion programs.",
+        "Our focus extends to supporting underprivileged talent, ensuring opportunities in cybersecurity are accessible to all, which builds a more diverse and resilient security ecosystem.",
       color: "#2E7D32",
       gradient: "from-[#2E7D32] to-[#4DB6E2]",
     },
     {
       icon: TrendingUp,
-      title: "Measurable Impact",
+      title: "Learning to Sustainable Practice",
       description:
-        "Data-driven approach with transparent reporting and continuous evaluation for optimal program effectiveness.",
-      color: "#F28B30",
-      gradient: "from-[#F28B30] to-[#5D4633]",
-    },
-    {
-      icon: Zap,
-      title: "Technology-Driven Solutions",
-      description:
-        "Digital literacy, smart classrooms, and tech innovation programs bridging the digital divide in communities.",
-      color: "#4DB6E2",
-      gradient: "from-[#4DB6E2] to-[#2E7D32]",
-    },
-    {
-      icon: Shield,
-      title: "Sustainable Practices",
-      description:
-        "Environment-conscious initiatives combined with long-term community capacity building for lasting change.",
-      color: "#F4C430",
-      gradient: "from-[#F4C430] to-[#F28B30]",
-    },
-    {
-      icon: GitBranch,
-      title: "Multi-Sector Partnerships",
-      description:
-        "Strong collaborations with corporates, institutions, and local partners for amplified social impact.",
-      color: "#2E7D32",
-      gradient: "from-[#2E7D32] to-[#4DB6E2]",
-    },
-    {
-      icon: Target,
-      title: "Future-Ready Focus",
-      description:
-        "STEM education, AI training, and sustainability programs preparing communities for tomorrow's challenges.",
+        "We go beyond the classroom. Our initiatives in digital inclusion and community upliftment mean we are invested in creating a broader culture of security awareness, leading to long-term, sustainable digital safety for everyone.",
       color: "#F28B30",
       gradient: "from-[#F28B30] to-[#5D4633]",
     },
@@ -164,9 +132,8 @@ const WhyChooseUs = () => {
           />
 
           <p className="text-xl text-[#4A4A4A] max-w-3xl mx-auto leading-relaxed">
-            Where cybersecurity innovation meets enterprise-grade protection —
-            delivering robust, reliable, and comprehensive security solutions
-            for your digital future.
+            We are a mission-driven partner, dedicated to building a digitally
+            empowered and secure society.
           </p>
         </motion.div>
 
