@@ -103,8 +103,7 @@ const Navbar = () => {
               {/* Social Media Icons */}
               <div className="flex items-center justify-center space-x-4">
                 <a
-                  href="https://wa.me/911234567890"
-                  target="_blank"
+                  href="https://wa.me/+919600129660"
                   rel="noopener noreferrer"
                   className="hover:text-[#faf6f2] transition-colors duration-200"
                 >

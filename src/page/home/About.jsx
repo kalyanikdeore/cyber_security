@@ -160,10 +160,10 @@ const AboutSection = () => {
               className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-6"
             >
               {[
-                { number: "50+", label: "CSR Programs" },
-                { number: "100K+", label: "Lives Impacted" },
-                { number: "25+", label: "Corporate Partners" },
-                { number: "15+", label: "Cities Reached" },
+                { number: "6+", label: "Focus Areas" },
+                { number: "1000+", label: "Lives Impacted" },
+                { number: "50+", label: "Community Programs" },
+                { number: "100%", label: "Transparent Operations" },
               ].map((stat, index) => (
                 <motion.div
                   key={index}

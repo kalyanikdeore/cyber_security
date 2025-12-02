@@ -76,25 +76,36 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4">
               <a
-                href="#"
+                href="https://www.instagram.com/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-[#faf6f2] hover:text-white transition duration-300"
               >
                 <FaInstagram className="h-5 w-5" />
               </a>
+
               <a
-                href="#"
+                href="https://www.linkedin.com/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-[#faf6f2] hover:text-white transition duration-300"
               >
                 <FaLinkedin className="h-5 w-5" />
               </a>
+
               <a
-                href="#"
+                href="https://wa.me/919600129660"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-[#faf6f2] hover:text-white transition duration-300"
               >
                 <FaWhatsapp className="h-5 w-5" />
               </a>
+
               <a
-                href="#"
+                href="mailto:example@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-[#faf6f2] hover:text-white transition duration-300"
               >
                 <FaEnvelope className="h-5 w-5" />
