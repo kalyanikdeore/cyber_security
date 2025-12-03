@@ -156,7 +156,7 @@ const AboutSection = () => {
             </motion.div>
 
             {/* Stats */}
-            <motion.div
+            {/* <motion.div
               variants={itemVariants}
               className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-6"
             >
@@ -180,7 +180,7 @@ const AboutSection = () => {
                   </div>
                 </motion.div>
               ))}
-            </motion.div>
+            </motion.div> */}
           </motion.div>
 
           {/* Image Side */}

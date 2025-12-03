@@ -187,7 +187,7 @@ const WhyChooseUs = () => {
         </div>
 
         {/* Stats Section - Optional */}
-        <motion.div
+        {/* <motion.div
           className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -208,7 +208,7 @@ const WhyChooseUs = () => {
               <div className="text-[#4A4A4A] font-medium">{stat.label}</div>
             </div>
           ))}
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   );
