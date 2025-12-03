@@ -152,7 +152,7 @@ const WhyChooseUs = () => {
                 y: -8,
                 boxShadow: "0 20px 40px rgba(0,0,0,0.1)",
               }}
-              className="relative bg-white rounded-2xl p-6 shadow-lg border border-[#D9DDDC] hover:shadow-xl transition-all duration-500 group"
+              className="relative bg-white rounded-2xl  text-justify p-6 shadow-lg border border-[#D9DDDC] hover:shadow-xl transition-all duration-500 group"
             >
               {/* Icon Container */}
               <div

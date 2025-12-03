@@ -259,12 +259,12 @@ export default function TechnologyDigitalPrograms({ onCTAClick }) {
                   </div>
 
                   <div className="flex-1">
-                    <h3 className="text-xl font-semibold text-slate-900 relative pb-1">
+                    <h3 className="text-xl font-semibold text-slate-900 relative pb-1 text-justify">
                       {it.title}
                     </h3>
                     <p className="text-sm text-slate-500">{it.subtitle}</p>
 
-                    <p className="mt-3 text-sm text-slate-600 mb-4">
+                    <p className="mt-3 text-sm text-slate-600 mb-4 text-justify">
                       {it.description}
                     </p>
 

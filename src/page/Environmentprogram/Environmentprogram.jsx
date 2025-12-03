@@ -126,7 +126,7 @@ export default function EnvironmentSustainabilityPrograms({ onCTAClick }) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7, duration: 0.6 }}
-            className="text-slate-600 text-xl max-w-3xl mx-auto leading-relaxed"
+            className="text-slate-600 text-xl max-w-3xl mx-auto leading-relaxed "
           >
             {" "}
             Designed to create sustainable communities through environmental
@@ -234,12 +234,12 @@ export default function EnvironmentSustainabilityPrograms({ onCTAClick }) {
                   </div>
 
                   <div>
-                    <h3 className="text-xl font-semibold text-slate-900 relative pb-1">
+                    <h3 className="text-xl font-semibold text-slate-900 relative pb-1 text-justify">
                       {it.title}
                     </h3>
                     <p className="text-sm text-slate-500">{it.subtitle}</p>
 
-                    <p className="mt-3 text-sm text-slate-600">
+                    <p className="mt-3 text-sm text-slate-600 text-justify">
                       {it.description}
                     </p>
                   </div>

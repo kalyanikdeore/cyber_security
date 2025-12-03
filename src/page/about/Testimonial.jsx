@@ -115,7 +115,7 @@ const TestimonialSection = () => {
               viewport={{ once: true }}
             />
 
-            <p className="text-xl text-[#4A4A4A] max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-[#4A4A4A] max-w-3xl mx-auto leading-relaxed ">
               Discover why enterprises worldwide trust our cybersecurity
               solutions to protect their digital assets and maintain business
               continuity.
@@ -167,7 +167,7 @@ const TestimonialSection = () => {
                         </p>
                       </div>
                     </div>
-                    <p className="text-gray-600 mb-4 leading-relaxed">
+                    <p className="text-gray-600 mb-4 leading-relaxed text-justify">
                       "{client.quote}"
                     </p>
                     <div className="flex gap-1 text-[#926b49]">
