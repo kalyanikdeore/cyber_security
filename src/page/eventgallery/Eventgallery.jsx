@@ -2,20 +2,21 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { ChevronLeft, Award, ChevronRight } from "lucide-react";
 // Cloud Security
+
+// Digital Forensics
+import df from "../../assets/logo/df.jpg";
+
+import df2 from "../../assets/logo/df2.jpg";
+import df3 from "../../assets/logo/df3.jpg";
+// Security Awareness
+import sa from "../../assets/logo/sa.jpg";
+import sa2 from "../../assets/logo/sa2.jpeg";
+import sa3 from "../../assets/logo/sa3.jpeg";
 import confernce1 from "../../assets/logo/confernce1.jpeg";
 import confernce2 from "../../assets/logo/confernce2.jpeg";
 import cs1 from "../../assets/logo/cs1.jpeg";
 import cs2 from "../../assets/logo/cs2.jpeg";
 import cs3 from "../../assets/logo/cs3.jpeg";
-// Digital Forensics
-import df from "../../assets/logo/df.jpeg";
-import df1 from "../../assets/logo/df1.jpeg";
-import df2 from "../../assets/logo/df2.jpeg";
-import df3 from "../../assets/logo/df3.jpeg";
-// Security Awareness
-import sa from "../../assets/logo/sa.jpeg";
-import sa2 from "../../assets/logo/sa2.jpeg";
-import sa3 from "../../assets/logo/sa3.jpeg";
 // Incident Response
 import ir from "../../assets/logo/ir.png";
 import ir2 from "../../assets/logo/ir2.jpeg";
@@ -67,6 +68,25 @@ const EventGallery = () => {
     //   img: cs2,
     // },
     {
+      id: 16,
+      category: "Digital Forensics",
+      title: "Cyber Crime Investigation",
+      img: df,
+    },
+
+    {
+      id: 18,
+      category: "Digital Forensics",
+      title: "Digital Evidence Workshop",
+      img: df2,
+    },
+    // {
+    //   id: 19,
+    //   category: "Digital Forensics",
+    //   title: "Forensic Tools Training",
+    //   img: df3,
+    // },
+    {
       id: 7,
       category: "Cloud Security",
       title: "Zero Trust Architecture",
@@ -91,18 +111,18 @@ const EventGallery = () => {
       title: "Emergency Response Training",
       img: ir,
     },
-    {
-      id: 11,
-      category: "Incident Response",
-      title: "Incident Response Drill",
-      img: ir2,
-    },
-    {
-      id: 12,
-      category: "Incident Response",
-      title: "Crisis Management Drill",
-      img: ir4,
-    },
+    // {
+    //   id: 11,
+    //   category: "Incident Response",
+    //   title: "Incident Response Drill",
+    //   img: ir2,
+    // },
+    // {
+    //   id: 12,
+    //   category: "Incident Response",
+    //   title: "Crisis Management Drill",
+    //   img: ir4,
+    // },
     // Security Awareness Items
     {
       id: 13,
@@ -110,43 +130,19 @@ const EventGallery = () => {
       title: "Phishing Simulation Workshop",
       img: sa,
     },
-    {
-      id: 14,
-      category: "Security Awareness",
-      title: "Security Training Session",
-      img: sa2,
-    },
-    {
-      id: 15,
-      category: "Security Awareness",
-      title: "Awareness Program Launch",
-      img: sa3,
-    },
+    // {
+    //   id: 14,
+    //   category: "Security Awareness",
+    //   title: "Security Training Session",
+    //   img: sa2,
+    // },
+    // {
+    //   id: 15,
+    //   category: "Security Awareness",
+    //   title: "Awareness Program Launch",
+    //   img: sa3,
+    // },
     // Digital Forensics Items
-    {
-      id: 16,
-      category: "Digital Forensics",
-      title: "Cyber Crime Investigation",
-      img: df,
-    },
-    {
-      id: 17,
-      category: "Digital Forensics",
-      title: "Forensic Analysis Lab",
-      img: df1,
-    },
-    {
-      id: 18,
-      category: "Digital Forensics",
-      title: "Digital Evidence Workshop",
-      img: df2,
-    },
-    {
-      id: 19,
-      category: "Digital Forensics",
-      title: "Forensic Tools Training",
-      img: df3,
-    },
   ];
 
   const [modalData, setModalData] = useState(null);
