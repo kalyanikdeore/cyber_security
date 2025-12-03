@@ -101,7 +101,7 @@ export default function TechnologyDigitalPrograms({ onCTAClick }) {
   };
 
   return (
-    <section className="max-w-7xl mx-auto px-6 py-16 ">
+    <section className="max-w-7xl mx-auto px-6 py-16 pt-30 ">
       {/* HERO SECTION */}
       <motion.div
         initial={{ opacity: 0, y: -40, scale: 0.95 }}
@@ -134,7 +134,7 @@ export default function TechnologyDigitalPrograms({ onCTAClick }) {
             transition={{ delay: 0.5, duration: 0.6 }}
             className="text-5xl md:text-4xl font-extrabold leading-tight text-slate-900 relative"
           >
-            <span className="bg-gradient-to-r from-[#805B3A] to-[#A1887F] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#805B3A] to-[#A1887F] bg-clip-text text-xl md:text-4xl text-transparent">
               Inclusive Digital Access
             </span>
             <br />

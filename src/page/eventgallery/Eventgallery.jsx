@@ -200,7 +200,7 @@ const EventGallery = () => {
   }, [modalData, currentImageIndex]);
 
   return (
-    <section className="w-full py-20 bg-gradient-to-br from-gray-50 to-gray-100">
+    <section className="w-full py-20 bg-gradient-to-br from-gray-50 to-gray-100 pt-30">
       <div className="max-w-7xl mx-auto px-4">
         {/* Centered Client Testimonials with Enhanced Framer Motion */}
         <motion.div

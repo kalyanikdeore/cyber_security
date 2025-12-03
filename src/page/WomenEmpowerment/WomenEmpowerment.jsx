@@ -82,7 +82,7 @@ export default function WomenEmpowermentPrograms({ onCTAClick }) {
   ];
 
   return (
-    <section className="max-w-7xl mx-auto px-6 py-16 ">
+    <section className="max-w-7xl mx-auto px-6 py-16 pt-30">
       {/* HERO SECTION */}
 
       <motion.div
@@ -116,11 +116,14 @@ export default function WomenEmpowermentPrograms({ onCTAClick }) {
             transition={{ delay: 0.5, duration: 0.6 }}
             className="text-5xl md:text-4xl font-extrabold leading-tight text-slate-900 relative"
           >
-            <span className="bg-gradient-to-r from-[#805B3A] to-[#A1887F] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#805B3A] to-[#A1887F] bg-clip-text text-xl md:text-4xl text-transparent">
               Skill-Based Empowerment
             </span>
             <br />
-            <span className="text-slate-800"> For Women's Advancement</span>
+            <span className="text-slate-800 text-3xl ">
+              {" "}
+              For Women's Advancement
+            </span>
             <span className="absolute left-1/2 -bottom-4 w-48 h-1 bg-gradient-to-r from-[#805B3A] to-[#A1887F] transform -translate-x-1/2 rounded-full"></span>
           </motion.h2>
 
@@ -129,7 +132,7 @@ export default function WomenEmpowermentPrograms({ onCTAClick }) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7, duration: 0.6 }}
-            className="text-slate-600 text-xl max-w-3xl mx-auto leading-relaxed"
+            className="text-slate-600 text-xl max-w-3xl mx-auto leading-relaxed text-justify"
           >
             We empower women with skill-based training, entrepreneurship
             development, and community support initiatives for financial

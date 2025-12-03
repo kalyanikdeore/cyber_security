@@ -32,7 +32,7 @@ export default function AboutCyberSecurity() {
   }, []);
 
   return (
-    <section className="py-20 px-6">
+    <section className="py-20 px-6 pt-30">
       <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-14 items-center">
         {/* LEFT CONTENT */}
         <motion.div
@@ -73,7 +73,7 @@ export default function AboutCyberSecurity() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="mt-6 text-[#5a4733] text-lg leading-relaxed"
+            className="mt-6 text-[#5a4733] text-lg leading-relaxed text-justify"
           >
             Navanvesha Foundation is a socially driven, non-profit organization
             committed to empowering communities through education, digital
@@ -88,7 +88,7 @@ export default function AboutCyberSecurity() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.75, delay: 0.3 }}
-            className="mt-5 text-[#5a4733] text-lg leading-relaxed"
+            className="mt-5 text-[#5a4733] text-lg leading-relaxed text-justify"
           >
             We specialize in creating pathways for growth by bridging skill
             gaps, supporting underprivileged communities, and fostering
@@ -102,7 +102,7 @@ export default function AboutCyberSecurity() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.75, delay: 0.3 }}
-            className="mt-5 text-[#5a4733] text-lg leading-relaxed"
+            className="mt-5 text-[#5a4733] text-lg leading-relaxed text-justify"
           >
             Our approach integrates capacity building, digital literacy,
             employability enhancement, health & well-being initiatives, and
@@ -114,7 +114,7 @@ export default function AboutCyberSecurity() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.75, delay: 0.3 }}
-            className="mt-5 text-[#5a4733] text-lg leading-relaxed"
+            className="mt-5 text-[#5a4733] text-lg leading-relaxed text-justify"
           >
             With a commitment to accountability, transparency, and
             community-first action, Navanvesha Foundation continues to work
