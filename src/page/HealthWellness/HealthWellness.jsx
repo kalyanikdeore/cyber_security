@@ -224,7 +224,7 @@ export default function TechnologyDigitalPrograms({ onCTAClick }) {
               <img
                 src={images[0]}
                 alt={`${initiative.title} 1`}
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                className="w-full h-full object-cover object-contain transition-transform duration-500 group-hover:scale-105"
               />
             </motion.div>
             <div className="flex flex-col gap-4">
@@ -240,7 +240,7 @@ export default function TechnologyDigitalPrograms({ onCTAClick }) {
                   <img
                     src={img}
                     alt={`${initiative.title} ${index + 2}`}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    className="w-full h-full object-contain object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                 </motion.div>
               ))}
@@ -541,14 +541,14 @@ export default function TechnologyDigitalPrograms({ onCTAClick }) {
                     {renderImageLayout(initiative)}
 
                     {/* Layout Badge */}
-                    <div className="absolute top-2 sm:top-4 right-2 sm:right-4 bg-gradient-to-r from-[#805B3A] to-[#A1887F] text-white text-xs font-medium px-2 sm:px-3 py-1 rounded-full">
+                    {/* <div className="absolute top-2 sm:top-4 right-2 sm:right-4 bg-gradient-to-r from-[#805B3A] to-[#A1887F] text-white text-xs font-medium px-2 sm:px-3 py-1 rounded-full">
                       {initiative.layoutType.replace("-", " ")}
-                    </div>
+                    </div> */}
 
                     {/* Initiative Badge */}
-                    <div className="absolute -top-2 sm:-top-3 left-4 sm:left-6 bg-gradient-to-r from-[#805B3A] to-[#A1887F] text-white px-3 sm:px-4 py-1 sm:py-2 rounded-full text-xs sm:text-sm font-semibold  z-10">
+                    {/* <div className="absolute -top-2 sm:-top-3 left-4 sm:left-6 bg-gradient-to-r from-[#805B3A] to-[#A1887F] text-white px-3 sm:px-4 py-1 sm:py-2 rounded-full text-xs sm:text-sm font-semibold  z-10">
                       Initiative #{index + 1}
-                    </div>
+                    </div> */}
                   </div>
                 </motion.div>
 

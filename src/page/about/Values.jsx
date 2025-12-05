@@ -6,23 +6,28 @@ const About = () => {
   const features = [
     {
       icon: <Lightbulb className="w-8 h-8" />,
-      title: "Navanvesha",
-      desc: "Constant discovery in a changing threat landscape.",
+      title: "Inclusivity",
+      desc: "Ensuring that our programs reach the most marginalized and vulnerable segments of society.",
     },
     {
       icon: <Users className="w-8 h-8" />,
-      title: " Empowerment",
-      desc: "Knowledge as the key to resilience and growth",
+      title: " Innovation",
+      desc: "Continuously seeking and adapting the best and newest technology-driven solutions.",
     },
     {
       icon: <Target className="w-8 h-8" />,
-      title: "Sustainable Impact",
-      desc: "Building skills that create lasting change.",
+      title: "Accountability",
+      desc: "Maintaining stringent standards of operational and financial transparency for all stakeholders.",
     },
     {
       icon: <Heart className="w-8 h-8" />,
-      title: "Collaborative Integrity",
-      desc: "Partnering with trust and shared purpose.",
+      title: "Compassion",
+      desc: "Approaching community needs with empathy and a dedication to holistic well-being.",
+    },
+    {
+      icon: <Heart className="w-8 h-8" />,
+      title: "Sustainability",
+      desc: "Designing programs with long-term viability, focusing on community ownership and environmental responsibility.",
     },
   ];
 

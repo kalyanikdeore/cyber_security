@@ -512,7 +512,7 @@ export default function TechnologyDigitalPrograms({ onCTAClick }) {
             </button>
 
             {/* Button 3 - Get In Touch (New) */}
-            <button
+            {/* <button
               onClick={redirectToContact}
               className="group px-6 sm:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl bg-gradient-to-r from-[#6e4d30] to-[#805B3A] text-white font-semibold text-sm sm:text-base  transition-all duration-300 hover:scale-105 hover:from-[#5a3d26] hover:to-[#6e4d30] flex items-center gap-2"
             >
@@ -520,7 +520,7 @@ export default function TechnologyDigitalPrograms({ onCTAClick }) {
               <span className="group-hover:translate-y-[-2px] transition-transform">
                 📞
               </span>
-            </button>
+            </button> */}
           </motion.div>
         </div>
       </motion.div>
@@ -593,14 +593,14 @@ export default function TechnologyDigitalPrograms({ onCTAClick }) {
                     {renderImageLayout(initiative)}
 
                     {/* Layout Badge */}
-                    <div className="absolute top-2 sm:top-4 right-2 sm:right-4 bg-gradient-to-r from-[#805B3A] to-[#A1887F] text-white text-xs font-medium px-2 sm:px-3 py-1 rounded-full">
+                    {/* <div className="absolute top-2 sm:top-4 right-2 sm:right-4 bg-gradient-to-r from-[#805B3A] to-[#A1887F] text-white text-xs font-medium px-2 sm:px-3 py-1 rounded-full">
                       {initiative.layoutType.replace("-", " ")}
-                    </div>
+                    </div> */}
 
                     {/* Initiative Badge */}
-                    <div className="absolute -top-2 sm:-top-3 left-4 sm:left-6 bg-gradient-to-r from-[#805B3A] to-[#A1887F] text-white px-3 sm:px-4 py-1 sm:py-2 rounded-full text-xs sm:text-sm font-semibold  z-10">
+                    {/* <div className="absolute -top-2 sm:-top-3 left-4 sm:left-6 bg-gradient-to-r from-[#805B3A] to-[#A1887F] text-white px-3 sm:px-4 py-1 sm:py-2 rounded-full text-xs sm:text-sm font-semibold  z-10">
                       Initiative #{index + 1}
-                    </div>
+                    </div> */}
                   </div>
                 </motion.div>
 
