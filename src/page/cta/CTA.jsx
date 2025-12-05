@@ -18,12 +18,12 @@ const CTA = () => {
     >
       <div className="bg-gradient-to-r from-[#805b3a] to-[#a4947d] rounded-2xl p-8 border border-[#a4947d]/30">
         <h3 className="text-2xl md:text-3xl font-bold text-[#faf6f2] mb-4">
-          Ready to Make a Lasting Impact?
+          Navanvesha: New Exploration. Renewed Discovery.
         </h3>
         <p className="text-[#faf6f2]/90 text-lg mb-6 max-w-2xl mx-auto">
-          Join us in empowering communities through education and digital
-          transformation. Let's create sustainable change and bridge skill gaps
-          together.
+          We are committed to empowering individuals and communities through
+          technology-driven education, skill development, and inclusive social
+          initiatives that create sustainable and measurable impact.
         </p>
 
         <motion.button

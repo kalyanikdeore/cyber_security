@@ -17,47 +17,29 @@ const HeroSection = () => {
     {
       image:
         "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=2070&q=80",
-      title: "Navanvesha Foundation",
-      subtitle: "New Exploration, Renewed Discovery",
+      title: "Technology & Education",
+      subtitle: "Empowering Futures with Digital Skills & Innovation. ",
       description:
-        "Empowering communities through technology-driven education, skill development, and inclusive social initiatives for sustainable impact.",
+        "Bridging the digital chasm to create a digitally literate and skilled generation..",
       icon: FaGraduationCap,
     },
     {
       image:
         "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=2071&q=80",
-      title: "Education & Skill Development",
-      subtitle: "Building Future Leaders",
+      title: "Livelihood & Empowerment",
+      subtitle: "Fueling Economic Autonomy for Women.",
       description:
-        "High-impact educational interventions nurturing foundational learning, creativity, and leadership skills among children and youth.",
+        " Providing the tools, skills, and support for women to achieve financial independence and leadership.",
       icon: FaLaptopCode,
     },
     {
       image:
         "https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?auto=format&fit=crop&w=2070&q=80",
-      title: "Women Empowerment",
-      subtitle: "Creating Financial Independence",
+      title: "Community & Environment",
+      subtitle: "Sustainable Well-being for Healthier Communities.",
       description:
-        "Enabling women to gain financial independence and leadership opportunities through skill-based training and entrepreneurship development.",
+        "Driving change through accessible healthcare, essential infrastructure, and environmental stewardship.",
       icon: FaHandsHelping,
-    },
-    {
-      image:
-        "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=2074&q=80",
-      title: "Digital Transformation",
-      subtitle: "Bridging the Digital Divide",
-      description:
-        "Empowering students, youth, and community members with essential digital skills for a tech-enabled future.",
-      icon: FaLaptopCode,
-    },
-    {
-      image:
-        "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=2074&q=80",
-      title: "Environment & Sustainability",
-      subtitle: "Green Future Initiatives",
-      description:
-        "Promoting environmental consciousness and sustainable practices through awareness drives and community-action programs.",
-      icon: FaLeaf,
     },
   ];
 

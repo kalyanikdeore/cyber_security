@@ -10,10 +10,9 @@ const FAQSection = () => {
 
   const faqs = [
     {
-      question:
-        "What does 'Navanvesha' mean and what is the foundation's core philosophy?",
+      question: "What does Navanvesha mean?",
       answer:
-        "Navanvesha means 'New Exploration' or 'Renewed Discovery' and symbolizes the spirit of curiosity, innovation, and continuous learning. Our philosophy is to build a bridge between traditional wisdom and modern creativity, empowering individuals and communities through technology-driven education and sustainable development initiatives.",
+        " Navanvesha translates to New Exploration or Renewed Discovery in Sanskrit. It represents our commitment to continuously seeking innovative solutions while rediscovering and valuing traditional wisdom.",
     },
     {
       question: "What are the main focus areas of Navanvesha Foundation?",
