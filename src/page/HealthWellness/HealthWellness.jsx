@@ -16,6 +16,15 @@ import {
   health_camps,
   nutrition_wellness_workshop,
   sanitation_clean_water_awarness,
+  adolescent_health_mental,
+  adolescent_health_mental2,
+  community_infrastructure_support,
+  community_infrastructure_support2,
+  health_camps1,
+  health_camps2,
+  nutration,
+  sanitation_clean_water,
+  sanitation_clean_water2,
 } from "../../assets";
 
 export default function TechnologyDigitalPrograms({ onCTAClick }) {
@@ -27,7 +36,7 @@ export default function TechnologyDigitalPrograms({ onCTAClick }) {
       icon: BookOpen,
       description:
         " We mobilize medical teams to conduct regular, free health check-ups and screenings in remote areas. This focus on preventative care and early diagnosis reduces the burden of chronic diseases and high treatment costs.  ",
-      images: [health_camps, health_camps, health_camps],
+      images: [health_camps, health_camps1, health_camps2],
       imagePosition: "left",
       layoutType: "grid-3-even",
       stats: ["500+", "Workshops", "98%", "Satisfaction Rate"],
@@ -41,7 +50,7 @@ export default function TechnologyDigitalPrograms({ onCTAClick }) {
         "Educational sessions focused on local, affordable, and nutritious eating habits, preventative health measures, and lifestyle modifications to combat diet-related illnesses.",
       images: [
         nutrition_wellness_workshop,
-        nutrition_wellness_workshop,
+        nutration,
         nutrition_wellness_workshop,
       ],
       imagePosition: "right",
@@ -58,9 +67,8 @@ export default function TechnologyDigitalPrograms({ onCTAClick }) {
       images: [
         adolescent_mental_wellness,
         ,
-        adolescent_mental_wellness,
-        ,
-        adolescent_mental_wellness,
+        adolescent_health_mental,
+        adolescent_health_mental2,
       ],
       imagePosition: "left",
       layoutType: "featured-large",
@@ -75,8 +83,8 @@ export default function TechnologyDigitalPrograms({ onCTAClick }) {
         "  Beyond awareness, we facilitate action by supporting the construction and maintenance of community sanitation facilities (toilets) and installing reliable clean drinking water units (purifiers) in schools and public areas.  ",
       images: [
         sanitation_clean_water_awarness,
-        sanitation_clean_water_awarness,
-        sanitation_clean_water_awarness,
+        sanitation_clean_water,
+        sanitation_clean_water2,
       ],
       imagePosition: "right",
       layoutType: "masonry",
@@ -92,25 +100,12 @@ export default function TechnologyDigitalPrograms({ onCTAClick }) {
         " Public-Private Innovations: Organizations now deploy smart IoT-monitored units with real-time maintenance alerts and solar-powered purification systems for off-grid areas. Circular economy models like converting waste to biogas/fertilizer from toilet units create sustainability. ",
       images: [
         community_infra_support,
-        community_infra_support,
-        community_infra_support,
+        community_infrastructure_support,
+        community_infrastructure_support2,
       ],
       imagePosition: "left",
       layoutType: "horizontal-stack",
       stats: ["300+", "Seniors Trained", "100%", "Personalized Sessions"],
-    },
-    // dummy added
-    {
-      id: 6,
-      title: "Preventive Healthcare",
-      subtitle: "Proactive health management",
-      icon: CreditCard,
-      description:
-        "Organizations now deploy AI/ML platforms that analyze individual health data, lifestyle, and genetic markers to predict risks (diabetes, CVD) 3-5 years in advance, enabling hyper-personalized Preventive Action Plans. ",
-      images: [health_camps, health_camps, health_camps],
-      imagePosition: "right",
-      layoutType: "diagonal",
-      stats: ["150+", "Financial Workshops", "₹50K+", "Scams Prevented"],
     },
   ];
 

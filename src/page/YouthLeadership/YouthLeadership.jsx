@@ -14,6 +14,15 @@ import {
   innovation_problem_solving,
   leadership_personality_workshops,
   soft_skills_communication,
+  soft_skills_communication_training2,
+  soft_skills_communication_training3,
+  volunteering_community_action_programs2,
+  volunteering_community_action_programs3,
+  creative_solution_development_innovation2,
+  creative_solution_development_innovation,
+  volunteering_community,
+  Leadership_WorkshopsPersonality,
+  Leadership_WorkshopsPersonality_Development,
 } from "../../assets";
 
 export default function TechnologyDigitalPrograms({ onCTAClick }) {
@@ -27,8 +36,8 @@ export default function TechnologyDigitalPrograms({ onCTAClick }) {
         " Intensive, soft-skill focused workshops covering crucial areas like effective communication, conflict resolution, public speaking, goal setting, and time management.   ",
       images: [
         leadership_personality_workshops,
-        leadership_personality_workshops,
-        leadership_personality_workshops,
+        Leadership_WorkshopsPersonality,
+        Leadership_WorkshopsPersonality_Development,
       ],
       imagePosition: "left",
       layoutType: "grid-3-even",
@@ -43,9 +52,9 @@ export default function TechnologyDigitalPrograms({ onCTAClick }) {
       description:
         " Structured, organized volunteering opportunities that give youth direct, hands-on experience in social service, such as running awareness drives, tutoring younger students, or assisting in health camps.  ",
       images: [
-        leadership_personality_workshops,
-        leadership_personality_workshops,
-        leadership_personality_workshops,
+        volunteering_community,
+        volunteering_community_action_programs2,
+        volunteering_community_action_programs3,
       ],
       imagePosition: "right",
       layoutType: "vertical-stack",
@@ -60,8 +69,8 @@ export default function TechnologyDigitalPrograms({ onCTAClick }) {
         " We organize 'Innovation Sprints' where youth teams identify pressing local issues (e.g., waste, traffic, digital literacy gap) and develop tech-enabled or social solutions.  ",
       images: [
         innovation_problem_solving,
-        innovation_problem_solving,
-        innovation_problem_solving,
+        creative_solution_development_innovation2,
+        creative_solution_development_innovation,
       ],
       imagePosition: "left",
       layoutType: "featured-large",
@@ -76,8 +85,8 @@ export default function TechnologyDigitalPrograms({ onCTAClick }) {
         " Customized training aimed at enhancing employability, covering professional email etiquette, interviewing skills, professional attire, and cross-cultural communication.  ",
       images: [
         soft_skills_communication,
-        soft_skills_communication,
-        soft_skills_communication,
+        soft_skills_communication_training2,
+        soft_skills_communication_training3,
       ],
       imagePosition: "right",
       layoutType: "masonry",

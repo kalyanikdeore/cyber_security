@@ -16,6 +16,16 @@ import {
   energy_conservation_drives,
   tree_plantation_green_campus,
   waste_segregation_recycling_awarness,
+  treeplan,
+  treeplan3,
+  waste1,
+  waste2,
+  cleengreen,
+  cleengreen2,
+  energy1,
+  energy2,
+  cliement1,
+  climate2,
 } from "../../assets";
 
 export default function TechnologyDigitalPrograms({ onCTAClick }) {
@@ -27,11 +37,7 @@ export default function TechnologyDigitalPrograms({ onCTAClick }) {
       icon: BookOpen,
       description:
         " scale, community-led tree planting drives focused on native species to restore local ecosystems and combat climate change. We also work with schools to establish and maintain 'Green Campuses' using rainwater harvesting and natural gardening.   ",
-      images: [
-        tree_plantation_green_campus,
-        tree_plantation_green_campus,
-        tree_plantation_green_campus,
-      ],
+      images: [tree_plantation_green_campus, treeplan, treeplan3],
       imagePosition: "left",
       layoutType: "grid-3-even",
       stats: ["500+", "Workshops", "98%", "Satisfaction Rate"],
@@ -43,11 +49,7 @@ export default function TechnologyDigitalPrograms({ onCTAClick }) {
       icon: BatteryCharging,
       description:
         " Practical, hands-on training for households and institutions on the correct methods of waste segregation (wet, dry, hazardous) and linking communities with local recycling agencies to minimize landfill waste. ",
-      images: [
-        waste_segregation_recycling_awarness,
-        waste_segregation_recycling_awarness,
-        waste_segregation_recycling_awarness,
-      ],
+      images: [waste_segregation_recycling_awarness, waste1, waste2],
       imagePosition: "right",
       layoutType: "vertical-stack",
       stats: ["2K+", "Participants", "40%", "Screen Time Reduction"],
@@ -59,11 +61,7 @@ export default function TechnologyDigitalPrograms({ onCTAClick }) {
       icon: ShieldCheck,
       description:
         " Integrating compelling modules on local climate challenges, biodiversity, and the importance of conservation into the educational curriculum. This empowers youth to become future environmental champions.  ",
-      images: [
-        climate_education_in_schools,
-        climate_education_in_schools,
-        climate_education_in_schools,
-      ],
+      images: [climate_education_in_schools, cliement1, climate2],
       imagePosition: "left",
       layoutType: "featured-large",
       stats: ["200+", "Sessions", "95%", "Security Awareness"],
@@ -75,11 +73,7 @@ export default function TechnologyDigitalPrograms({ onCTAClick }) {
       icon: Smartphone,
       description:
         " Community campaigns focused on adopting simple, yet effective, energy-saving measures at home, promoting the use of energy-efficient appliances and renewable energy sources where feasible.  ",
-      images: [
-        energy_conservation_drives,
-        energy_conservation_drives,
-        energy_conservation_drives,
-      ],
+      images: [energy_conservation_drives, energy1, energy2],
       imagePosition: "right",
       layoutType: "masonry",
       stats: ["1K+", "Devices Donated", "15+", "Community Partners"],
@@ -91,31 +85,10 @@ export default function TechnologyDigitalPrograms({ onCTAClick }) {
       icon: UserCheck,
       description:
         " Navanvesha Foundation leads community-driven initiatives to build cleaner, greener, and healthier neighborhoods. Through environmental education, waste management awareness, and volunteer participation, we inspire citizens to take ownership of their surroundings. ",
-      images: [
-        clean_green_community_campaigns,
-        clean_green_community_campaigns,
-        clean_green_community_campaigns,
-      ],
+      images: [clean_green_community_campaigns, cleengreen, cleengreen2],
       imagePosition: "left",
       layoutType: "horizontal-stack",
       stats: ["300+", "Seniors Trained", "100%", "Personalized Sessions"],
-    },
-    // dummy
-    {
-      id: 6,
-      title: "Preventive Healthcare",
-      subtitle: "Proactive health management",
-      icon: CreditCard,
-      description:
-        "Traditional classrooms into dynamic, interactive learning spaces equipped with digital displays, reliable connectivity, and educational software. These labs are central to fostering collaborative learning and critical thinking. ",
-      images: [
-        clean_green_community_campaigns,
-        clean_green_community_campaigns,
-        clean_green_community_campaigns,
-      ],
-      imagePosition: "right",
-      layoutType: "diagonal",
-      stats: ["150+", "Financial Workshops", "₹50K+", "Scams Prevented"],
     },
   ];
 

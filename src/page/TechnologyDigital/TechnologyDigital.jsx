@@ -15,13 +15,29 @@ import {
   digitalaccess,
   digitaldetox,
   assistiveadaptive,
-  digitalfinancialawarness,
+  // digitalfinancialawarness,
   digitalliteracyworkshops,
   techforseniors,
-  assitivetechnology,
+  // assitivetechnology,
   cybersafety,
   cybersafteyawarness,
+  cyber_safety_programs,
   devicedonation,
+  assistive_technology,
+  cybersafteyawrness2,
+  digital_financial_awareness,
+  digitaldeox3,
+  Donation,
+  Readingclubs,
+  tech_for_seniors,
+  tech_seniors,
+  assistivetechnology2,
+  assitivetechnology3,
+  digital_financial_aw,
+  tech_forseniors2,
+  donation,
+  donation2,
+  // tech_seniors,
 } from "../../assets";
 
 export default function TechnologyDigitalPrograms({ onCTAClick }) {
@@ -57,7 +73,7 @@ export default function TechnologyDigitalPrograms({ onCTAClick }) {
       icon: ShieldCheck,
       description:
         "Our Cyber Safety Awareness Programs are designed to educate and protect individuals, communities, and organizations from rapidly growing online threats. The sessions cover essential topics such as identifying phishing and scam attempts, creating strong and secure passwords, managing privacy settings on social media and digital devices, and ensuring safe financial transactions through UPI, mobile banking, and online payments",
-      images: [cybersafety, cybersafteyawarness, digitalfinancialawarness],
+      images: [cybersafety, cybersafteyawrness2, cyber_safety_programs],
       imagePosition: "left",
       layoutType: "featured-large",
       stats: ["200+", "Sessions", "95%", "Security Awareness"],
@@ -69,7 +85,7 @@ export default function TechnologyDigitalPrograms({ onCTAClick }) {
       icon: Smartphone,
       description:
         " We collect, refurbish, and distribute essential digital devices (laptops, tablets) to students and community centers. Furthermore, we support the establishment of Community Digital Hubs—shared access points with reliable internet and technical support, turning public spaces into centers of digital learning. ",
-      images: [devicedonation, digitalaccess, digitalliteracyworkshops],
+      images: [devicedonation, donation, donation2],
       imagePosition: "right",
       layoutType: "masonry",
       stats: ["1K+", "Devices Donated", "15+", "Community Partners"],
@@ -81,7 +97,7 @@ export default function TechnologyDigitalPrograms({ onCTAClick }) {
       icon: UserCheck,
       description:
         "Dedicated sessions crafted to simplify technology adoption for older community members, focusing on communication (video calls with family), access to government services, and online health resources, combating social isolation.",
-      images: [techforseniors, assitivetechnology, digitaldetox],
+      images: [techforseniors, tech_forseniors2, tech_seniors],
       imagePosition: "left",
       layoutType: "horizontal-stack",
       stats: ["300+", "Seniors Trained", "100%", "Personalized Sessions"],
@@ -93,7 +109,7 @@ export default function TechnologyDigitalPrograms({ onCTAClick }) {
       icon: CreditCard,
       description:
         "Workshops on UPI, payments, budgeting apps & spotting financial scams for all ages.",
-      images: [digitalfinancialawarness, cybersafety, digitalaccess],
+      images: [digital_financial_awareness, cybersafety, digital_financial_aw],
       imagePosition: "right",
       layoutType: "diagonal",
       stats: ["150+", "Financial Workshops", "₹50K+", "Scams Prevented"],
@@ -105,7 +121,7 @@ export default function TechnologyDigitalPrograms({ onCTAClick }) {
       icon: Accessibility,
       description:
         "True transformation means leaving no one behind. We identify individuals with disabilities and provide specialized assistive technology (e.g., screen readers, adaptive devices) and customized training to enable them to engage fully in education and livelihood opportunities.",
-      images: [assistiveadaptive, assitivetechnology, digitalliteracyworkshops],
+      images: [assistiveadaptive, assistivetechnology2, assitivetechnology3],
       imagePosition: "left",
       layoutType: "pyramid",
       stats: ["50+", "Assistive Devices", "100%", "Accessibility Focus"],
@@ -657,11 +673,12 @@ export default function TechnologyDigitalPrograms({ onCTAClick }) {
 
           <div className="relative z-10">
             <h3 className="text-xl sm:text-3xl md:text-4xl font-extrabold text-white mb-4 sm:mb-6">
-      Be a Digital Enabler
+              Be a Digital Enabler
             </h3>
 
             <p className="text-white/90 text-sm sm:text-lg mb-6 sm:mb-8 max-w-2xl mx-auto">
-            Your support bridges the physical and skill-based gaps, providing essential tools and knowledge
+              Your support bridges the physical and skill-based gaps, providing
+              essential tools and knowledge
             </p>
 
             <div className="flex flex-wrap justify-center gap-4 sm:gap-6">

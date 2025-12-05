@@ -11,14 +11,31 @@ import {
 } from "lucide-react";
 
 import {
+  aicodding,
+  aicodding2,
   ai_coding_computational_training,
   career_guidance,
   learning_corners,
   library_setup_reading_club,
   scholarships,
   settingup_smart_classrooms_digital_labs,
-  STEM_clubs,
+  // STEM_clubs,
   teacher_training_capacity_building,
+  scholership,
+  scholership2,
+  teacher_tranning,
+  CareerGuidanPrograms3,
+  CareerGuidanPrograms2,
+  Readingclubs,
+  teacher_tranning2,
+  educationalmaterialsupport2,
+  educationalmaterialsupport,
+  educationalmaterialsupport3,
+  setting_up_smart_classrooms_digital,
+  setting_upsmart_classroomsdigitalLabs,
+  stm_clubs,
+  stem_clubs,
+  stmeclubs,
 } from "../../assets";
 
 export default function TechnologyDigitalPrograms({ onCTAClick }) {
@@ -30,7 +47,7 @@ export default function TechnologyDigitalPrograms({ onCTAClick }) {
       icon: BookOpen,
       description:
         "Financial barriers should not halt potential. We offer need-based scholarships and academic support through tutoring and mentoring programs to ensure meritorious students from underprivileged backgrounds can pursue higher education and career goals.",
-      images: [scholarships, career_guidance, library_setup_reading_club],
+      images: [scholarships, scholership2, scholership],
       imagePosition: "left",
       layoutType: "grid-3-even",
       stats: ["500+", "Workshops", "98%", "Satisfaction Rate"],
@@ -44,8 +61,8 @@ export default function TechnologyDigitalPrograms({ onCTAClick }) {
         "We empower educators to become catalysts for change. Training modules cover modern pedagogical methods, effective integration of digital tools, and techniques for nurturing student creativity and emotional intelligence in the classroom.",
       images: [
         teacher_training_capacity_building,
-        career_guidance,
-        learning_corners,
+        teacher_tranning2,
+        teacher_tranning,
       ],
       imagePosition: "right",
       layoutType: "vertical-stack",
@@ -58,7 +75,7 @@ export default function TechnologyDigitalPrograms({ onCTAClick }) {
       icon: ShieldCheck,
       description:
         "Connecting learning outcomes directly to career paths. Workshops cover resume building, interview techniques, soft skills, and industry exposure through job fairs and expert talks.",
-      images: [career_guidance, scholarships, library_setup_reading_club],
+      images: [career_guidance, CareerGuidanPrograms2, CareerGuidanPrograms3],
       imagePosition: "left",
       layoutType: "featured-large",
       stats: ["200+", "Sessions", "95%", "Security Awareness"],
@@ -70,7 +87,7 @@ export default function TechnologyDigitalPrograms({ onCTAClick }) {
       icon: Smartphone,
       description:
         "Our organization is committed to nurturing a culture of reading, knowledge sharing, and inclusive learning within communities. Through our Reading Clubs and Learning Corners, we create supportive environments where students, youth, and community members can engage in reading activities and discussions.",
-      images: [library_setup_reading_club, learning_corners, scholarships],
+      images: [library_setup_reading_club, learning_corners, Readingclubs],
       imagePosition: "right",
       layoutType: "masonry",
       stats: ["1K+", "Devices Donated", "15+", "Community Partners"],
@@ -83,9 +100,9 @@ export default function TechnologyDigitalPrograms({ onCTAClick }) {
       description:
         "We strengthen learning environments by providing equipment and educational material support, ensuring that students and community centers have essential tools for effective education.",
       images: [
-        learning_corners,
-        teacher_training_capacity_building,
-        scholarships,
+        educationalmaterialsupport,
+        educationalmaterialsupport2,
+        educationalmaterialsupport3,
       ],
       imagePosition: "left",
       layoutType: "horizontal-stack",
@@ -100,8 +117,8 @@ export default function TechnologyDigitalPrograms({ onCTAClick }) {
         "Transforming traditional classrooms into dynamic digital learning spaces equipped with interactive tools, software, and high-speed connectivity.",
       images: [
         settingup_smart_classrooms_digital_labs,
-        learning_corners,
-        career_guidance,
+        setting_up_smart_classrooms_digital,
+        setting_upsmart_classroomsdigitalLabs,
       ],
       imagePosition: "right",
       layoutType: "diagonal",
@@ -114,7 +131,7 @@ export default function TechnologyDigitalPrograms({ onCTAClick }) {
       icon: Accessibility,
       description:
         "STEM Clubs inspire curiosity and innovation through hands-on learning, experiments, robotics, science fairs, and problem-solving activities.",
-      images: [STEM_clubs, learning_corners, library_setup_reading_club],
+      images: [stm_clubs, stem_clubs, stmeclubs],
       imagePosition: "left",
       layoutType: "pyramid",
       stats: ["50+", "STEM Schools", "100%", "Student Engagement"],
@@ -126,7 +143,7 @@ export default function TechnologyDigitalPrograms({ onCTAClick }) {
       icon: Accessibility,
       description:
         "Preparing students for careers in emerging technologies by teaching coding, robotics, AI fundamentals, and computational thinking through practical workshops.",
-      images: [ai_coding_computational_training, STEM_clubs, career_guidance],
+      images: [ai_coding_computational_training, aicodding, aicodding2],
       imagePosition: "left",
       layoutType: "pyramid",
       stats: ["10K+", "Students Trained", "95%", "Skill Growth"],
@@ -151,7 +168,7 @@ export default function TechnologyDigitalPrograms({ onCTAClick }) {
               <img
                 src={images[0]}
                 alt={`${initiative.title} 1`}
-                className="w-full h-54 sm:h-44 object-cover transition-transform duration-500 group-hover:scale-110"
+                className="w-full h-54 sm:h-44 object-cover object-contain transition-transform duration-500 group-hover:scale-110"
               />
             </motion.div>
 

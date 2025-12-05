@@ -15,6 +15,14 @@ import {
   financial_literacy_programs,
   self_help_group_strengthening,
   women_micro_entrepreneurs,
+  digital_awareness_programs1,
+  digital_awareness_programs3,
+  digital_skills_for_homemakers,
+  digital_skills_for_homemakers2,
+  shg,
+  shg2,
+  financial_literacy_programs3,
+  Financial_Literacy_Programs1,
 } from "../../assets";
 
 export default function TechnologyDigitalPrograms({ onCTAClick }) {
@@ -28,8 +36,8 @@ export default function TechnologyDigitalPrograms({ onCTAClick }) {
         " Critical training that demystifies personal finance. Topics include budgeting, saving, understanding banking services, accessing loans responsibly, and managing cash flow for small businesses.   ",
       images: [
         financial_literacy_programs,
-        financial_literacy_programs,
-        financial_literacy_programs,
+        financial_literacy_programs3,
+        Financial_Literacy_Programs1,
       ],
       imagePosition: "left",
       layoutType: "grid-3-even",
@@ -44,8 +52,8 @@ export default function TechnologyDigitalPrograms({ onCTAClick }) {
         "Beyond Just Cybersecurity Programs now cover Digital Wellness, Ethics, AI Literacy, and Data Privacy .  Training must address secure practices outside the traditional office (public Wi-Fi, home networks).",
       images: [
         digital_awarness_programs,
-        digital_awarness_programs,
-        digital_awarness_programs,
+        digital_awareness_programs1,
+        digital_awareness_programs3,
       ],
       imagePosition: "right",
       layoutType: "vertical-stack",
@@ -58,11 +66,7 @@ export default function TechnologyDigitalPrograms({ onCTAClick }) {
       icon: ShieldCheck,
       description:
         " We work to institutionalize and scale up existing SHGs by providing training in governance, collective bargaining, and linking them directly with government schemes and financial institutions. ",
-      images: [
-        self_help_group_strengthening,
-        self_help_group_strengthening,
-        self_help_group_strengthening,
-      ],
+      images: [self_help_group_strengthening, shg, shg2],
       imagePosition: "left",
       layoutType: "featured-large",
       stats: ["200+", "Sessions", "95%", "Security Awareness"],
@@ -76,46 +80,12 @@ export default function TechnologyDigitalPrograms({ onCTAClick }) {
         " Focusing on practical applications, we teach women how to use social media platforms for marketing, manage online inventory, handle digital payments, and access broader markets beyond their immediate locality. ",
       images: [
         women_micro_entrepreneurs,
-        women_micro_entrepreneurs,
-        women_micro_entrepreneurs,
+        digital_skills_for_homemakers,
+        digital_skills_for_homemakers2,
       ],
       imagePosition: "right",
       layoutType: "masonry",
       stats: ["1K+", "Devices Donated", "15+", "Community Partners"],
-    },
-
-    // images randomly added
-    {
-      id: 5,
-      title: "Digital Skills for Homemakers",
-      subtitle: "Home-based opportunities",
-      icon: UserCheck,
-      description:
-        " Focused on non-entrepreneurial women, this covers essential digital safety for the home, accessing government welfare schemes online, and leveraging technology for family health and education. ",
-      images: [
-        women_micro_entrepreneurs,
-        women_micro_entrepreneurs,
-        women_micro_entrepreneurs,
-      ],
-      imagePosition: "left",
-      layoutType: "horizontal-stack",
-      stats: ["300+", "Seniors Trained", "100%", "Personalized Sessions"],
-    },
-    {
-      id: 6,
-      title: "Women Micro-Entrepreneurs",
-      subtitle: "Small business growth",
-      icon: CreditCard,
-      description:
-        " Leading organizations are moving from isolated training programs to integrated ecosystems that address digital access, childcare, mental health, climate resilience, and intergenerational transfer simultaneously. The most successful recognize that women's micro-entrepreneurship support is a holistic development strategy, not just an economic intervention. ",
-      images: [
-        women_micro_entrepreneurs,
-        women_micro_entrepreneurs,
-        women_micro_entrepreneurs,
-      ],
-      imagePosition: "right",
-      layoutType: "diagonal",
-      stats: ["150+", "Financial Workshops", "₹50K+", "Scams Prevented"],
     },
   ];
 
@@ -132,12 +102,12 @@ export default function TechnologyDigitalPrograms({ onCTAClick }) {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
-              className="relative rounded-xl overflow-hidden  group h-56 sm:h-44"
+              className="relative rounded-xl overflow-hidden  group h-76 sm:h-44"
             >
               <img
                 src={images[0]}
                 alt={`${initiative.title} 1`}
-                className="w-full h-54 sm:h-44 object-cover transition-transform duration-500 group-hover:scale-110"
+                className="w-full h-54 sm:h-44 object-cover transition-transform duration-500 group-hover:scale-110 object-contain"
               />
             </motion.div>
 
