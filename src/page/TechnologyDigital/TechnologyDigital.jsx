@@ -12,7 +12,7 @@ import {
 
 import {
   DigitalWorkshops,
-  digitalaccess,
+  tech1,
   digitaldetox,
   assistiveadaptive,
   // digitalfinancialawarness,
@@ -49,7 +49,7 @@ export default function TechnologyDigitalPrograms({ onCTAClick }) {
       icon: BookOpen,
       description:
         "We offer tiered modules from 'Digital Basics' (email, search) to 'Advanced Tools' (cloud computing, collaboration software). Our methodology is highly practical, employing a 1:1 mentor ratio where possible, focusing on confidence-building and real-world application, not just theory.",
-      images: [digitalaccess, DigitalWorkshops, digitalliteracyworkshops],
+      images: [tech1, DigitalWorkshops, digitalliteracyworkshops],
       imagePosition: "left",
       layoutType: "grid-3-even",
       stats: ["500+", "Workshops", "98%", "Satisfaction Rate"],
@@ -141,18 +141,18 @@ export default function TechnologyDigitalPrograms({ onCTAClick }) {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
-              className="relative rounded-xl overflow-hidden   group h-56 sm:h-44"
+              className="relative rounded-xl overflow-hidden   group "
             >
               <img
                 src={images[0]}
                 alt={`${initiative.title} 1`}
                 className="
-    w-full               /* full width always */
-    h-auto               /* maintain aspect ratio */
-    sm:h-48              /* height on small screens */
-    md:h-56              /* height on medium screens */
-    lg:h-64              /* height on large screens */
-    object-fit
+    // w-full            
+    // h-auto            
+    // sm:h-48              
+    // md:h-56        
+    // lg:h-64             
+    object-cover
     transition-transform
     duration-500
     group-hover:scale-110

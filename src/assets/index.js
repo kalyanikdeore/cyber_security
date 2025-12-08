@@ -128,7 +128,9 @@ import donation from "./TechnologyDigitalTransformationPrograms/donation.jpeg";
 import donation2 from "./TechnologyDigitalTransformationPrograms/donation2.jpeg";
 import tech from "./TechnologyDigitalTransformationPrograms/tech.jpeg";
 import tech2 from "./TechnologyDigitalTransformationPrograms/tech2.png";
+import tech1 from "./TechnologyDigitalTransformationPrograms/tech1.png";
 export {
+  tech1,
   tech2,
   tech,
   donation,
