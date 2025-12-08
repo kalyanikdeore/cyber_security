@@ -25,7 +25,7 @@ import {
   energy1,
   energy2,
   cliement1,
-  cliement1,
+  climate2,
 } from "../../assets";
 
 export default function TechnologyDigitalPrograms({ onCTAClick }) {
@@ -61,7 +61,7 @@ export default function TechnologyDigitalPrograms({ onCTAClick }) {
       icon: ShieldCheck,
       description:
         " Integrating compelling modules on local climate challenges, biodiversity, and the importance of conservation into the educational curriculum. This empowers youth to become future environmental champions.  ",
-      images: [climate_education_in_schools, cliement1, cliement1],
+      images: [climate_education_in_schools, cliement1, climate2],
       imagePosition: "left",
       layoutType: "featured-large",
       stats: ["200+", "Sessions", "95%", "Security Awareness"],
