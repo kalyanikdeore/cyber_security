@@ -36,6 +36,7 @@ import {
   stm_clubs,
   stem_clubs,
   stmeclubs,
+  scholership11,
 } from "../../assets";
 
 export default function TechnologyDigitalPrograms({ onCTAClick }) {
@@ -47,7 +48,7 @@ export default function TechnologyDigitalPrograms({ onCTAClick }) {
       icon: BookOpen,
       description:
         "Financial barriers should not halt potential. We offer need-based scholarships and academic support through tutoring and mentoring programs to ensure meritorious students from underprivileged backgrounds can pursue higher education and career goals.",
-      images: [scholarships, scholership2, scholership],
+      images: [scholership11, scholership2, scholership],
       imagePosition: "left",
       layoutType: "grid-3-even",
       stats: ["500+", "Workshops", "98%", "Satisfaction Rate"],

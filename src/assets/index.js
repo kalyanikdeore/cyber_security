@@ -117,7 +117,8 @@ import cleengreen2 from "./environmentsustainabilityprograms/cleengreen2.png";
 import energy1 from "./environmentsustainabilityprograms/energy1.png";
 import energy2 from "./environmentsustainabilityprograms/energy1.png";
 import cliement1 from "./environmentsustainabilityprograms/cliement.jpg";
-import climate2 from "./environmentsustainabilityprograms/climate2.jpg";
+// import climate2 from "./environmentsustainabilityprograms/climate2.jpg";
+import climate from "./environmentsustainabilityprograms/climate.jpg";
 import assistiveadaptive from "./TechnologyDigitalTransformationPrograms/assistive_tech_adaptive_devices.jpeg";
 import assitivetechnology3 from "./TechnologyDigitalTransformationPrograms/assitivetechnology2.jpeg";
 import assistivetechnology2 from "./TechnologyDigitalTransformationPrograms/assistive_technology.png";
@@ -129,7 +130,9 @@ import donation2 from "./TechnologyDigitalTransformationPrograms/donation2.jpeg"
 import tech from "./TechnologyDigitalTransformationPrograms/tech.jpeg";
 import tech2 from "./TechnologyDigitalTransformationPrograms/tech2.png";
 import tech1 from "./TechnologyDigitalTransformationPrograms/tech1.png";
+import scholership11 from "./EducationSkilldevelopementprograms/scholarship11.png";
 export {
+  scholership11,
   tech1,
   tech2,
   tech,
@@ -142,7 +145,7 @@ export {
   assistivetechnology2,
   assitivetechnology3,
   cliement1,
-  climate2,
+  climate,
   cleengreen,
   cleengreen2,
   energy1,
