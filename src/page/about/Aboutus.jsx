@@ -2,7 +2,7 @@ import React, { useMemo } from "react";
 import { motion } from "framer-motion";
 import { FiShield, FiClock } from "react-icons/fi";
 import { SiHackthebox } from "react-icons/si";
-import about2 from "../../assets/logo/about2.jpg";
+import about2 from "../../assets/about/about_us_2.png";
 
 export default function AboutCyberSecurity() {
   const features = [

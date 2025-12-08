@@ -8,7 +8,7 @@ import {
   FaHeart,
 } from "react-icons/fa";
 import CTA from "../cta/CTA";
-import about3 from "../../assets/logo/about3.jpg";
+import about3 from "../../assets/about/about_us_1.png";
 
 const AboutSection = () => {
   // Animation variants

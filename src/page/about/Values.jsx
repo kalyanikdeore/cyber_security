@@ -11,7 +11,7 @@ const About = () => {
     },
     {
       icon: <Users className="w-8 h-8" />,
-      title: " Innovation",
+      title: "Innovation",
       desc: "Continuously seeking and adapting the best and newest technology-driven solutions.",
     },
     {
@@ -54,6 +54,7 @@ const About = () => {
                 Our Values
               </span>
             </motion.div>
+
             <h2 className="text-4xl md:text-4xl font-bold text-[#1E1E1E] mb-6">
               Our <span className="text-[#926b49]">Core Principles</span>
             </h2>
@@ -73,7 +74,8 @@ const About = () => {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {/* Updated grid: 1 → 2 → 3 → 5 columns */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
             {features.map((feature, index) => (
               <motion.div
                 key={index}
@@ -86,10 +88,14 @@ const About = () => {
                 <div className="w-12 h-12 bg-gradient-to-r from-[#926b49] to-[#7a573a] rounded-2xl flex items-center justify-center text-white mb-6 mx-auto group-hover:scale-110 transition-transform duration-300">
                   {feature.icon}
                 </div>
+
                 <h3 className="text-xl font-bold text-gray-900 mb-4">
                   {feature.title}
                 </h3>
-                <p className="text-gray-600 leading-relaxed">{feature.desc}</p>
+
+                <p className="text-gray-600 leading-relaxed text-justify">
+                  {feature.desc}
+                </p>
               </motion.div>
             ))}
           </div>

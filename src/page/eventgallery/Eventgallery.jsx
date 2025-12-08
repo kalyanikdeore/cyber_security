@@ -3,146 +3,93 @@ import { motion } from "framer-motion";
 import { ChevronLeft, Award, ChevronRight } from "lucide-react";
 // Cloud Security
 
-// Digital Forensics
-import df from "../../assets/logo/df.jpg";
-
-import df2 from "../../assets/logo/df2.jpg";
-import df3 from "../../assets/logo/df3.jpg";
-// Security Awareness
-import sa from "../../assets/logo/sa.jpg";
-import sa2 from "../../assets/logo/sa2.jpeg";
-import sa3 from "../../assets/logo/sa3.jpeg";
-import confernce1 from "../../assets/logo/confernce1.jpeg";
-import confernce2 from "../../assets/logo/confernce2.jpeg";
-import cs1 from "../../assets/logo/cs1.jpeg";
-import cs2 from "../../assets/logo/cs2.jpeg";
-import cs3 from "../../assets/logo/cs3.jpeg";
-// Incident Response
-import ir from "../../assets/logo/ir.png";
-import ir2 from "../../assets/logo/ir2.jpeg";
-import ir4 from "../../assets/logo/ir4.jpeg";
-// Threat Intelligence
-// import ti1 from "../../assets/logo/ti1.jpeg";
-// import ti2 from "../../assets/logo/ti2.jpeg";
-// import ti3 from "../../assets/logo/ti3.jpeg";
-// import ti4 from "../../assets/logo/ti4.jpeg";
+import {
+  DigitalWorkshops,
+  cybersafety,
+  digital_financial_awareness,
+  digital_financial_aw,
+  scholership,
+  aicodding,
+  stm_clubs,
+  digital_skills_for_homemakers2,
+  clean_green_community_campaigns,
+  energy1,
+  soft_skills_communication_training2,
+} from "../../assets";
 
 const EventGallery = () => {
   const items = [
-    // Threat Intelligence Items
-    // {
-    //   id: 1,
-    //   category: "Threat Intelligence",
-    //   title: "Advanced Threat Analysis",
-    //   img: ti1,
-    // },
-    // {
-    //   id: 2,
-    //   category: "Threat Intelligence",
-    //   title: "Threat Intelligence Summit",
-    //   img: ti2,
-    // },
-    // {
-    //   id: 3,
-    //   category: "Threat Intelligence",
-    //   title: "Malware Analysis Deep Dive",
-    //   img: ti3,
-    // },
-    // {
-    //   id: 4,
-    //   category: "Threat Intelligence",
-    //   title: "Cyber Threat Conference",
-    //   img: ti4,
-    // },
-    // // Cloud Security Items
-    // {
-    //   id: 5,
-    //   category: "Cloud Security",
-    //   title: "Cloud Infrastructure Protection",
-    //   img: cs1,
-    // },
-    // {
-    //   id: 6,
-    //   category: "Cloud Security",
-    //   title: "Cloud Security Conference",
-    //   img: cs2,
-    // },
+    // Cybersecurity
     {
-      id: 16,
-      category: "Digital Forensics",
-      title: "Cyber Crime Investigation",
-      img: df,
+      id: 1,
+      category: "Cybersecurity",
+      title: "Security Operations Center",
+      img: DigitalWorkshops,
+    },
+    {
+      id: 2,
+      category: "Cybersecurity",
+      title: "Cyber Defense Training",
+      img: cybersafety,
+    },
+    {
+      id: 3,
+      category: "Cybersecurity",
+      title: "Threat Intelligence Workshop",
+      img: digital_financial_awareness,
+    },
+    {
+      id: 4,
+      category: "Cybersecurity",
+      title: "Incident Response Simulation",
+      img: digital_financial_aw,
     },
 
+    // Network Security
     {
-      id: 18,
-      category: "Digital Forensics",
-      title: "Digital Evidence Workshop",
-      img: df2,
+      id: 5,
+      category: "Network Security",
+      title: "Network Infrastructure Security",
+      img: aicodding,
     },
-    // {
-    //   id: 19,
-    //   category: "Digital Forensics",
-    //   title: "Forensic Tools Training",
-    //   img: df3,
-    // },
+    {
+      id: 6,
+      category: "Network Security",
+      title: "Secure Network Architecture",
+      img: scholership,
+    },
     {
       id: 7,
-      category: "Cloud Security",
-      title: "Zero Trust Architecture",
-      img: cs3,
+      category: "Network Security",
+      title: "Firewall & VPN Setup",
+      img: stm_clubs,
     },
     {
       id: 8,
-      category: "Cloud Security",
-      title: "Security Conference 2024",
-      img: confernce1,
+      category: "Network Security",
+      title: "Wireless Security Audit",
+      img: digital_skills_for_homemakers2,
     },
+
+    // Penetration Testing
     {
       id: 9,
-      category: "Cloud Security",
-      title: "Cloud Security Workshop",
-      img: confernce2,
+      category: "Penetration Testing",
+      title: "Vulnerability Assessment",
+      img: clean_green_community_campaigns,
     },
-    // Incident Response Items
     {
       id: 10,
-      category: "Incident Response",
-      title: "Emergency Response Training",
-      img: ir,
+      category: "Penetration Testing",
+      title: "Web Application Pen Testing",
+      img: energy1,
     },
-    // {
-    //   id: 11,
-    //   category: "Incident Response",
-    //   title: "Incident Response Drill",
-    //   img: ir2,
-    // },
-    // {
-    //   id: 12,
-    //   category: "Incident Response",
-    //   title: "Crisis Management Drill",
-    //   img: ir4,
-    // },
-    // Security Awareness Items
     {
-      id: 13,
-      category: "Security Awareness",
-      title: "Phishing Simulation Workshop",
-      img: sa,
+      id: 11,
+      category: "Penetration Testing",
+      title: "Network Pen Testing",
+      img: soft_skills_communication_training2,
     },
-    // {
-    //   id: 14,
-    //   category: "Security Awareness",
-    //   title: "Security Training Session",
-    //   img: sa2,
-    // },
-    // {
-    //   id: 15,
-    //   category: "Security Awareness",
-    //   title: "Awareness Program Launch",
-    //   img: sa3,
-    // },
-    // Digital Forensics Items
   ];
 
   const [modalData, setModalData] = useState(null);
@@ -193,7 +140,7 @@ const EventGallery = () => {
 
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [modalData, currentImageIndex]);
+  }, [modalData]);
 
   return (
     <section className="w-full py-20 bg-gradient-to-br from-gray-50 to-gray-100 pt-30">
@@ -334,8 +281,6 @@ const EventGallery = () => {
             </motion.div>
           ))}
         </div>
-
-        {/* Empty State - Removed since we're always showing all images */}
       </div>
 
       {/* Enhanced Modal with Carousel */}
@@ -410,7 +355,7 @@ const EventGallery = () => {
                 />
 
                 {/* Image Info Overlay */}
-                {/* <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
                   <div className="text-white">
                     <span className="inline-block px-3 py-1 bg-[#805b3a] rounded-full text-sm font-medium mb-2">
                       {items[currentImageIndex].category}
@@ -422,12 +367,38 @@ const EventGallery = () => {
                       {currentImageIndex + 1} of {items.length}
                     </p>
                   </div>
-                </div> */}
+                </div>
               </div>
             </div>
 
+            {/* Thumbnail Navigation - Desktop */}
+            <div className="hidden lg:flex justify-center space-x-2 p-6 bg-gray-50">
+              {items.map((item, index) => (
+                <motion.button
+                  key={item.id}
+                  onClick={() => goToImage(index)}
+                  className={`relative w-16 h-16 rounded-lg overflow-hidden border-2 transition-all duration-200 ${
+                    index === currentImageIndex
+                      ? "border-[#805b3a] scale-110"
+                      : "border-transparent hover:border-gray-300"
+                  }`}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <img
+                    src={item.img}
+                    alt={item.title}
+                    className="w-full h-full object-cover"
+                  />
+                  {index === currentImageIndex && (
+                    <div className="absolute inset-0 bg-[#805b3a]/20"></div>
+                  )}
+                </motion.button>
+              ))}
+            </div>
+
             {/* Mobile Navigation Dots */}
-            <div className="lg:hidden flex justify-center space-x-2 pb-6 bg-gray-50">
+            <div className="lg:hidden flex justify-center space-x-2 p-6 bg-gray-50">
               {items.map((_, index) => (
                 <motion.button
                   key={index}

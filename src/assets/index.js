@@ -126,7 +126,11 @@ import tech_forseniors2 from "./TechnologyDigitalTransformationPrograms/tech_for
 import tech_seniors3 from "./TechnologyDigitalTransformationPrograms/tech_seniors.png";
 import donation from "./TechnologyDigitalTransformationPrograms/donation.jpeg";
 import donation2 from "./TechnologyDigitalTransformationPrograms/donation2.jpeg";
+import tech from "./TechnologyDigitalTransformationPrograms/tech.jpeg";
+import tech2 from "./TechnologyDigitalTransformationPrograms/tech2.png";
 export {
+  tech2,
+  tech,
   donation,
   donation2,
   tech_forseniors2,
