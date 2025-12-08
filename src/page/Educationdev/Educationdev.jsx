@@ -168,7 +168,7 @@ export default function TechnologyDigitalPrograms({ onCTAClick }) {
               <img
                 src={images[0]}
                 alt={`${initiative.title} 1`}
-                className="w-full h-54 sm:h-44 object-cover object-contain transition-transform duration-500 group-hover:scale-110"
+                className="w-full h-54 sm:h-44 object-fit transition-transform duration-500 group-hover:scale-110"
               />
             </motion.div>
 
@@ -185,7 +185,7 @@ export default function TechnologyDigitalPrograms({ onCTAClick }) {
                   <img
                     src={img}
                     alt={`${initiative.title} ${index + 2}`}
-                    className=" sm:w-78 h-40 sm:h-46 object-cover transition-transform duration-500 group-hover:scale-110"
+                    className=" sm:w-78 h-40 sm:h-46 object-fit transition-transform duration-500 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </motion.div>
@@ -240,7 +240,7 @@ export default function TechnologyDigitalPrograms({ onCTAClick }) {
                 <img
                   src={img}
                   alt={`${initiative.title} ${index + 1}`}
-                  className="h-30 sm:h-44 w-130 object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="h-30 sm:h-44 w-130 object-fit transition-transform duration-500 group-hover:scale-105"
                 />
                 {index === 0 && (
                   <div className="absolute top-2 right-2 bg-black/60 text-white text-xs px-2 py-1 rounded-full">
@@ -260,12 +260,12 @@ export default function TechnologyDigitalPrograms({ onCTAClick }) {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
-              className="sm:col-span-2 relative rounded-xl overflow-hidden bg-center group sm:w-full h-60 sm:h-72"
+              className="sm:col-span-2 relative  rounded-xl overflow-hidden bg-center group sm:w-full "
             >
               <img
                 src={images[0]}
                 alt={`${initiative.title} 1`}
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                className="w-full h-full object-fit transition-transform duration-500 group-hover:scale-105"
               />
             </motion.div>
             <div className="flex flex-col gap-4">

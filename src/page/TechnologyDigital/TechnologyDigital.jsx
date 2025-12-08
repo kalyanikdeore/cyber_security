@@ -73,7 +73,7 @@ export default function TechnologyDigitalPrograms({ onCTAClick }) {
       icon: ShieldCheck,
       description:
         "Our Cyber Safety Awareness Programs are designed to educate and protect individuals, communities, and organizations from rapidly growing online threats. The sessions cover essential topics such as identifying phishing and scam attempts, creating strong and secure passwords, managing privacy settings on social media and digital devices, and ensuring safe financial transactions through UPI, mobile banking, and online payments",
-      images: [cybersafety, cybersafteyawrness2, cyber_safety_programs],
+      images: [cybersafteyawarness, cybersafteyawrness2, cyber_safety_programs],
       imagePosition: "left",
       layoutType: "featured-large",
       stats: ["200+", "Sessions", "95%", "Security Awareness"],
@@ -146,17 +146,7 @@ export default function TechnologyDigitalPrograms({ onCTAClick }) {
               <img
                 src={images[0]}
                 alt={`${initiative.title} 1`}
-                className="
-    // w-full            
-    // h-auto            
-    // sm:h-48              
-    // md:h-56        
-    // lg:h-64             
-    object-cover
-    transition-transform
-    duration-500
-    group-hover:scale-110
-  "
+                className="object-cover transition-transform duration-500 group-hover:scale-110"
               />
             </motion.div>
 
@@ -168,12 +158,12 @@ export default function TechnologyDigitalPrograms({ onCTAClick }) {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="relative rounded-xl object-fit  overflow-hidden  group h-56 sm:h-64"
+                  className="relative rounded-xl   overflow-hidden  group h-56 sm:h-64"
                 >
                   <img
                     src={img}
                     alt={`${initiative.title} ${index + 2}`}
-                    className="object-fit sm:w-78 h-40 sm:h-46  transition-transform duration-500 group-hover:scale-110"
+                    className="object-fit sm:w-78 h-40 sm:h-46   object-cover  transition-transform duration-500 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </motion.div>
@@ -201,7 +191,7 @@ export default function TechnologyDigitalPrograms({ onCTAClick }) {
                 <img
                   src={img}
                   alt={`${initiative.title} ${index + 1}`}
-                  className="  object-fit sm:w-78 h-40 sm:h-46  transition-transform duration-700 group-hover:scale-110"
+                  className="    object-cover sm:w-78 h-40 sm:h-46  transition-transform duration-700 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </motion.div>
@@ -228,7 +218,7 @@ export default function TechnologyDigitalPrograms({ onCTAClick }) {
                 <img
                   src={img}
                   alt={`${initiative.title} ${index + 1}`}
-                  className=" object-fit h-30 sm:h-44 w-[430px] md:w-[500px] lg:w-[550px]
+                  className="   object-fit h-30 sm:h-44 w-[430px] md:w-[500px] lg:w-[550px]
   transition-transform duration-500 group-hover:scale-105"
                 />
 
