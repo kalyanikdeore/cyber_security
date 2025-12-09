@@ -9,14 +9,18 @@ import {
   FaLeaf,
   FaEnvelope,
 } from "react-icons/fa";
+// import hero from "../../assets/logo/hero.jpeg";
+//live
+import hero1 from "../../assets/logo/hero2.jpg";
+import hero2 from "../../assets/logo/hero3.jpg";
+import hero11 from "../../assets/logo/hero11.jpg";
 
 const HeroSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const slides = [
     {
-      image:
-        "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=2070&q=80",
+      image: [hero11],
       title: "Technology & Education",
       subtitle: "Empowering Futures with Digital Skills & Innovation. ",
       description:
@@ -24,8 +28,7 @@ const HeroSection = () => {
       icon: FaGraduationCap,
     },
     {
-      image:
-        "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=2071&q=80",
+      image: [hero1],
       title: "Livelihood & Empowerment",
       subtitle: "Fueling Economic Autonomy for Women.",
       description:
@@ -33,8 +36,7 @@ const HeroSection = () => {
       icon: FaLaptopCode,
     },
     {
-      image:
-        "https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?auto=format&fit=crop&w=2070&q=80",
+      image: [hero2],
       title: "Community & Environment",
       subtitle: "Sustainable Well-being for Healthier Communities.",
       description:

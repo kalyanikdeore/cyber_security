@@ -141,7 +141,7 @@ const Navbar = () => {
         {/* Main Navigation */}
         <nav className="bg-[#faf6f2] shadow-sm">
           <div className="max-w-7xl mx-auto px-4">
-            <div className="flex justify-between items-center h-32">
+            <div className="flex justify-between items-center h-25">
               {/* Logo */}
               <Link
                 to="/"
@@ -150,7 +150,7 @@ const Navbar = () => {
                 <img
                   src={logo}
                   alt="Logo"
-                  className="h-32 w-32 object-contain"
+                  className="h-25 w-25 object-contain"
                 />
               </Link>
 

@@ -115,7 +115,7 @@ import waste2 from "./environmentsustainabilityprograms/waste3.jpeg";
 import cleengreen from "./environmentsustainabilityprograms/cleengreen.png";
 import cleengreen2 from "./environmentsustainabilityprograms/cleengreen2.png";
 import energy1 from "./environmentsustainabilityprograms/energy1.png";
-import energy2 from "./environmentsustainabilityprograms/energy1.png";
+import energy2 from "./environmentsustainabilityprograms/energy2.png";
 import cliement1 from "./environmentsustainabilityprograms/cliement.jpg";
 // import climate2 from "./environmentsustainabilityprograms/climate2.jpg";
 import climate from "./environmentsustainabilityprograms/climate.jpg";
@@ -131,7 +131,62 @@ import tech from "./TechnologyDigitalTransformationPrograms/tech.jpeg";
 import tech2 from "./TechnologyDigitalTransformationPrograms/tech2.png";
 import tech1 from "./TechnologyDigitalTransformationPrograms/tech1.png";
 import scholership11 from "./EducationSkilldevelopementprograms/scholarship11.png";
+import cyber_safety_awarness from "./TechnologyDigitalTransformationPrograms/cyber_safety_awarness.png";
+import career_guidance2 from "./EducationSkilldevelopementprograms/career_guidance2.jpg";
+import stmeclub from "./EducationSkilldevelopementprograms/stmeclub.jpg";
+import ai from "./EducationSkilldevelopementprograms/ai.png";
+import edumaterialsupport from "./EducationSkilldevelopementprograms/edumaterialsupport.jpg";
+// new updated images
+import edumaterial from "./EducationSkilldevelopementprograms/edumaterial.jpg";
+// import edumaterialsupport from "./EducationSkilldevelopementprograms/educationalmaterialsupport.jpg";
+
+import innovation from "./youthleadershipcommunityengagementprograms/innovation.jpg";
+import leadership from "./youthleadershipcommunityengagementprograms/leadership.jpg";
+import climateeducation from "./environmentsustainabilityprograms/climateeducation.jpg";
+import treeplan99 from "./environmentsustainabilityprograms/treeplan99.jpg";
+import health_camps99 from "./Healthwellnesscommunitydevelopementprograms/health_camps99.jpg";
+import nutriation_wellness from "./Healthwellnesscommunitydevelopementprograms/nutriation_wellness.jpg";
+import amentalwellness from "./Healthwellnesscommunitydevelopementprograms/amentalwellness.jpg";
+import amentalwellness2 from "./Healthwellnesscommunitydevelopementprograms/amentalwellness2.jpg";
+// import financial2 from "./womenempowermentivelihoodtraining/financial_literacy_programs2.jpg";
+// import financial_literacy from "./womenempowermentivelihoodtraining/financial_literacy_program2.jpg";
+import financialprogram from "./womenempowermentivelihoodtraining/financialprogram.jpg";
+import educational_material from "./EducationSkilldevelopementprograms/educational_material.jpg";
+import career_guidance99 from "./EducationSkilldevelopementprograms/career_guidance99.jpg";
+import career_guidance909 from "./EducationSkilldevelopementprograms/career_guidance909.jpg";
+import cyber_safetyAwareness1 from "./TechnologyDigitalTransformationPrograms/cyber_safetyAwareness1.jpg";
+import cyber_safetyAwareness2 from "./TechnologyDigitalTransformationPrograms/cyber_safetyawareness2.jpg";
+import cyber_safetyAwareness3 from "./TechnologyDigitalTransformationPrograms/cyber_safetyAwareness3.jpg";
+import Seniors101 from "./TechnologyDigitalTransformationPrograms/Seniors101.jpg";
+import digitaldetox1 from "./TechnologyDigitalTransformationPrograms/digitaldetox1.jpeg";
+import digitaldetox22 from "./TechnologyDigitalTransformationPrograms/digital_detox_parent.webp";
+
 export {
+  digitaldetox1,
+  digitaldetox22,
+  Seniors101,
+  cyber_safetyAwareness1,
+  cyber_safetyAwareness2,
+  cyber_safetyAwareness3,
+  career_guidance909,
+  career_guidance99,
+  educational_material,
+  financialprogram,
+  // financial_literacy,
+  amentalwellness2,
+  amentalwellness,
+  nutriation_wellness,
+  health_camps99,
+  treeplan99,
+  climateeducation,
+  leadership,
+  innovation,
+  edumaterial,
+  edumaterialsupport,
+  ai,
+  stmeclub,
+  career_guidance2,
+  cyber_safety_awarness,
   scholership11,
   tech1,
   tech2,

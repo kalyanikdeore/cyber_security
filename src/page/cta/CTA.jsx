@@ -32,7 +32,7 @@ const CTA = () => {
           onClick={handleRedirect}
           className="bg-[#faf6f2] text-[#805b3a] px-8 py-3 rounded-xl font-semibold text-lg shadow-2xl hover:shadow-[#805b3a]/25 transition-all duration-300 hover:bg-[#f0e6d8]"
         >
-          Enquiry Now
+          Connect With Us
         </motion.button>
       </div>
     </motion.div>

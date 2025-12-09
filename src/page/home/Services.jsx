@@ -9,6 +9,36 @@ import {
   FaArrowRight,
 } from "react-icons/fa";
 
+import {
+  cybersafety,
+  assistivetechnology2,
+  devicedonation,
+  // Seniors101,
+  digitalliteracyworkshops,
+  career_guidance,
+  ai_coding_computational_training,
+  scholership2,
+  Readingclubs,
+  women_micro_entrepreneurs,
+  financialprogram,
+  financial_literacy_programs3,
+  self_help_group_strengthening,
+  health_camps99,
+  nutrition_wellness_workshop,
+  amentalwellness,
+  sanitation_clean_water,
+  treeplan99,
+  waste2,
+  cleengreen,
+  treeplan,
+  leadership,
+  volunteering_community_action_programs3,
+  innovation,
+  soft_skills_communication,
+  climateeducation,
+  energy_conservation_drives,
+} from "../../assets";
+
 const ServicesSection = () => {
   const services = [
     {
@@ -26,6 +56,14 @@ const ServicesSection = () => {
         "Assistive Technology for Inclusion Program",
       ],
       href: "/technology-digital",
+      images: [
+        digitalliteracyworkshops,
+        cybersafety,
+        assistivetechnology2,
+        // Seniors101,
+
+        devicedonation,
+      ],
     },
     {
       icon: FaBuilding,
@@ -43,6 +81,13 @@ const ServicesSection = () => {
         "AI, Coding & Computational Thinking trainings",
       ],
       href: "/education-development",
+      images: [
+        scholership2,
+        career_guidance,
+        ai_coding_computational_training,
+
+        Readingclubs,
+      ],
     },
     {
       icon: FaUserGraduate,
@@ -56,6 +101,12 @@ const ServicesSection = () => {
         "Digital Skills for homemakers and Women Micro-Entrepreneurs",
       ],
       href: "/women-empowerment",
+      images: [
+        financialprogram,
+        women_micro_entrepreneurs,
+        self_help_group_strengthening,
+        financial_literacy_programs3,
+      ],
     },
     {
       icon: FaUsers,
@@ -70,6 +121,12 @@ const ServicesSection = () => {
         "Community Infrastructure Support (Toilets, Purifiers, Clean Drinking Water Units)",
       ],
       href: "/health-wellness",
+      images: [
+        health_camps99,
+        nutrition_wellness_workshop,
+        amentalwellness,
+        sanitation_clean_water,
+      ],
     },
     {
       icon: FaShieldAlt,
@@ -84,6 +141,12 @@ const ServicesSection = () => {
         "Clean & Green Community Campaigns",
       ],
       href: "/environment-program",
+      images: [
+        treeplan99,
+        waste2,
+        climateeducation,
+        energy_conservation_drives,
+      ],
     },
     {
       icon: FaBrain,
@@ -97,23 +160,36 @@ const ServicesSection = () => {
         "Soft Skills & Communication Training",
       ],
       href: "/youth-leadership",
+      images: [
+        leadership,
+        volunteering_community_action_programs3,
+
+        innovation,
+        soft_skills_communication,
+      ],
     },
   ];
 
   return (
-    <section id="services" className="py-20 ">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section
+      id="services"
+      className="py-10 px-6 md:px-12 relative overflow-hidden"
+    >
+      <div className="max-w-6xl mx-auto">
+        {" "}
+        {/* 👈 ADDED WRAPPER WIDTH */}
         <div className="text-center">
           {/* Badge */}
           <span className="inline-block px-4 py-2 bg-[#926b49]/10 border border-[#926b49]/30 rounded-full text-[#926b49] text-sm font-semibold tracking-wide mb-6">
-            Programs
+            What We Do - Our Goals & Program Pillars
           </span>
 
           {/* Main Heading */}
           <h2 className="text-4xl lg:text-4xl font-bold text-gray-900 leading-tight mb-4">
-            Comprehensive{" "}
-            <span className="text-[#926b49]">Training Programs</span>
+            Our Six
+            <span className="text-[#926b49]"> Pillars of Transformation</span>
           </h2>
+
           <motion.div
             className="h-1 w-20 bg-gradient-to-r from-[#926b49] to-[#82613e] mx-auto mb-6"
             initial={{ width: 0 }}
@@ -124,68 +200,87 @@ const ServicesSection = () => {
 
           {/* Short Description */}
           <p className="text-gray-600 text-lg mb-12 max-w-2xl mx-auto">
-            Empowering diverse audiences through specialized education in AI,
-            cybersecurity, and digital responsibility across all segments of
-            society.
+            Explore the comprehensive areas where we are dedicated to creating
+            long-term, sustainable change.
           </p>
         </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* 1 Row 2 Col Alternate Layout */}
+        <div className="space-y-14">
           {services.map((service, index) => (
-            <motion.div
+            <div
               key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              whileHover={{
-                y: -5,
-                backgroundColor: "#f0e6d8",
-                borderColor: "#805b3a",
-              }}
-              className="bg-white/80 rounded-2xl p-6 border border-[#a4947d]/30 hover:shadow-xl transition-all duration-300 flex flex-col h-full"
+              className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${
+                index % 2 !== 0 ? "lg:flex-row-reverse" : ""
+              }`}
             >
-              <div className="w-14 h-14 bg-[#805b3a]/10 rounded-xl flex items-center justify-center mb-4">
-                <service.icon className="text-[#805b3a] text-2xl" />
-              </div>
-              <h3 className="text-xl font-bold text-black mb-3 ">
-                {service.title}
-              </h3>
-              <p className="text-[#805b3a] mb-4 leading-relaxed text-justify">
-                {service.description}
-              </p>
-              <div className="space-y-2 mb-6 flex-grow">
-                {service.features.map((feature, featureIndex) => (
-                  <div
-                    key={featureIndex}
-                    className="flex items-center space-x-2"
-                  >
-                    <div className="w-2 h-2 bg-[#805b3a] rounded-full flex-shrink-0"></div>
-                    <span className="text-black text-sm">{feature}</span>
-                  </div>
-                ))}
+              {/* IMAGE SECTION */}
+              <div
+                className={`${index % 2 !== 0 ? "lg:order-2" : "lg:order-1"}`}
+              >
+                <div className="grid grid-cols-2 gap-4">
+                  <img
+                    src={service.images[0]}
+                    alt=""
+                    className="w-full h-48 object-cover rounded-2xl shadow-md"
+                  />
+                  <img
+                    src={service.images[1]}
+                    alt=""
+                    className="w-full h-48 object-cover rounded-2xl shadow-md"
+                  />
+                </div>
+                <div className="grid grid-cols-2 gap-4 mt-4">
+                  <img
+                    src={service.images[2]}
+                    alt=""
+                    className="w-full h-48 object-cover rounded-2xl shadow-md"
+                  />
+                  <img
+                    src={service.images[3]}
+                    alt=""
+                    className="w-full h-48 object-cover rounded-2xl shadow-md"
+                  />
+                </div>
               </div>
 
-              {/* Updated Learn More Button */}
-              <motion.a
-                href={service.href}
-                whileHover={{ scale: 1.05, backgroundColor: "#805b3a" }}
-                whileTap={{ scale: 0.95 }}
-                className="mt-auto w-full bg-[#805b3a]/10 hover:bg-[#805b3a] text-[#805b3a] hover:text-white py-3 px-4 rounded-xl font-semibold flex items-center justify-center gap-2 transition-all duration-300 border border-[#805b3a]/30 hover:border-[#805b3a]"
+              {/* CONTENT SECTION */}
+              <div
+                className={`${index % 2 !== 0 ? "lg:order-1" : "lg:order-2"}`}
               >
-                <span>Learn More</span>
-                <motion.span
-                  initial={{ x: 0 }}
-                  whileHover={{ x: 3 }}
-                  transition={{ duration: 0.2 }}
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="w-14 h-14 bg-[#805b3a]/10 rounded-xl flex items-center justify-center">
+                    <service.icon className="text-[#805b3a] text-3xl" />
+                  </div>
+                  <h3 className="text-3xl font-bold text-gray-900">
+                    {service.title}
+                  </h3>
+                </div>
+
+                <p className="text-gray-700 text-lg mb-5 leading-relaxed text-justify">
+                  {service.description}
+                </p>
+
+                <div className="space-y-3 mb-7">
+                  {service.features.map((feature, i) => (
+                    <div key={i} className="flex items-start gap-2">
+                      <div className="w-2 h-2 bg-[#805b3a] rounded-full mt-2" />
+                      <span className="text-gray-800 text-base">{feature}</span>
+                    </div>
+                  ))}
+                </div>
+
+                <a
+                  href={service.href}
+                  className="inline-flex items-center gap-2 text-xl font-semibold text-[#805b3a] hover:underline"
                 >
-                  <FaArrowRight className="text-sm" />
-                </motion.span>
-              </motion.a>
-            </motion.div>
+                  Learn More <FaArrowRight className="text-lg" />
+                </a>
+              </div>
+            </div>
           ))}
         </div>
-      </div>
+      </div>{" "}
+      {/* 👈 WRAPPER END */}
     </section>
   );
 };

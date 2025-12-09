@@ -7,9 +7,11 @@ import {
   FaChartLine,
   FaHeart,
 } from "react-icons/fa";
+import { Link } from "react-router-dom";
 import CTA from "../cta/CTA";
-import about3 from "../../assets/about/about_us_1.png";
-
+import about2 from "../../assets/about/about_us_1.png";
+import about1 from "../../assets/TechnologyDigitalTransformationPrograms/cyber_safety_programs.jpeg";
+import about3 from "../../assets/EducationSkilldevelopementprograms/learning_corners.jpeg";
 const AboutSection = () => {
   // Animation variants
   const containerVariants = {
@@ -72,7 +74,7 @@ const AboutSection = () => {
           <h2 className="text-4xl lg:text-3xl font-bold text-gray-900 leading-tight mb-4">
             Navanvesha means{" "}
             <span className="text-[#926b49]">
-              “New Exploration” or “Renewed Discovery.”
+              "New Exploration" or "Renewed Discovery."
             </span>
           </h2>
           <motion.div
@@ -92,7 +94,7 @@ const AboutSection = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Content Side */}
+          {/* Content Side - UNCHANGED */}
           <motion.div
             variants={containerVariants}
             initial="hidden"
@@ -154,17 +156,24 @@ const AboutSection = () => {
                 ))}
               </div>
             </motion.div>
+            {/* <div className="mt-6">
+              <Link
+                to="/about"
+                className="inline-flex items-center px-6 py-3  text-[#805b3a] font-semibold rounded-full shadow-lg transition duration-300"
+              >
+                About Us
+              </Link>
+            </div> */}
 
             {/* Stats */}
-            {/* <motion.div
+            <motion.div
               variants={itemVariants}
-              className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-6"
+              className="grid grid-cols-2 md:grid-cols-3 gap-6 pt-6"
             >
               {[
-                { number: "6+", label: "Focus Areas" },
-                { number: "1000+", label: "Lives Impacted" },
-                { number: "50+", label: "Community Programs" },
-                { number: "100%", label: "Transparent Operations" },
+                { number: "1,00,000+ ", label: " Lives Touched" },
+                { number: "6", label: "Core  Pillars " },
+                { number: "100+", label: "Partners" },
               ].map((stat, index) => (
                 <motion.div
                   key={index}
@@ -180,10 +189,10 @@ const AboutSection = () => {
                   </div>
                 </motion.div>
               ))}
-            </motion.div> */}
+            </motion.div>
           </motion.div>
 
-          {/* Image Side */}
+          {/* Image Side - UPDATED with 3-image grid */}
           <motion.div
             variants={imageVariants}
             initial="hidden"
@@ -191,15 +200,60 @@ const AboutSection = () => {
             viewport={{ once: true }}
             className="relative"
           >
-            {/* Main Image */}
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-[#a4947d]/20">
-              <img
-                src={about3}
-                alt="Navanvesha Foundation Community Empowerment"
-                className="w-full h-[600px] object-cover"
-              />
-              {/* Image overlay for better text contrast */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#805b3a]/10 to-transparent"></div>
+            {/* Image Grid Container */}
+            <div className="grid grid-cols-2 grid-rows-2 gap-4 h-[600px]">
+              {/* First Row: Single column spanning both columns */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true }}
+                className="col-span-2 row-span-1"
+              >
+                <div className="relative h-full rounded-2xl overflow-hidden shadow-xl border-4 border-[#a4947d]/20">
+                  <img
+                    src={about2} // Your first image
+                    alt="Navanvesha Foundation Community Impact"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#805b3a]/10 to-transparent"></div>
+                </div>
+              </motion.div>
+
+              {/* Second Row: Two columns */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                viewport={{ once: true }}
+                className="col-span-1 row-span-1"
+              >
+                <div className="relative h-full rounded-2xl overflow-hidden shadow-xl border-4 border-[#a4947d]/20">
+                  <img
+                    src={about1} // Your second image
+                    alt="Navanvesha Foundation Education Programs"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#805b3a]/10 to-transparent"></div>
+                </div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.6 }}
+                viewport={{ once: true }}
+                className="col-span-1 row-span-1"
+              >
+                <div className="relative h-full rounded-2xl overflow-hidden shadow-xl border-4 border-[#a4947d]/20">
+                  <img
+                    src={about3} // Your third image
+                    alt="Navanvesha Foundation Team Collaboration"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#805b3a]/10 to-transparent"></div>
+                </div>
+              </motion.div>
             </div>
 
             {/* Background Decorative Elements */}

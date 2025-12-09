@@ -1,8 +1,9 @@
-import React, { useMemo } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import { FiShield, FiClock } from "react-icons/fi";
 import { SiHackthebox } from "react-icons/si";
-import about2 from "../../assets/about/about_us_2.png";
+
+import { leadership, innovation, scholership2 } from "../../assets";
 
 export default function AboutCyberSecurity() {
   const features = [
@@ -23,14 +24,6 @@ export default function AboutCyberSecurity() {
     },
   ];
 
-  const cyberSecurityImages = [about2];
-
-  const randomImage = useMemo(() => {
-    return cyberSecurityImages[
-      Math.floor(Math.random() * cyberSecurityImages.length)
-    ];
-  }, []);
-
   return (
     <section className="py-20 px-6 pt-30">
       <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-14 items-center">
@@ -44,7 +37,6 @@ export default function AboutCyberSecurity() {
           <motion.span
             initial={{ opacity: 0, y: -10 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
             transition={{ duration: 0.4 }}
             className="text-sm tracking-wider font-semibold bg-[#805b3a] text-white px-4 py-1 rounded-full"
           >
@@ -54,12 +46,10 @@ export default function AboutCyberSecurity() {
           <motion.h2
             initial={{ opacity: 0, y: -15 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
             transition={{ duration: 0.6 }}
             className="text-4xl font-extrabold text-[#543f29] leading-tight mt-4"
           >
-            About Us{" "}
-            {/* <span className="text-[#805b3a]">Navanvesha Foundation</span> */}
+            About Us
           </motion.h2>
 
           <motion.div
@@ -67,12 +57,12 @@ export default function AboutCyberSecurity() {
             whileInView={{ width: "9rem" }}
             transition={{ duration: 0.6 }}
             className="h-1 bg-[#805b3a] mt-5 rounded-lg"
-          ></motion.div>
+          />
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
+            transition={{ duration: 0.7 }}
             className="mt-6 text-[#5a4733] text-lg leading-relaxed text-justify"
           >
             Navanvesha Foundation is a socially driven, non-profit organization
@@ -87,7 +77,7 @@ export default function AboutCyberSecurity() {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.75, delay: 0.3 }}
+            transition={{ duration: 0.75 }}
             className="mt-5 text-[#5a4733] text-lg leading-relaxed text-justify"
           >
             We specialize in creating pathways for growth by bridging skill
@@ -101,7 +91,7 @@ export default function AboutCyberSecurity() {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.75, delay: 0.3 }}
+            transition={{ duration: 0.75 }}
             className="mt-5 text-[#5a4733] text-lg leading-relaxed text-justify"
           >
             Our approach integrates capacity building, digital literacy,
@@ -110,20 +100,8 @@ export default function AboutCyberSecurity() {
             grassroots level.
           </motion.p>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.75, delay: 0.3 }}
-            className="mt-5 text-[#5a4733] text-lg leading-relaxed text-justify"
-          >
-            With a commitment to accountability, transparency, and
-            community-first action, Navanvesha Foundation continues to work
-            towards a future where innovation meets compassion, and progress is
-            shared by all.
-          </motion.p>
-
           {/* FEATURES */}
-          <div className="mt-10 grid gap-5 sm:grid-cols-2">
+          <div className="mt-5 grid gap-5 sm:grid-cols-2">
             {features.map((feature, i) => (
               <motion.div
                 key={feature.id}
@@ -142,53 +120,35 @@ export default function AboutCyberSecurity() {
               </motion.div>
             ))}
           </div>
-
-          {/* MISSION & VISION */}
-          {/* <motion.div
-            initial={{ opacity: 0, y: 25 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="mt-10 space-y-6"
-          >
-            <div className="bg-gradient-to-r from-[#f8f4f0] to-[#f0e6d8] p-6 rounded-xl border border-[#d4c5b0]">
-              <h3 className="text-xl font-bold text-[#805b3a] mb-2">
-                Our Mission
-              </h3>
-              <p className="text-[#5a4733]">
-                "To empower individuals and communities through
-                technology-driven education, skill development, and inclusive
-                social initiatives that create sustainable and measurable
-                impact."
-              </p>
-            </div>
-
-            <div className="bg-gradient-to-r from-[#f8f4f0] to-[#f0e6d8] p-6 rounded-xl border border-[#d4c5b0]">
-              <h3 className="text-xl font-bold text-[#805b3a] mb-2">
-                Our Vision
-              </h3>
-              <p className="text-[#5a4733]">
-                "To build a digitally empowered, skilled, and equitable society
-                where opportunities for growth and transformation are accessible
-                to all."
-              </p>
-            </div>
-          </motion.div> */}
         </motion.div>
 
-        {/* RIGHT IMAGE */}
+        {/* RIGHT SIDE IMAGES */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.85 }}
+          initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          animate={{ y: [0, -15, 0] }}
-          className="flex justify-center"
+          transition={{ duration: 0.7 }}
+          className="grid grid-cols-2 gap-4 items-center"
         >
-          <img
-            src={randomImage}
-            alt="Navanvesha Foundation"
-            className="w-full max-w-lg h-[450px] object-cover rounded-3xl  shadow-[0_0_35px_#c6af93]"
+          <div className="flex flex-col gap-4">
+            <motion.img
+              src={scholership2}
+              className="w-full h-56 object-cover rounded-2xl shadow-[0_0_25px_#c6af93] hover:scale-105 transition-all duration-500"
+              animate={{ y: [0, -10, 0] }}
+              transition={{ repeat: Infinity, duration: 4 }}
+            />
+            <motion.img
+              src={innovation}
+              className="w-full h-56 object-cover rounded-2xl shadow-[0_0_25px_#c6af93] hover:scale-105 transition-all duration-500"
+              animate={{ y: [0, -12, 0] }}
+              transition={{ repeat: Infinity, duration: 4 }}
+            />
+          </div>
+
+          <motion.img
+            src={leadership}
+            className="w-full h-[460px] object-cover rounded-3xl shadow-[0_0_35px_#c6af93] hover:scale-105 transition-all duration-500"
+            animate={{ y: [0, -15, 0] }}
+            transition={{ repeat: Infinity, duration: 4.5 }}
           />
         </motion.div>
       </div>
