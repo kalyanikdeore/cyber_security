@@ -157,11 +157,16 @@ import career_guidance909 from "./EducationSkilldevelopementprograms/career_guid
 import cyber_safetyAwareness1 from "./TechnologyDigitalTransformationPrograms/cyber_safetyAwareness1.jpg";
 import cyber_safetyAwareness2 from "./TechnologyDigitalTransformationPrograms/cyber_safetyawareness2.jpg";
 import cyber_safetyAwareness3 from "./TechnologyDigitalTransformationPrograms/cyber_safetyAwareness3.jpg";
-import Seniors101 from "./TechnologyDigitalTransformationPrograms/Seniors101.jpg";
+import Seniors101 from "./TechnologyDigitalTransformationPrograms/Seniors101.png";
 import digitaldetox1 from "./TechnologyDigitalTransformationPrograms/digitaldetox1.jpeg";
 import digitaldetox22 from "./TechnologyDigitalTransformationPrograms/digital_detox_parent.webp";
-
+import techs1 from "./TechnologyDigitalTransformationPrograms/techs1.jpg";
+import techs2 from "./TechnologyDigitalTransformationPrograms/techs2.jpg";
+import about11 from "./logo/about11.jpg";
 export {
+  about11,
+  techs1,
+  techs2,
   digitaldetox1,
   digitaldetox22,
   Seniors101,

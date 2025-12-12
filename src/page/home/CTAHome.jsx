@@ -14,9 +14,9 @@ const NavanveshaCTA = () => {
   };
 
   return (
-    <section className="bg-gray-50 py-5">
-      <div className="max-w-6xl mx-auto">
-        {/* Motion Card Container */}
+    <section className="bg-gray-50 py-5 sm:py-10">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Motion Card Container - Desktop remains unchanged, only mobile adjustments */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -24,29 +24,29 @@ const NavanveshaCTA = () => {
           viewport={{ once: true }}
           className="bg-white rounded-2xl shadow-xl border border-gray-200 overflow-hidden"
         >
-          <div className="px-8 py-12 lg:px-16 lg:py-10">
+          <div className="px-4 py-8 sm:px-6 sm:py-10 md:px-8 md:py-12 lg:px-16 lg:py-10">
             <div className="text-center">
-              {/* Heading */}
-              <h2 className="text-4xl lg:text-3xl font-bold text-gray-900 leading-tight mb-6">
+              {/* Heading - Responsive text size for mobile */}
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-bold text-gray-900 leading-tight mb-4 sm:mb-5 md:mb-6">
                 Empower Communities Through
                 <span className="text-[#926b49]"> Sustainable Change</span>
               </h2>
 
-              {/* Description */}
-              <p className="text-gray-600 text-lg mb-6 max-w-2xl mx-auto">
+              {/* Description - Responsive text size for mobile */}
+              <p className="text-gray-600 text-sm sm:text-base md:text-lg lg:text-lg mb-6 sm:mb-6 max-w-2xl mx-auto">
                 Join us in creating lasting impact through education, digital
                 transformation, and community development initiatives that
                 bridge gaps and foster growth.
               </p>
             </div>
 
-            {/* CTA Buttons */}
+            {/* CTA Buttons - Full width on mobile */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               {/* <motion.button
                 onClick={handleViewPrograms}
                 whileHover={{ scale: 1.08 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-[#926b49] text-white py-3 px-8 rounded-lg font-semibold hover:bg-[#7a5a3d] transition-all duration-300 shadow-lg min-w-[200px]"
+                className="w-full sm:w-auto bg-[#926b49] text-white py-3 px-8 rounded-lg font-semibold hover:bg-[#7a5a3d] transition-all duration-300 shadow-lg min-w-[200px] text-center"
               >
                 View Our Programs
               </motion.button> */}
@@ -55,7 +55,7 @@ const NavanveshaCTA = () => {
                 onClick={handleGetInvolved}
                 whileHover={{ scale: 1.08 }}
                 whileTap={{ scale: 0.95 }}
-                className="border-2 border-[#926b49] text-[#926b49] py-3 px-8 rounded-lg font-semibold hover:bg-[#926b49] hover:text-white transition-all duration-300 min-w-[200px]"
+                className="w-full sm:w-auto border-2 border-[#926b49] text-[#926b49] py-3 px-8 rounded-lg font-semibold hover:bg-[#926b49] hover:text-white transition-all duration-300 min-w-[200px] text-center"
               >
                 Contact Our Team
               </motion.button>

@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { motion } from "framer-motion";
-import { useNavigate } from "react-router-dom"; // If using React Router
+import { useNavigate } from "react-router-dom";
 
 const MapSection = () => {
-  const navigate = useNavigate(); // React Router navigation hook
+  const navigate = useNavigate();
+
   const locations = [
     {
       id: 1,
@@ -16,8 +16,7 @@ const MapSection = () => {
     },
   ];
 
-  const [selectedLocation, setSelectedLocation] = useState(locations[0]);
-  const [isHovered, setIsHovered] = useState(null);
+  const [selectedLocation] = useState(locations[0]);
 
   // Simple iframe src without API key
   const getSimpleMapUrl = (location) => {
@@ -25,126 +24,37 @@ const MapSection = () => {
     return `https://maps.google.com/maps?q=${encodedQuery}&t=&z=15&ie=UTF8&iwloc=&output=embed`;
   };
 
-  // Handle Contact Us button click
   const handleContactUs = () => {
-    // Option 1: If using React Router
     navigate("/contact");
-
-    // Option 2: If you want to scroll to contact section on same page
-    // const contactSection = document.getElementById("contact");
-    // if (contactSection) {
-    //   contactSection.scrollIntoView({ behavior: "smooth" });
-    // }
-
-    // Option 3: For external linking or anchor links
-    // window.location.href = "/contact"; // Change to your contact page URL
-  };
-
-  // Animation variants
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut",
-      },
-    },
-  };
-
-  const mapVariants = {
-    hidden: { opacity: 0, scale: 0.9 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: {
-        duration: 0.7,
-        ease: "easeOut",
-      },
-    },
-  };
-
-  const cardVariants = {
-    hidden: { opacity: 0, x: 30 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut",
-      },
-    },
   };
 
   return (
     <section className="w-full py-16 bg-gradient-to-br from-slate-50 to-blue-50/30">
       <div className="container mx-auto px-4">
-        <motion.div
-          className="text-center"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
-          variants={containerVariants}
-        >
-          {/* Badge */}
-          <motion.span
-            className="inline-block px-4 py-2 bg-[#926b49]/10 border border-[#926b49]/30 rounded-full text-[#926b49] text-sm font-semibold tracking-wide mb-6"
-            variants={itemVariants}
-          >
+        {/* Heading */}
+        <div className="text-center">
+          <span className="inline-block px-4 py-2 bg-[#926b49]/10 border border-[#926b49]/30 rounded-full text-[#926b49] text-sm font-semibold tracking-wide mb-6">
             Our Location
-          </motion.span>
+          </span>
 
-          {/* Main Heading */}
-          <motion.h2
-            className="text-4xl lg:text-4xl font-bold text-gray-900 leading-tight mb-4"
-            variants={itemVariants}
-          >
+          <h2 className="text-4xl lg:text-4xl font-bold text-gray-900 leading-tight mb-4">
             Find <span className="text-[#926b49]"> Our Office</span>
-          </motion.h2>
+          </h2>
 
-          <motion.div
-            className="h-1 w-20 bg-gradient-to-r from-[#926b49] to-[#82613e] mx-auto mb-6"
-            initial={{ width: 0 }}
-            whileInView={{ width: "5rem" }}
-            transition={{ delay: 0.3, duration: 0.5 }}
-            viewport={{ once: true }}
-          />
+          <div className="h-1 w-20 bg-gradient-to-r from-[#926b49] to-[#82613e] mx-auto mb-6" />
 
-          {/* Short Description */}
-          <motion.p
-            className="text-gray-600 text-lg mb-12 max-w-2xl mx-auto"
-            variants={itemVariants}
-          >
+          <p className="text-gray-600 text-lg mb-12 max-w-2xl mx-auto">
             Visit our conveniently located office for exceptional service and
             support.
-          </motion.p>
-        </motion.div>
+          </p>
+        </div>
 
-        <motion.div
-          className="flex flex-col lg:flex-row gap-6 max-w-6xl mx-auto"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
-          variants={containerVariants}
-        >
-          {/* Map Container - Smaller Height */}
-          <motion.div className="lg:w-2/3" variants={mapVariants}>
+        {/* Layout */}
+        <div className="flex flex-col lg:flex-row gap-6 max-w-6xl mx-auto">
+          {/* Map Section */}
+          <div className="lg:w-2/3">
             <div className="relative group">
-              <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-[#926b49] to-[#82613e] rounded-xl blur-lg opacity-20 group-hover:opacity-30 transition-opacity duration-300"
-                whileHover={{ opacity: 0.4 }}
-              />
+              <div className="absolute inset-0 bg-gradient-to-r from-[#926b49] to-[#82613e] rounded-xl blur-lg opacity-20 group-hover:opacity-30 transition-opacity duration-300" />
               <div className="relative h-64 lg:h-80 rounded-xl overflow-hidden shadow-xl border border-white/20 bg-white">
                 <iframe
                   src={getSimpleMapUrl(selectedLocation)}
@@ -159,75 +69,41 @@ const MapSection = () => {
                 ></iframe>
               </div>
             </div>
-          </motion.div>
+          </div>
 
-          {/* Single Location Info Section */}
-          <motion.div className="lg:w-1/3" variants={cardVariants}>
-            <motion.div
-              className="bg-white/80 backdrop-blur-sm rounded-xl shadow-xl border border-white/20 p-6 h-full flex flex-col"
-              whileHover={{
-                y: -5,
-                boxShadow: "0 20px 40px rgba(0,0,0,0.1)",
-              }}
-              transition={{ type: "spring", stiffness: 300 }}
-            >
-              {/* Header with icon and title */}
-              <motion.div
-                className="flex items-center justify-between mb-6"
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.4, duration: 0.5 }}
-                viewport={{ once: true }}
-              >
+          {/* Info Section */}
+          <div className="lg:w-1/3">
+            <div className="bg-white/80 backdrop-blur-sm rounded-xl shadow-xl border border-white/20 p-6 h-full flex flex-col hover:-translate-y-1 hover:shadow-2xl transition-all duration-300">
+              {/* Header */}
+              <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center gap-3">
                   <div className="w-2 h-6 bg-gradient-to-b from-[#926b49] to-[#82613e] rounded-full"></div>
                   <h3 className="text-xl font-bold text-gray-800">
                     Our Details
                   </h3>
                 </div>
-              </motion.div>
+              </div>
 
-              {/* Single Location Card */}
               <div className="space-y-4 flex-1">
-                <motion.div
-                  className="p-4 rounded-xl bg-gradient-to-r from-[#926b49]/10 to-[#82613e]/10 border-2 border-[#926b49]/20 shadow-lg flex-1"
-                  whileHover={{ scale: 1.02 }}
-                  transition={{ type: "spring", stiffness: 400 }}
-                >
+                {/* Card */}
+                <div className="p-4 rounded-xl bg-gradient-to-r from-[#926b49]/10 to-[#82613e]/10 border-2 border-[#926b49]/20 shadow-lg flex-1 hover:scale-[1.02] transition-all duration-300">
                   <div className="flex flex-col h-full">
                     <div className="flex items-start justify-between mb-4">
                       <div className="flex-1">
                         <div className="flex items-center gap-2 mb-2">
-                          <motion.h4
-                            className="font-bold text-[#926b49] text-lg"
-                            whileHover={{ scale: 1.05 }}
-                          >
+                          <h4 className="font-bold text-[#926b49] text-lg">
                             {locations[0].name}
-                          </motion.h4>
-                          <motion.span
-                            className="px-2 py-1 bg-[#926b49]/20 text-[#926b49] text-xs rounded-full font-medium"
-                            whileHover={{ scale: 1.1 }}
-                          >
+                          </h4>
+                          <span className="px-2 py-1 bg-[#926b49]/20 text-[#926b49] text-xs rounded-full font-medium">
                             Active
-                          </motion.span>
+                          </span>
                         </div>
-                        <motion.p
-                          className="text-gray-600 text-sm mb-4 leading-relaxed"
-                          initial={{ opacity: 0 }}
-                          whileInView={{ opacity: 1 }}
-                          transition={{ delay: 0.6 }}
-                          viewport={{ once: true }}
-                        >
+                        <p className="text-gray-600 text-sm mb-4 leading-relaxed">
                           {locations[0].address}
-                        </motion.p>
+                        </p>
                       </div>
-                      <motion.div
-                        className="p-2 rounded-lg bg-[#926b49]/20 text-[#926b49] ml-2"
-                        whileHover={{
-                          scale: 1.1,
-                          rotate: 5,
-                        }}
-                      >
+
+                      <div className="p-2 rounded-lg bg-[#926b49]/20 text-[#926b49] ml-2 hover:rotate-3 transition-all">
                         <svg
                           className="w-5 h-5"
                           fill="none"
@@ -247,32 +123,14 @@ const MapSection = () => {
                             d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                           />
                         </svg>
-                      </motion.div>
+                      </div>
                     </div>
 
-                    {/* Contact Information */}
-                    <motion.div
-                      className="space-y-3 mt-auto"
-                      initial="hidden"
-                      whileInView="visible"
-                      viewport={{ once: true }}
-                      variants={{
-                        hidden: { opacity: 0 },
-                        visible: {
-                          opacity: 1,
-                          transition: {
-                            staggerChildren: 0.1,
-                          },
-                        },
-                      }}
-                    >
-                      <motion.div
-                        className="flex items-center gap-2 text-sm text-gray-600"
-                        variants={itemVariants}
-                        whileHover={{ x: 5 }}
-                      >
+                    {/* Contact */}
+                    <div className="space-y-3 mt-auto">
+                      <div className="flex items-center gap-2 text-sm text-gray-600 hover:translate-x-1 transition-all">
                         <svg
-                          className="w-4 h-4 flex-shrink-0 text-[#926b49]"
+                          className="w-4 h-4 text-[#926b49]"
                           fill="none"
                           stroke="currentColor"
                           viewBox="0 0 24 24"
@@ -285,15 +143,11 @@ const MapSection = () => {
                           />
                         </svg>
                         <span className="truncate">{locations[0].phone}</span>
-                      </motion.div>
+                      </div>
 
-                      <motion.div
-                        className="flex items-center gap-2 text-sm text-gray-600"
-                        variants={itemVariants}
-                        whileHover={{ x: 5 }}
-                      >
+                      <div className="flex items-center gap-2 text-sm text-gray-600 hover:translate-x-1 transition-all">
                         <svg
-                          className="w-4 h-4 flex-shrink-0 text-[#926b49]"
+                          className="w-4 h-4 text-[#926b49]"
                           fill="none"
                           stroke="currentColor"
                           viewBox="0 0 24 24"
@@ -306,25 +160,17 @@ const MapSection = () => {
                           />
                         </svg>
                         <span className="truncate">{locations[0].email}</span>
-                      </motion.div>
-                    </motion.div>
+                      </div>
+                    </div>
                   </div>
-                </motion.div>
+                </div>
               </div>
 
-              {/* Alternative: Larger Contact Us Button at Bottom */}
-              <motion.div
-                className="mt-6 pt-6 border-t border-gray-200/50"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.8 }}
-                viewport={{ once: true }}
-              >
-                <motion.button
+              {/* Contact Button */}
+              <div className="mt-6 pt-6 border-t border-gray-200/50">
+                <button
                   onClick={handleContactUs}
-                  className="w-full py-3 bg-gradient-to-r from-[#926b49] to-[#82613e] text-white font-semibold rounded-xl hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-3"
-                  whileHover={{ scale: 1.02, y: -2 }}
-                  whileTap={{ scale: 0.98 }}
+                  className="w-full py-3 bg-gradient-to-r from-[#926b49] to-[#82613e] text-white font-semibold rounded-xl hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-3"
                 >
                   <svg
                     className="w-5 h-5"
@@ -340,11 +186,11 @@ const MapSection = () => {
                     />
                   </svg>
                   Get in Touch
-                </motion.button>
-              </motion.div>
-            </motion.div>
-          </motion.div>
-        </motion.div>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );

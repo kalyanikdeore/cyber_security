@@ -9,8 +9,7 @@ import {
   FaLeaf,
   FaEnvelope,
 } from "react-icons/fa";
-// import hero from "../../assets/logo/hero.jpeg";
-//live
+
 import hero1 from "../../assets/logo/hero2.jpg";
 import hero2 from "../../assets/logo/hero3.jpg";
 import hero11 from "../../assets/logo/hero11.jpg";
@@ -22,7 +21,7 @@ const HeroSection = () => {
     {
       image: [hero11],
       title: "Technology & Education",
-      subtitle: "Empowering Futures with Digital Skills & Innovation. ",
+      subtitle: "Empowering Futures with Digital Skills & Innovation.",
       description:
         "Bridging the digital chasm to create a digitally literate and skilled generation..",
       icon: FaGraduationCap,
@@ -103,7 +102,15 @@ const HeroSection = () => {
   const IconComponent = slides[currentSlide].icon;
 
   return (
-    <section className="relative h-[79vh] min-h-[500px] max-h-[700px] overflow-hidden">
+    <section
+      className="
+        relative 
+        h-[79vh] min-h-[500px] max-h-[700px] 
+        sm:h-[79vh] sm:min-h-[500px] sm:max-h-[700px]
+        h-[60vh]  /* mobile responsive height */
+        overflow-hidden
+      "
+    >
       <div className="absolute inset-0">
         <AnimatePresence mode="wait">
           <motion.div
@@ -117,7 +124,7 @@ const HeroSection = () => {
             <img
               src={slides[currentSlide].image}
               alt={slides[currentSlide].title}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover sm:h-full h-[60vh]" // mobile image height
             />
             <div className="absolute inset-0 bg-gradient-to-r from-[#805b3a]/40 to-[#a4947d]/60"></div>
             <div className="absolute inset-0 bg-black/30"></div>

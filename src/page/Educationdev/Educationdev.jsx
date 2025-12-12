@@ -154,20 +154,20 @@ export default function TechnologyDigitalPrograms({ onCTAClick }) {
     },
   ];
 
-  // Function to render different image layouts
+  // Function to render different image layouts with mobile responsiveness
   const renderImageLayout = (initiative) => {
     const { images, layoutType } = initiative;
 
     switch (layoutType) {
       case "grid-3-even":
         return (
-          <div className="grid grid-cols-1 gap-4">
+          <div className="grid grid-cols-1 gap-3 sm:gap-4">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
-              className="relative rounded-xl overflow-hidden group h-64"
+              className="relative rounded-xl overflow-hidden group h-48 sm:h-56 md:h-64"
             >
               <img
                 src={images[0]}
@@ -176,7 +176,7 @@ export default function TechnologyDigitalPrograms({ onCTAClick }) {
               />
             </motion.div>
 
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 gap-3 sm:gap-4">
               {images.slice(1).map((img, index) => (
                 <motion.div
                   key={index + 1}
@@ -184,7 +184,7 @@ export default function TechnologyDigitalPrograms({ onCTAClick }) {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="relative rounded-xl overflow-hidden group h-64"
+                  className="relative rounded-xl overflow-hidden group h-40 sm:h-48 md:h-56"
                 >
                   <img
                     src={img}
@@ -200,7 +200,7 @@ export default function TechnologyDigitalPrograms({ onCTAClick }) {
 
       case "vertical-stack":
         return (
-          <div className="relative w-full min-h-[400px]">
+          <div className="relative w-full min-h-[250px] sm:min-h-[300px] md:min-h-[400px]">
             {images.map((img, index) => (
               <motion.div
                 key={index}
@@ -209,15 +209,24 @@ export default function TechnologyDigitalPrograms({ onCTAClick }) {
                 transition={{ duration: 0.6, delay: index * 0.2 }}
                 viewport={{ once: true }}
                 className={`absolute rounded-xl overflow-hidden group
-            ${index === 0 && "top-0 left-0 w-2/3 h-72"}
-            ${index === 1 && "top-16 left-24 w-2/3 h-72"}
-            ${index === 2 && "top-32 left-48 w-2/3 h-72"}
-          `}
+                  ${
+                    index === 0 &&
+                    "top-0 left-0 w-2/3 h-48 sm:h-56 md:h-64 lg:h-72"
+                  }
+                  ${
+                    index === 1 &&
+                    "top-8 sm:top-12 md:top-16 left-12 sm:left-16 md:left-24 w-2/3 h-48 sm:h-56 md:h-64 lg:h-72"
+                  }
+                  ${
+                    index === 2 &&
+                    "top-16 sm:top-24 md:top-32 left-24 sm:left-28 md:left-48 w-2/3 h-48 sm:h-56 md:h-64 lg:h-72"
+                  }
+                `}
               >
                 <img
                   src={img}
                   alt={`${initiative.title} ${index + 1}`}
-                  className="w-full h-full object-fit transition-transform duration-700 group-hover:scale-110"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </motion.div>
@@ -227,7 +236,7 @@ export default function TechnologyDigitalPrograms({ onCTAClick }) {
 
       case "featured-large":
         return (
-          <div className="space-y-4">
+          <div className="space-y-3 sm:space-y-4">
             {images.map((img, index) => (
               <motion.div
                 key={index}
@@ -242,10 +251,10 @@ export default function TechnologyDigitalPrograms({ onCTAClick }) {
                 <img
                   src={img}
                   alt={`${initiative.title} ${index + 1}`}
-                  className="h-64 w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="h-40 sm:h-48 md:h-56 w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
                 {index === 0 && (
-                  <div className="absolute top-4 right-4 bg-black/60 text-white text-sm px-3 py-1 rounded-full">
+                  <div className="absolute top-2 sm:top-4 right-2 sm:right-4 bg-black/60 text-white text-xs sm:text-sm px-2 sm:px-3 py-0.5 sm:py-1 rounded-full">
                     Featured
                   </div>
                 )}
@@ -256,13 +265,13 @@ export default function TechnologyDigitalPrograms({ onCTAClick }) {
 
       case "masonry":
         return (
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid grid-cols-3 gap-3 sm:gap-4">
             <motion.div
               initial={{ opacity: 0, y: -20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
-              className="col-span-2 relative rounded-xl overflow-hidden bg-center group h-96"
+              className="col-span-2 relative rounded-xl overflow-hidden bg-center group h-60 sm:h-72 md:h-80 lg:h-96"
             >
               <img
                 src={images[0]}
@@ -270,7 +279,7 @@ export default function TechnologyDigitalPrograms({ onCTAClick }) {
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
             </motion.div>
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-3 sm:gap-4">
               {images.slice(1).map((img, index) => (
                 <motion.div
                   key={index}
@@ -278,7 +287,7 @@ export default function TechnologyDigitalPrograms({ onCTAClick }) {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
                   viewport={{ once: true }}
-                  className="relative rounded-xl overflow-hidden group h-44"
+                  className="relative rounded-xl overflow-hidden group h-28 sm:h-32 md:h-36 lg:h-44"
                 >
                   <img
                     src={img}
@@ -291,35 +300,35 @@ export default function TechnologyDigitalPrograms({ onCTAClick }) {
           </div>
         );
 
-      case "horizontal-stack":
-        return (
-          <div className="flex gap-4">
-            {images.map((img, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="flex-1 relative rounded-xl overflow-hidden group h-72"
-              >
-                <img
-                  src={img}
-                  alt={`${initiative.title} ${index + 1}`}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-                <div className="absolute top-4 right-4 bg-black/60 text-white text-sm px-3 py-1 rounded-full">
-                  {index + 1}/3
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        );
+      // case "horizontal-stack":
+      //   return (
+      //     <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+      //       {images.map((img, index) => (
+      //         <motion.div
+      //           key={index}
+      //           initial={{ opacity: 0, scale: 0.9 }}
+      //           whileInView={{ opacity: 1, scale: 1 }}
+      //           transition={{ duration: 0.4, delay: index * 0.1 }}
+      //           viewport={{ once: true }}
+      //           className="flex-1 relative rounded-xl overflow-hidden group h-40 sm:h-48 md:h-56 lg:h-72"
+      //         >
+      //           <img
+      //             src={img}
+      //             alt={`${initiative.title} ${index + 1}`}
+      //             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+      //           />
+      //           <div className="absolute top-2 sm:top-4 right-2 sm:right-4 bg-black/60 text-white text-xs sm:text-sm px-2 sm:px-3 py-0.5 sm:py-1 rounded-full">
+      //             {index + 1}/3
+      //           </div>
+      //         </motion.div>
+      //       ))}
+      //     </div>
+      //   );
 
       case "diagonal":
         return (
-          <div className="w-full py-8">
-            <div className="flex justify-center gap-8 mb-8 relative h-80">
+          <div className="w-full py-4 sm:py-6 md:py-8">
+            <div className="flex justify-center gap-4 sm:gap-6 md:gap-8 mb-4 sm:mb-6 md:mb-8 relative h-48 sm:h-60 md:h-72 lg:h-80">
               {images.slice(0, 2).map((img, index) => (
                 <motion.div
                   key={index}
@@ -327,13 +336,13 @@ export default function TechnologyDigitalPrograms({ onCTAClick }) {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.2 }}
                   viewport={{ once: true }}
-                  className={`w-1/2 h-80 rounded-xl overflow-hidden border-4 border-white
-              group hover:-translate-y-2 transition-transform duration-500 absolute
-              ${
-                index === 0
-                  ? "rotate-[-4deg] -translate-x-32 z-20"
-                  : "rotate-[4deg] translate-x-32 z-10"
-              }`}
+                  className={`w-1/2 h-48 sm:h-60 md:h-72 lg:h-80 rounded-xl overflow-hidden border-2 sm:border-3 md:border-4 border-white
+                    group hover:-translate-y-2 transition-transform duration-500 absolute
+                    ${
+                      index === 0
+                        ? "rotate-[-4deg] -translate-x-16 sm:-translate-x-24 md:-translate-x-32 z-20"
+                        : "rotate-[4deg] translate-x-16 sm:translate-x-24 md:translate-x-32 z-10"
+                    }`}
                 >
                   <img
                     src={img}
@@ -351,7 +360,7 @@ export default function TechnologyDigitalPrograms({ onCTAClick }) {
               viewport={{ once: true }}
               className="w-full flex justify-center"
             >
-              <div className="w-2/3 h-80 rounded-xl overflow-hidden border-4 border-white group hover:-translate-y-2 transition-transform duration-500 rotate-[-2deg]">
+              <div className="w-4/5 sm:w-3/4 md:w-2/3 h-48 sm:h-60 md:h-72 lg:h-80 rounded-xl overflow-hidden border-2 sm:border-3 md:border-4 border-white group hover:-translate-y-2 transition-transform duration-500 rotate-[-2deg]">
                 <img
                   src={images[2]}
                   alt="single-image"
@@ -364,15 +373,15 @@ export default function TechnologyDigitalPrograms({ onCTAClick }) {
 
       case "pyramid":
         return (
-          <div className="w-full py-4">
+          <div className="w-full py-2 sm:py-3 md:py-4">
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
-              className="w-full flex justify-center mb-6"
+              className="w-full flex justify-center mb-3 sm:mb-4 md:mb-6"
             >
-              <div className="w-full h-64 rounded-xl overflow-hidden group border-4 border-white">
+              <div className="w-full h-40 sm:h-48 md:h-56 lg:h-64 rounded-xl overflow-hidden group border-2 sm:border-3 md:border-4 border-white">
                 <img
                   src={images[0]}
                   alt={`${initiative.title} 1`}
@@ -381,7 +390,7 @@ export default function TechnologyDigitalPrograms({ onCTAClick }) {
               </div>
             </motion.div>
 
-            <div className="grid grid-cols-2 gap-6 justify-items-center">
+            <div className="grid grid-cols-2 gap-3 sm:gap-4 md:gap-6 justify-items-center">
               {images.slice(1).map((img, index) => (
                 <motion.div
                   key={index}
@@ -389,7 +398,7 @@ export default function TechnologyDigitalPrograms({ onCTAClick }) {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.2 }}
                   viewport={{ once: true }}
-                  className="w-full h-56 rounded-xl overflow-hidden group border-4 border-white"
+                  className="w-full h-32 sm:h-40 md:h-48 lg:h-56 rounded-xl overflow-hidden group border-2 sm:border-3 md:border-4 border-white"
                 >
                   <img
                     src={img}
@@ -404,11 +413,11 @@ export default function TechnologyDigitalPrograms({ onCTAClick }) {
 
       default:
         return (
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid grid-cols-3 gap-3 sm:gap-4">
             {images.map((img, index) => (
               <div
                 key={index}
-                className="relative rounded-lg overflow-hidden h-56"
+                className="relative rounded-lg overflow-hidden h-32 sm:h-40 md:h-48 lg:h-56"
               >
                 <img
                   src={img}
@@ -432,24 +441,24 @@ export default function TechnologyDigitalPrograms({ onCTAClick }) {
   };
 
   return (
-    <section className="max-w-7xl mx-auto px-8 py-16">
+    <section className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-28 sm:py-16 md:py-20">
       {/* HERO SECTION */}
       <motion.div
         initial={{ opacity: 0, y: -40, scale: 0.95 }}
         animate={{ opacity: 1, y: 0, scale: 1 }}
         transition={{ duration: 0.6 }}
-        className="relative min-h-[600px] flex items-center justify-center overflow-hidden mb-20"
+        className="relative min-h-[400px] sm:min-h-[500px] md:min-h-[600px] flex items-center justify-center overflow-hidden mb-12 sm:mb-16 md:mb-20"
       >
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-[#A1887F]/10 rounded-full blur-3xl"></div>
+          <div className="absolute -bottom-20 sm:-bottom-32 md:-bottom-40 -left-20 sm:-left-32 md:-left-40 w-40 sm:w-60 md:w-80 h-40 sm:h-60 md:h-80 bg-[#A1887F]/10 rounded-full blur-3xl"></div>
         </div>
 
-        <div className="relative text-center space-y-8 max-w-4xl mx-auto px-6">
+        <div className="relative text-center space-y-4 sm:space-y-6 md:space-y-8 max-w-4xl mx-auto px-4 sm:px-6">
           <motion.span
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.3, duration: 0.5 }}
-            className="inline-block bg-gradient-to-r from-[#805B3A] to-[#A1887F] text-white text-sm font-semibold px-8 py-3 rounded-full border border-[#805B3A]/30 backdrop-blur-sm"
+            className="inline-block bg-gradient-to-r from-[#805B3A] to-[#A1887F] text-white text-xs sm:text-sm font-semibold px-4 sm:px-6 md:px-8 py-2 sm:py-3 rounded-full border border-[#805B3A]/30 backdrop-blur-sm"
           >
             Education & Skill Development Programs
           </motion.span>
@@ -458,23 +467,23 @@ export default function TechnologyDigitalPrograms({ onCTAClick }) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.6 }}
-            className="text-4xl md:text-5xl font-extrabold leading-tight text-slate-900 relative"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight text-slate-900 relative px-2"
           >
             <span className="bg-gradient-to-r from-[#805B3A] to-[#A1887F] bg-clip-text text-transparent">
               Empowering Through
             </span>
             <br />
-            <span className="text-slate-800 text-4xl md:text-5xl">
+            <span className="text-slate-800 text-xl sm:text-2xl md:text-3xl lg:text-4xl">
               Education & Skill Development
             </span>
-            <span className="absolute left-1/2 -bottom-4 w-48 h-1 bg-gradient-to-r from-[#805B3A] to-[#A1887F] transform -translate-x-1/2 rounded-full"></span>
+            <span className="absolute left-1/2 -bottom-2 sm:-bottom-3 md:-bottom-4 w-32 sm:w-40 md:w-48 h-0.5 sm:h-1 bg-gradient-to-r from-[#805B3A] to-[#A1887F] transform -translate-x-1/2 rounded-full"></span>
           </motion.h2>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7, duration: 0.6 }}
-            className="text-slate-600 text-xl max-w-3xl mx-auto leading-relaxed"
+            className="text-slate-600 text-base sm:text-lg md:text-xl max-w-3xl mx-auto leading-relaxed px-2 sm:px-4"
           >
             Designed to equip children and youth with essential academic
             foundation, creative thinking, and future-ready skills. and
@@ -482,19 +491,17 @@ export default function TechnologyDigitalPrograms({ onCTAClick }) {
               {" "}
               leadership skills among children and youth.
             </span>
-            .
           </motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.9, duration: 0.6 }}
-            className="flex justify-center gap-6 pt-6"
+            className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 md:gap-6 pt-4 sm:pt-6 px-2"
           >
-            {/* Button 1 - About Us */}
             <button
               onClick={redirectToAbout}
-              className="group px-8 py-4 rounded-2xl bg-gradient-to-r from-[#805B3A] to-[#A1887F] text-white font-semibold text-base transition-all duration-300 hover:scale-105 hover:from-[#6e4d30] hover:to-[#8d756c] flex items-center gap-2"
+              className="group px-6 sm:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl bg-gradient-to-r from-[#805B3A] to-[#A1887F] text-white font-semibold text-sm sm:text-base transition-all duration-300 hover:scale-105 hover:from-[#6e4d30] hover:to-[#8d756c] flex items-center justify-center gap-2"
             >
               <span>About Us</span>
               <span className="group-hover:translate-x-1 transition-transform">
@@ -502,10 +509,9 @@ export default function TechnologyDigitalPrograms({ onCTAClick }) {
               </span>
             </button>
 
-            {/* Button 2 - Connect With Us */}
             <button
               onClick={redirectToContact}
-              className="group px-8 py-4 rounded-2xl bg-white text-[#805B3A] font-semibold text-base transition-all duration-300 hover:scale-105 border border-slate-200 hover:border-[#805B3A]/30 flex items-center gap-2"
+              className="group px-6 sm:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl bg-white text-[#805B3A] font-semibold text-sm sm:text-base transition-all duration-300 hover:scale-105 border border-slate-200 hover:border-[#805B3A]/30 flex items-center justify-center gap-2"
             >
               <span>Connect With Us</span>
               <span className="group-hover:rotate-12 transition-transform">
@@ -522,32 +528,32 @@ export default function TechnologyDigitalPrograms({ onCTAClick }) {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7 }}
         viewport={{ once: true }}
-        className="mt-20"
+        className="mt-12 sm:mt-16 md:mt-20"
       >
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-8 sm:mb-12 md:mb-16 px-2"
         >
-          <div className="inline-flex items-center justify-center gap-3 mb-6">
-            <div className="w-12 h-1 bg-gradient-to-r from-[#805B3A] to-transparent"></div>
-            <span className="text-[#805B3A] font-semibold tracking-wider uppercase text-sm">
+          <div className="inline-flex items-center justify-center gap-2 sm:gap-3 mb-4 sm:mb-6">
+            <div className="w-6 sm:w-8 md:w-12 h-0.5 sm:h-1 bg-gradient-to-r from-[#805B3A] to-transparent"></div>
+            <span className="text-[#805B3A] font-semibold tracking-wider uppercase text-xs sm:text-sm">
               Our Educational Initiatives
             </span>
-            <div className="w-12 h-1 bg-gradient-to-l from-[#805B3A] to-transparent"></div>
+            <div className="w-6 sm:w-8 md:w-12 h-0.5 sm:h-1 bg-gradient-to-l from-[#805B3A] to-transparent"></div>
           </div>
 
-          <h2 className="text-4xl font-extrabold leading-tight text-slate-900 mb-6">
-            Igniting Potential:
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold leading-tight text-slate-900 mb-4 sm:mb-6 px-2">
+            Igniting Potential:
             <span className="bg-gradient-to-r from-[#805B3A] to-[#A1887F] bg-clip-text text-transparent">
               {" "}
               Transforming Classrooms into Innovation Labs
             </span>
           </h2>
 
-          <p className="text-slate-600 max-w-3xl mx-auto text-lg">
+          <p className="text-slate-600 max-w-3xl mx-auto text-sm sm:text-base md:text-lg px-2">
             Education must evolve from textbook knowledge to future-ready skill
             acquisition. Navanvesha focuses on holistic learning, combining
             foundational literacy with cutting-edge technological skills to
@@ -556,7 +562,7 @@ export default function TechnologyDigitalPrograms({ onCTAClick }) {
         </motion.div>
 
         {/* Initiatives List with Images */}
-        <div className="space-y-24">
+        <div className="space-y-16 sm:space-y-20 md:space-y-24 px-2">
           {initiatives.map((initiative, index) => {
             const Icon = initiative.icon;
             const isImageLeft = initiative.imagePosition === "left";
@@ -568,7 +574,7 @@ export default function TechnologyDigitalPrograms({ onCTAClick }) {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className={`grid lg:grid-cols-2 gap-12 items-center ${
+                className={`grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center ${
                   isImageLeft ? "" : "lg:grid-flow-dense"
                 }`}
               >
@@ -580,7 +586,7 @@ export default function TechnologyDigitalPrograms({ onCTAClick }) {
                   viewport={{ once: true }}
                   className={`relative ${isImageLeft ? "" : "lg:col-start-2"}`}
                 >
-                  <div className="relative p-4 bg-gradient-to-br from-slate-50 to-white rounded-2xl shadow-xl">
+                  <div className="relative p-3 sm:p-4 bg-gradient-to-br from-slate-50 to-white rounded-xl sm:rounded-2xl shadow-lg sm:shadow-xl">
                     {renderImageLayout(initiative)}
                   </div>
                 </motion.div>
@@ -591,67 +597,67 @@ export default function TechnologyDigitalPrograms({ onCTAClick }) {
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.7, delay: index * 0.1 + 0.3 }}
                   viewport={{ once: true }}
-                  className={`${isImageLeft ? "" : "lg:col-start-1"}`}
+                  className={`${
+                    isImageLeft ? "" : "lg:col-start-1"
+                  } space-y-4 sm:space-y-6`}
                 >
-                  <div className="space-y-6">
-                    {/* Initiative Header */}
-                    <div className="flex items-start gap-4">
-                      <div className="flex-shrink-0 h-14 w-14 flex items-center justify-center rounded-xl bg-gradient-to-br from-[#805B3A] to-[#A1887F] text-white shadow-lg">
-                        <Icon className="w-7 h-7" />
-                      </div>
-
-                      <div>
-                        <div className="flex items-center gap-2 mb-2">
-                          <span className="text-sm font-medium text-[#805B3A] bg-[#805B3A]/10 px-3 py-1 rounded-full">
-                            {initiative.subtitle}
-                          </span>
-                        </div>
-                        <h3 className="text-3xl font-bold text-slate-900">
-                          {initiative.title}
-                        </h3>
-                      </div>
+                  {/* Initiative Header */}
+                  <div className="flex items-start gap-3 sm:gap-4">
+                    <div className="flex-shrink-0 h-10 w-10 sm:h-12 sm:w-12 md:h-14 md:w-14 flex items-center justify-center rounded-lg sm:rounded-xl bg-gradient-to-br from-[#805B3A] to-[#A1887F] text-white shadow-md sm:shadow-lg">
+                      <Icon className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7" />
                     </div>
 
-                    {/* Description */}
-                    <p className="text-slate-600 text-lg leading-relaxed">
-                      {initiative.description}
-                    </p>
-
-                    {/* Key Features */}
-                    <div className="pt-4">
-                      <h4 className="text-lg font-semibold text-slate-800 mb-3 flex items-center gap-2">
-                        <div className="w-2 h-2 bg-[#805B3A] rounded-full"></div>
-                        Program Highlights
-                      </h4>
-                      <div className="grid grid-cols-2 gap-3">
-                        {getProgramHighlights(initiative.id).map(
-                          (feature, featureIndex) => (
-                            <div
-                              key={featureIndex}
-                              className="flex items-center gap-2"
-                            >
-                              <div className="w-1.5 h-1.5 bg-[#805B3A] rounded-full"></div>
-                              <span className="text-slate-700 text-sm">
-                                {feature}
-                              </span>
-                            </div>
-                          )
-                        )}
-                      </div>
-                    </div>
-
-                    {/* Button for each initiative */}
-                    <div className="pt-6">
-                      <button
-                        onClick={redirectToContact}
-                        className="group inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#805B3A] to-[#A1887F] text-white font-semibold rounded-lg hover:from-[#6e4d30] hover:to-[#8d756c] transition-all duration-300 hover:scale-105 hover:shadow-lg"
-                      >
-                        <span>Get In Touch</span>
-                        <span className="group-hover:translate-x-1 transition-transform">
-                          →
+                    <div>
+                      <div className="flex items-center gap-1 sm:gap-2 mb-1 sm:mb-2">
+                        <span className="text-xs sm:text-sm font-medium text-[#805B3A] bg-[#805B3A]/10 px-2 sm:px-3 py-1 rounded-full">
+                          {initiative.subtitle}
                         </span>
-                      </button>
+                      </div>
+                      <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-900">
+                        {initiative.title}
+                      </h3>
                     </div>
+                  </div>
+
+                  {/* Description */}
+                  <p className="text-slate-600 text-sm sm:text-base md:text-lg leading-relaxed">
+                    {initiative.description}
+                  </p>
+
+                  {/* Key Features */}
+                  <div className="pt-2 sm:pt-4">
+                    <h4 className="text-base sm:text-lg font-semibold text-slate-800 mb-2 sm:mb-3 flex items-center gap-2">
+                      <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#805B3A] rounded-full"></div>
+                      Program Highlights
+                    </h4>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
+                      {getProgramHighlights(initiative.id).map(
+                        (feature, featureIndex) => (
+                          <div
+                            key={featureIndex}
+                            className="flex items-center gap-1 sm:gap-2"
+                          >
+                            <div className="w-1.5 h-1.5 bg-[#805B3A] rounded-full flex-shrink-0"></div>
+                            <span className="text-slate-700 text-xs sm:text-sm">
+                              {feature}
+                            </span>
+                          </div>
+                        )
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Button for each initiative */}
+                  <div className="pt-4 sm:pt-6">
+                    <button
+                      onClick={redirectToContact}
+                      className="group inline-flex items-center gap-2 px-4 sm:px-6 py-2 sm:py-3 bg-gradient-to-r from-[#805B3A] to-[#A1887F] text-white font-semibold rounded-lg hover:from-[#6e4d30] hover:to-[#8d756c] transition-all duration-300 hover:scale-105 hover:shadow-lg text-sm sm:text-base"
+                    >
+                      <span>Get In Touch</span>
+                      <span className="group-hover:translate-x-1 transition-transform">
+                        →
+                      </span>
+                    </button>
                   </div>
                 </motion.div>
               </motion.div>
@@ -666,38 +672,37 @@ export default function TechnologyDigitalPrograms({ onCTAClick }) {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.3 }}
         viewport={{ once: true }}
-        className="text-center mt-20"
+        className="text-center mt-8 sm:mt-12 md:mt-16 lg:mt-20 px-2 sm:px-4"
       >
-        <div className="relative bg-gradient-to-r from-[#805B3A] to-[#A1887F] rounded-3xl p-12 border border-[#A1887F]/50 shadow-2xl overflow-hidden">
+        <div className="relative bg-gradient-to-r from-[#805B3A] to-[#A1887F] rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 lg:p-12 border border-[#A1887F]/50 shadow-xl sm:shadow-2xl overflow-hidden">
           <div className="absolute inset-0 opacity-10">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-white rounded-full -translate-y-32 translate-x-32"></div>
-            <div className="absolute bottom-0 left-0 w-64 h-64 bg-white rounded-full translate-y-32 -translate-x-32"></div>
+            <div className="absolute top-0 right-0 w-16 h-16 sm:w-24 sm:h-24 md:w-32 md:h-32 lg:w-64 lg:h-64 bg-white rounded-full -translate-y-8 sm:-translate-y-12 md:-translate-y-16 lg:-translate-y-32 translate-x-8 sm:translate-x-12 md:translate-x-16 lg:translate-x-32"></div>
+            <div className="absolute bottom-0 left-0 w-16 h-16 sm:w-24 sm:h-24 md:w-32 md:h-32 lg:w-64 lg:h-64 bg-white rounded-full translate-y-8 sm:translate-y-12 md:translate-y-16 lg:translate-y-32 -translate-x-8 sm:-translate-x-12 md:-translate-x-16 lg:-translate-x-32"></div>
           </div>
 
           <div className="relative z-10">
-            <h3 className="text-3xl md:text-4xl font-extrabold text-white mb-6">
+            <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-extrabold text-white mb-3 sm:mb-4 md:mb-6">
               Invest in Potential
             </h3>
 
-            <p className="text-white/90 text-lg mb-8 max-w-2xl mx-auto">
+            <p className="text-white/90 text-sm sm:text-base md:text-lg mb-4 sm:mb-6 md:mb-8 max-w-2xl mx-auto">
               Your funding equips a classroom or secures a student's future.
             </p>
 
-            <div className="flex justify-center gap-6">
-              {/* Button - Connect With Our Team */}
+            {/* Buttons section */}
+            <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 md:gap-6">
               <motion.button
                 whileHover={{ scale: 1.06 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={redirectToContact}
-                className="bg-white text-[#805B3A] px-10 py-4 rounded-xl font-semibold text-lg hover:bg-[#FAF6F2] transition-all"
+                className="bg-white text-[#805B3A] px-6 sm:px-8 md:px-10 py-2 sm:py-3 md:py-4 rounded-lg sm:rounded-xl font-semibold text-sm sm:text-base md:text-lg hover:bg-[#FAF6F2] transition-all"
               >
                 Connect With Our Team
               </motion.button>
 
-              {/* Button - Explore All Programs */}
               <button
                 onClick={redirectToAbout}
-                className="bg-transparent border-2 text-white px-10 py-4 rounded-xl font-semibold text-lg hover:bg-white/10 transition-all"
+                className="bg-transparent border border-white sm:border-2 text-white px-6 sm:px-8 md:px-10 py-2 sm:py-3 md:py-4 rounded-lg sm:rounded-xl font-semibold text-sm sm:text-base md:text-lg hover:bg-white/10 transition-all"
               >
                 Explore All Programs
               </button>

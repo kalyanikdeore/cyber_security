@@ -6,7 +6,7 @@ import Whychoose from "./Whychoose";
 import CTAabout from "./CTAabout";
 import Values from "./Values";
 // import Ourstory from "./Ourstory";
-import Impact from "./Impact";
+// import Impact from "./Impact";
 import Communitydevelopment from "./Communitydevelopment";
 function About() {
   return (
@@ -16,7 +16,7 @@ function About() {
       <Visionmission />
       <Values />
       <Whychoose />
-      <Impact />
+      {/* <Impact /> */}
       <Communitydevelopment />
 
       {/* <Testimonial /> */}

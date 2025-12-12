@@ -1,8 +1,9 @@
-// Updated Products component with underline, short title & redirect button
+// Updated Products component with hover name bottom display
 
 import React, { useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
+
 import {
   cyber_safety_programs,
   DigitalWorkshops,
@@ -29,7 +30,7 @@ const categories = [
   "Youth Leadership & Community Engagement Programs",
 ];
 
-// Only imported images listed
+// Products List
 const allProducts = [
   { src: cyber_safety_programs, category: categories[1] },
   { src: DigitalWorkshops, category: categories[1] },
@@ -73,16 +74,13 @@ export default function Products() {
   };
 
   return (
-    <motion.div id="gallery" className="bg-white text-black py-29">
+    <motion.div id="gallery" className="bg-white text-black py-20">
       {/* Heading */}
       <div className="text-center mb-10">
         <h2 className="text-3xl font-bold">
           Our <span className="text-[#805b3a]">Gallery</span>
         </h2>
-
         <div className="w-24 h-1 bg-[#805b3a] mx-auto mt-2 rounded-full"></div>
-
-        {/* Short Title */}
         <p className="text-gray-600 mt-3">
           Explore moments captured from our community development programs
         </p>
@@ -96,8 +94,8 @@ export default function Products() {
             onClick={() => setActiveCategory(cat)}
             className={`px-6 py-2 rounded-full border border-[#805b3a] transition ${
               activeCategory === cat
-                ? "bg-[#805b3a] text-black"
-                : "text-[#805b3a] hover:[#805b3a] hover:text-black"
+                ? "bg-[#805b3a] text-white"
+                : "text-[#805b3a] hover:bg-[#805b3a] hover:text-white"
             }`}
           >
             {cat}
@@ -105,28 +103,40 @@ export default function Products() {
         ))}
       </div>
 
-      {/* Grid 1 row + 4 col */}
+      {/* Gallery Grid with hover overlay and bottom text */}
+      {/* Gallery Grid with hover text bottom */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-7xl mx-auto px-4 mb-10">
         {filteredProducts.map((product, index) => (
           <div
             key={index}
             onClick={() => openModal(index)}
-            className="cursor-pointer hover:scale-105 transition duration-300"
+            className="relative cursor-pointer overflow-hidden rounded-xl group shadow-lg"
           >
             <img
               src={product.src}
+              className="w-full h-56 object-cover rounded-xl transition duration-500 group-hover:scale-110"
               alt=""
-              className="rounded-xl w-full h-56 object-cover shadow-lg"
             />
+
+            {/* Overlay background */}
+            <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300"></div>
+
+            {/* NAME appears only on hover */}
+            <div
+              className="absolute bottom-0 left-0 w-full bg-black/70 text-white text-xs py-2 text-center 
+      opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-300"
+            >
+              {product.category}
+            </div>
           </div>
         ))}
       </div>
 
-      {/* View Gallery redirect button */}
+      {/* View Full Gallery Button */}
       <div className="text-center mb-12">
         <button
           onClick={() => (window.location.href = "/event-gallery")}
-          className="px-8 py-3 bg-[#805b3a] text-white rounded-full font-semibold hover:bg-[#705b3a] transition"
+          className="px-8 py-3 bg-[#805b3a] text-white rounded-full font-semibold hover:bg-[#6e4d32] transition"
         >
           View Full Gallery
         </button>
@@ -145,14 +155,14 @@ export default function Products() {
             >
               <button
                 onClick={() => setShowModal(false)}
-                className="absolute -top-3 -right-3 bg-black text-black rounded-full w-8 h-8 flex items-center justify-center"
+                className="absolute -top-3 -right-3 bg-white text-black rounded-full w-8 h-8 flex items-center justify-center shadow-lg"
               >
                 ✖
               </button>
 
               <button
                 onClick={prevImage}
-                className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/60 text-black p-3 rounded-full"
+                className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/70 text-black p-3 rounded-full shadow"
               >
                 <FaChevronLeft size={20} />
               </button>
@@ -165,12 +175,12 @@ export default function Products() {
 
               <button
                 onClick={nextImage}
-                className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/60 text-black p-3 rounded-full"
+                className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/70 text-black p-3 rounded-full shadow"
               >
                 <FaChevronRight size={20} />
               </button>
 
-              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/70 text-black px-4 py-1 rounded-full text-sm">
+              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-white/80 text-black px-4 py-1 rounded-full text-sm">
                 {currentIndex + 1} / {filteredProducts.length}
               </div>
             </div>

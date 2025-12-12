@@ -12,7 +12,7 @@ const FAQSection = () => {
     {
       question: "What does Navanvesha mean?",
       answer:
-        " Navanvesha translates to New Exploration or Renewed Discovery in Sanskrit. It represents our commitment to continuously seeking innovative solutions while rediscovering and valuing traditional wisdom.",
+        "Navanvesha translates to New Exploration or Renewed Discovery in Sanskrit. It represents our commitment to continuously seeking innovative solutions while rediscovering and valuing traditional wisdom.",
     },
     {
       question: "What are the main focus areas of Navanvesha Foundation?",
@@ -79,12 +79,12 @@ const FAQSection = () => {
   };
 
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-10 sm:py-12 md:py-16 bg-gray-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
-          {/* Badge - Updated with FAQ related text */}
+          {/* Badge */}
           <motion.span
-            className="inline-block px-4 py-2 bg-[#926b49]/10 border border-[#926b49]/30 rounded-full text-[#926b49] text-sm font-semibold tracking-wide mb-6"
+            className="inline-block px-3 py-1.5 sm:px-4 sm:py-2 bg-[#926b49]/10 border border-[#926b49]/30 rounded-full text-[#926b49] text-xs sm:text-sm font-semibold tracking-wide mb-4 sm:mb-6"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -95,7 +95,7 @@ const FAQSection = () => {
 
           {/* Main Heading */}
           <motion.h2
-            className="text-4xl lg:text-4xl font-bold text-gray-900 leading-tight mb-4"
+            className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 leading-tight mb-3 sm:mb-4 px-2"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
@@ -105,16 +105,16 @@ const FAQSection = () => {
           </motion.h2>
 
           <motion.div
-            className="h-1 w-20 bg-gradient-to-r from-[#926b49] to-[#82613e] mx-auto mb-6"
+            className="h-1 w-16 sm:w-20 bg-gradient-to-r from-[#926b49] to-[#82613e] mx-auto mb-4 sm:mb-6"
             initial={{ width: 0 }}
-            whileInView={{ width: "5rem" }}
+            whileInView={{ width: "4rem" }}
             transition={{ delay: 0.3, duration: 0.5 }}
             viewport={{ once: true }}
           />
 
           {/* Short Description */}
           <motion.p
-            className="text-gray-600 text-lg mb-12 max-w-2xl mx-auto"
+            className="text-gray-600 text-sm sm:text-base md:text-lg mb-8 sm:mb-12 max-w-2xl mx-auto px-4"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
@@ -136,26 +136,26 @@ const FAQSection = () => {
           {faqs.map((faq, index) => (
             <motion.div
               key={index}
-              className="mb-4 bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg"
+              className="mb-3 sm:mb-4 bg-white rounded-lg sm:rounded-xl shadow-sm sm:shadow-md overflow-hidden transition-all duration-300 hover:shadow-md sm:hover:shadow-lg"
               variants={itemVariants}
               whileHover={{ scale: 1.01 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
               <motion.button
-                className="w-full px-6 py-4 text-left flex justify-between items-center bg-white hover:bg-gray-50 transition-colors duration-200"
+                className="w-full px-4 py-3 sm:px-6 sm:py-4 text-left flex justify-between items-center bg-white hover:bg-gray-50 transition-colors duration-200"
                 onClick={() => toggleFAQ(index)}
                 whileTap={{ scale: 0.98 }}
               >
-                <span className="text-lg font-semibold text-gray-800 pr-4">
+                <span className="text-base sm:text-lg font-semibold text-gray-800 pr-3 sm:pr-4 text-left">
                   {faq.question}
                 </span>
                 <motion.span
                   animate={{ rotate: openIndex === index ? 180 : 0 }}
                   transition={{ duration: 0.3 }}
-                  className="text-[#805b3a]"
+                  className="text-[#805b3a] flex-shrink-0 ml-2"
                 >
                   <svg
-                    className="w-5 h-5"
+                    className="w-4 h-4 sm:w-5 sm:h-5"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -176,12 +176,46 @@ const FAQSection = () => {
                 animate={openIndex === index ? "open" : "closed"}
                 className="overflow-hidden"
               >
-                <div className="px-6 py-4 border-t border-gray-200 text-justify">
-                  <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
+                <div className="px-4 py-3 sm:px-6 sm:py-4 border-t border-gray-100 sm:border-gray-200">
+                  <p className="text-gray-600 leading-relaxed text-sm sm:text-base text-justify sm:text-left">
+                    {faq.answer}
+                  </p>
                 </div>
               </motion.div>
             </motion.div>
           ))}
+        </motion.div>
+
+        {/* Additional Contact Info for Mobile */}
+        <motion.div
+          className="mt-8 sm:mt-12 text-center lg:hidden"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          viewport={{ once: true }}
+        >
+          <p className="text-gray-600 text-sm sm:text-base mb-3">
+            Still have questions?
+          </p>
+          <a
+            href="/contact"
+            className="inline-flex items-center gap-2 text-[#805b3a] font-semibold text-sm sm:text-base hover:underline"
+          >
+            Contact Us
+            <svg
+              className="w-4 h-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M14 5l7 7m0 0l-7 7m7-7H3"
+              />
+            </svg>
+          </a>
         </motion.div>
       </div>
     </section>

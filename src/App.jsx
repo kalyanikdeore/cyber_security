@@ -36,7 +36,7 @@ function App() {
         {/* <Route path="recent-event" element={<Recentevent />} /> */}
         <Route path="future-event" element={<Futureevent />} />
         <Route path="service" element={<Service />} />
-        {/* <Route path="cloud-security" element={<CloudSecurity />} /> */}
+        {/* <Route path="cloud-security" element={<CloudSecurity />} /> */} 
         <Route path="Endpoint-Protection" element={<EndpointProtection />} />
 
         <Route path="technology-digital" element={<TechnologyDigital />} />

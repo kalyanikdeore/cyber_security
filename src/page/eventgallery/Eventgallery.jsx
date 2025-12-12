@@ -1,4 +1,4 @@
-// Updated Products component with underline, short title & redirect button
+// Updated Products component with category hover title overlay
 
 import React, { useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
@@ -29,7 +29,7 @@ const categories = [
   "Youth Leadership & Community Engagement Programs",
 ];
 
-// Only imported images listed
+// Product List
 const allProducts = [
   { src: cyber_safety_programs, category: categories[1] },
   { src: DigitalWorkshops, category: categories[1] },
@@ -73,7 +73,7 @@ export default function Products() {
   };
 
   return (
-    <motion.div id="gallery" className="bg-white text-black py-19">
+    <motion.div id="gallery" className="bg-white text-black py-29">
       {/* Heading */}
       <div className="text-center mb-10">
         <h2 className="text-3xl font-bold">
@@ -82,7 +82,6 @@ export default function Products() {
 
         <div className="w-24 h-1 bg-[#805b3a] mx-auto mt-2 rounded-full"></div>
 
-        {/* Short Title */}
         <p className="text-gray-600 mt-3">
           Explore moments captured from our community development programs
         </p>
@@ -97,7 +96,7 @@ export default function Products() {
             className={`px-6 py-2 rounded-full border border-[#805b3a] transition ${
               activeCategory === cat
                 ? "bg-[#805b3a] text-black"
-                : "text-[#805b3a] hover:[#805b3a] hover:text-black"
+                : "text-[#805b3a] hover:bg-[#805b3a] hover:text-black"
             }`}
           >
             {cat}
@@ -105,19 +104,27 @@ export default function Products() {
         ))}
       </div>
 
-      {/* Grid 1 row + 4 col */}
+      {/* Grid Images with Hover Category Name */}
+      {/* Grid Images with Hover Category Name (Bottom) */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-7xl mx-auto px-4 mb-10">
         {filteredProducts.map((product, index) => (
           <div
             key={index}
             onClick={() => openModal(index)}
-            className="cursor-pointer hover:scale-105 transition duration-300"
+            className="relative cursor-pointer group"
           >
             <img
               src={product.src}
               alt=""
-              className="rounded-xl w-full h-56 object-cover shadow-lg"
+              className="rounded-xl w-full h-56 object-cover shadow-lg transition-transform duration-300 group-hover:scale-105"
             />
+
+            {/* Bottom Hover Name */}
+            <div className="absolute bottom-0 left-0 right-0 bg-black/70 rounded-b-xl opacity-0 group-hover:opacity-100 transition duration-300 p-2 text-center">
+              <span className="text-white text-sm font-semibold">
+                {product.category}
+              </span>
+            </div>
           </div>
         ))}
       </div>
@@ -135,14 +142,14 @@ export default function Products() {
             >
               <button
                 onClick={() => setShowModal(false)}
-                className="absolute -top-3 -right-3 bg-black text-black rounded-full w-8 h-8 flex items-center justify-center"
+                className="absolute -top-3 -right-3 bg-black text-white rounded-full w-8 h-8 flex items-center justify-center"
               >
                 ✖
               </button>
 
               <button
                 onClick={prevImage}
-                className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/60 text-black p-3 rounded-full"
+                className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/60 text-white p-3 rounded-full"
               >
                 <FaChevronLeft size={20} />
               </button>
@@ -155,12 +162,12 @@ export default function Products() {
 
               <button
                 onClick={nextImage}
-                className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/60 text-black p-3 rounded-full"
+                className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/60 text-white p-3 rounded-full"
               >
                 <FaChevronRight size={20} />
               </button>
 
-              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/70 text-black px-4 py-1 rounded-full text-sm">
+              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/70 text-white px-4 py-1 rounded-full text-sm">
                 {currentIndex + 1} / {filteredProducts.length}
               </div>
             </div>

@@ -68,7 +68,6 @@ const Navbar = () => {
     open: { opacity: 1, y: 0 },
   };
 
-  // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -81,80 +80,60 @@ const Navbar = () => {
 
   return (
     <>
-      {/* Fixed Container for both top bar and main nav */}
+      {/* Fixed wrapper */}
       <div className="fixed w-full top-0 z-50">
-        {/* Top Bar with Contact Info and Social Media */}
-        {/* Top Bar with Contact Info and Social Media - Mobile Responsive */}
-        <div className="bg-[#805b3a] text-white py-2">
+        {/* Top Bar - Hidden on mobile, visible on md and above */}
+        <div className="bg-[#805b3a] text-white py-2 hidden md:block">
           <div className="max-w-7xl mx-auto px-4">
-            <div className="flex flex-col md:flex-row justify-between md:items-center gap-3 md:gap-0 text-center md:text-left">
-              {/* Left Side - Contact Info */}
-              <div className="flex flex-col md:flex-row items-center justify-center md:justify-start space-y-2 md:space-y-0 md:space-x-6 text-sm">
-                <div className="flex items-center space-x-2">
+            <div className="flex flex-col md:flex-row justify-between md:items-center gap-2 md:gap-0">
+              {/* Contact */}
+              <div className="flex flex-col md:flex-row items-center justify-center md:justify-start text-sm gap-1 md:gap-6">
+                <div className="flex items-center gap-2">
                   <FaPhone className="w-3 h-3" />
                   <span>+91 9600129660</span>
                 </div>
-                <div className="flex items-center space-x-2">
+                <div className="flex items-center gap-2">
                   <FaEnvelope className="w-3 h-3" />
                   <span>navanveshafoundation@gmail.com</span>
                 </div>
               </div>
 
-              {/* Social Media Icons */}
-              <div className="flex items-center justify-center space-x-4">
+              {/* Social Icons */}
+              <div className="flex justify-center items-center gap-4">
                 <a
-                  href="https://wa.me/+919600129660"
-                  rel="noopener noreferrer"
-                  className="hover:text-[#faf6f2] transition-colors duration-200"
+                  href="https://wa.me/919600129660"
+                  target="_blank"
+                  rel="noreferrer"
                 >
-                  <FaWhatsapp className="w-4 h-4" />
+                  <FaWhatsapp className="w-4 h-4 hover:text-[#faf6f2]" />
                 </a>
                 <a
                   href="https://instagram.com"
                   target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-[#faf6f2] transition-colors duration-200"
+                  rel="noreferrer"
                 >
-                  <FaInstagram className="w-4 h-4" />
+                  <FaInstagram className="w-4 h-4 hover:text-[#faf6f2]" />
                 </a>
-                <a
-                  href="https://facebook.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-[#faf6f2] transition-colors duration-200"
-                >
-                  <FaFacebook className="w-4 h-4" />
+                <a href="https://facebook.com" target="_blank" rel="noreferrer">
+                  <FaFacebook className="w-4 h-4 hover:text-[#faf6f2]" />
                 </a>
-                <a
-                  href="https://linkedin.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-[#faf6f2] transition-colors duration-200"
-                >
-                  <FaLinkedin className="w-4 h-4" />
+                <a href="https://linkedin.com" target="_blank" rel="noreferrer">
+                  <FaLinkedin className="w-4 h-4 hover:text-[#faf6f2]" />
                 </a>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Main Navigation */}
+        {/* Main Nav */}
         <nav className="bg-[#faf6f2] shadow-sm">
           <div className="max-w-7xl mx-auto px-4">
-            <div className="flex justify-between items-center h-25">
-              {/* Logo */}
-              <Link
-                to="/"
-                className="flex items-center space-x-3 cursor-pointer"
-              >
-                <img
-                  src={logo}
-                  alt="Logo"
-                  className="h-25 w-25 object-contain"
-                />
+            <div className="flex justify-between items-center h-24">
+              <Link to="/" className="flex items-center">
+                <img src={logo} alt="Logo" className="h-25 object-contain" />
               </Link>
 
-              {/* Desktop Menu - Align Right */}
+              {/* Desktop Menu */}
               <div
                 className="hidden md:flex items-center space-x-8 ml-auto"
                 ref={dropdownRef}
@@ -167,7 +146,7 @@ const Navbar = () => {
                         onMouseEnter={() => setActiveDropdown(item.name)}
                         onMouseLeave={() => setActiveDropdown(null)}
                       >
-                        <button className="text-[#805b3a] font-medium flex items-center space-x-2 relative pb-1 px-3 py-2 min-w-[120px] justify-center">
+                        <button className="text-[#805b3a] font-medium flex items-center space-x-2 relative pb-1 px-3 py-2">
                           <span>{item.name}</span>
                           <motion.div
                             animate={{
@@ -176,7 +155,6 @@ const Navbar = () => {
                           >
                             <FaChevronDown className="w-3 h-3" />
                           </motion.div>
-
                           <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-[#805b3a] group-hover:w-full transition-all duration-300" />
                         </button>
 
@@ -193,7 +171,7 @@ const Navbar = () => {
                                 <Link
                                   key={drop.name}
                                   to={drop.href}
-                                  className="flex items-center space-x-3 px-4 py-3 text-[#faf6f2] hover:bg-[#a18467] transition-all rounded-lg"
+                                  className="flex items-center space-x-3 px-4 py-3 text-[#faf6f2] hover:bg-[#a18467] rounded-lg"
                                   onClick={() => setActiveDropdown(null)}
                                 >
                                   {drop.icon}
@@ -217,20 +195,19 @@ const Navbar = () => {
                 ))}
               </div>
 
-              {/* CTA Button Desktop */}
               <div className="hidden md:block ml-6">
                 <Link
                   to="/contact"
-                  className="bg-[#805b3a] hover:bg-[#a18467] text-white px-4 py-2 rounded-xl font-semibold transition-all block"
+                  className="bg-[#805b3a] hover:bg-[#a18467] text-white px-4 py-2 rounded-xl font-semibold transition-all"
                 >
                   Enquiry Now
                 </Link>
               </div>
 
-              {/* Mobile Hamburger */}
+              {/* Mobile */}
               <button
                 onClick={() => setIsOpen(true)}
-                className="md:hidden text-[#805b3a] p-2 rounded-lg"
+                className="md:hidden text-[#805b3a] p-2"
               >
                 <FaBars className="w-7 h-7" />
               </button>
@@ -247,57 +224,22 @@ const Navbar = () => {
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ duration: 0.4 }}
-            className="fixed top-0 right-0 w-full h-full bg-[#faf6f2] shadow-2xl z-50 md:hidden"
+            className="fixed top-0 right-0 w-full h-full overflow-y-auto bg-[#faf6f2] z-50 md:hidden"
           >
-            <div className="flex justify-between items-center p-5 border-b border-gray-300">
-              <img src={logo} alt="Logo" className="h-16 object-contain" />
+            <div className="flex justify-between items-center p-4 border-b">
+              <img src={logo} alt="Logo" className="h-14 object-contain" />
               <button
                 onClick={() => setIsOpen(false)}
-                className="text-[#805b3a] p-2 rounded-lg"
+                className="text-[#805b3a] p-2"
               >
                 <FaTimes className="w-6 h-6" />
               </button>
             </div>
 
-            {/* Mobile Social Media Icons */}
-            <div className="flex justify-center space-x-6 py-4 border-b border-gray-200">
-              <a
-                href="https://wa.me/911234567890"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[#805b3a] hover:text-[#a18467] transition-colors duration-200"
-              >
-                <FaWhatsapp className="w-5 h-5" />
-              </a>
-              <a
-                href="https://instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[#805b3a] hover:text-[#a18467] transition-colors duration-200"
-              >
-                <FaInstagram className="w-5 h-5" />
-              </a>
-              <a
-                href="https://facebook.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[#805b3a] hover:text-[#a18467] transition-colors duration-200"
-              >
-                <FaFacebook className="w-5 h-5" />
-              </a>
-              <a
-                href="https://linkedin.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[#805b3a] hover:text-[#a18467] transition-colors duration-200"
-              >
-                <FaLinkedin className="w-5 h-5" />
-              </a>
-            </div>
-
-            <div className="flex flex-col space-y-3 px-5 py-5">
+            {/* Mobile nav items */}
+            <div className="flex flex-col px-5 py-5 space-y-3">
               {navItems.map((item) => (
-                <div key={item.name} className="w-full">
+                <div key={item.name}>
                   {item.dropdown ? (
                     <>
                       <button
@@ -306,14 +248,13 @@ const Navbar = () => {
                             activeDropdown === item.name ? null : item.name
                           )
                         }
-                        className="flex justify-between items-center w-full py-4 px-4 font-semibold text-[#805b3a] bg-white rounded-lg shadow-sm border border-gray-200 active:bg-gray-50 transition-all duration-200"
+                        className="flex justify-between items-center w-full py-3 px-4 font-semibold text-[#805b3a] bg-white rounded-lg shadow-sm"
                       >
-                        <span className="text-lg">{item.name}</span>
+                        <span>{item.name}</span>
                         <motion.span
                           animate={{
                             rotate: activeDropdown === item.name ? 180 : 0,
                           }}
-                          transition={{ duration: 0.2 }}
                         >
                           <FaChevronDown />
                         </motion.span>
@@ -325,22 +266,17 @@ const Navbar = () => {
                             initial={{ opacity: 0, height: 0 }}
                             animate={{ opacity: 1, height: "auto" }}
                             exit={{ opacity: 0, height: 0 }}
-                            transition={{ duration: 0.3 }}
                             className="ml-2 mt-2 space-y-2 overflow-hidden"
                           >
                             {item.dropdown.map((drop) => (
                               <Link
                                 key={drop.name}
                                 to={drop.href}
-                                className="flex items-center space-x-3 py-3 px-4 text-[#805b3a] font-medium bg-gray-50 rounded-lg border border-gray-100 active:bg-gray-100 transition-all duration-200"
                                 onClick={() => setIsOpen(false)}
+                                className="flex items-center space-x-3 py-3 px-4 font-medium text-[#805b3a] bg-gray-50 rounded-lg"
                               >
-                                <span className="text-[#805b3a]">
-                                  {drop.icon}
-                                </span>
-                                <span className="text-sm flex-1">
-                                  {drop.name}
-                                </span>
+                                {drop.icon}
+                                <span className="text-sm">{drop.name}</span>
                               </Link>
                             ))}
                           </motion.div>
@@ -350,8 +286,8 @@ const Navbar = () => {
                   ) : (
                     <Link
                       to={item.href}
-                      className="py-4 px-4 block font-semibold text-[#805b3a] bg-white rounded-lg shadow-sm border border-gray-200 active:bg-gray-50 transition-all duration-200 text-lg"
                       onClick={() => setIsOpen(false)}
+                      className="block py-3 px-4 font-semibold text-[#805b3a] bg-white rounded-lg shadow-sm"
                     >
                       {item.name}
                     </Link>
@@ -361,8 +297,8 @@ const Navbar = () => {
 
               <Link
                 to="/contact"
-                className="bg-[#805b3a] hover:bg-[#a18467] text-white w-full py-4 rounded-xl mt-6 font-semibold text-lg active:bg-[#927153] transition-all duration-200 text-center block"
                 onClick={() => setIsOpen(false)}
+                className="bg-[#805b3a] hover:bg-[#a18467] text-white py-4 rounded-xl font-semibold text-lg mt-4 text-center"
               >
                 Enquiry Now
               </Link>
@@ -371,8 +307,8 @@ const Navbar = () => {
         )}
       </AnimatePresence>
 
-      {/* spacing below navbar - increased to account for both top bar and main nav */}
-      <div className="h-32" />
+      {/* Page padding - Only for desktop */}
+      <div className="hidden md:block h-32" />
     </>
   );
 };
