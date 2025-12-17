@@ -1,14 +1,17 @@
 import axios from "axios";
 
+// Base URL for uploaded files (images)
+export const fileBaseURL = "http://127.0.0.1:8000/uploads/";
+
+// Base URL for API requests
+export const API_BASE_URL = "http://127.0.0.1:8000/api/";
+
 const axiosInstance = axios.create({
-//   baseURL: "https://dentalcarenasik.demovoting.com/api",
-  baseURL: "http://127.0.0.1:8000/api",
-  timeout: 10000,
+  baseURL: API_BASE_URL,
   headers: {
     "Content-Type": "application/json",
     Accept: "application/json",
   },
 });
 
-// export const fileBaseURL = "https://dentalcarenasik.demovoting.com/uploads/";
-export const fileBaseURL = "http://127.0.0.1:8000/uploads/";
+export default axiosInstance;

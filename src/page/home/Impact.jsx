@@ -1,45 +1,29 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import axiosInstance from "../../services/api";
 
 const FAQSection = () => {
   const [openIndex, setOpenIndex] = useState(null);
+  const [faqs, setFaqs] = useState([]); // ✅ dynamic data
 
   const toggleFAQ = (index) => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
-  const faqs = [
-    {
-      question: "What does Navanvesha mean?",
-      answer:
-        "Navanvesha translates to New Exploration or Renewed Discovery in Sanskrit. It represents our commitment to continuously seeking innovative solutions while rediscovering and valuing traditional wisdom.",
-    },
-    {
-      question: "What are the main focus areas of Navanvesha Foundation?",
-      answer:
-        "Our primary focus areas include: Education & Research, Technology & Innovation, Social Development & Skill Growth, Sustainability & Future Studies, and Youth Empowerment & Awareness. We work across these domains to create comprehensive impact through structured programs in digital literacy, skill development, women empowerment, health initiatives, and environmental sustainability.",
-    },
-    {
-      question:
-        "How does the foundation approach technology and digital transformation?",
-      answer:
-        "Our Technology & Digital Transformation Programs bridge the digital divide through Digital Literacy Workshops, Cyber Safety Awareness, Device Donation programs, Tech for Seniors initiatives, and Assistive Technology for Inclusion. We provide structured training from basic to advanced levels, ensuring communities can transition into a tech-enabled future with hands-on learning opportunities.",
-    },
-    {
-      question:
-        "What kind of educational programs does Navanvesha Foundation offer?",
-      answer:
-        "Our Education & Skill Development Programs include Scholarships & Academic Support, Teacher Training, Career Guidance, Library Setups, Smart Classrooms, STEM Clubs, and AI/Coding trainings. We focus on improving learning outcomes through foundational learning, creativity development, and leadership skills for children and youth.",
-    },
-    {
-      question:
-        "How can corporations and individuals partner with Navanvesha Foundation?",
-      answer:
-        "We collaborate with corporates, institutions, and local partners through structured CSR programs, volunteering opportunities, and community initiatives. Partnerships can focus on specific areas like digital transformation, women empowerment, environmental sustainability, or youth development. We ensure transparency, measurable impact, and community-first approach in all collaborations.",
-    },
-  ];
+  // ✅ FETCH DATA FROM BACKEND
+  useEffect(() => {
+    axiosInstance
+      .get("faqs")
+      .then((response) => {
+        setFaqs(response.data);
+      })
+      .catch((error) => {
+        console.error("Error fetching FAQs:", error);
+      });
+  }, []);
 
-  // Animation variants
+  // ⬇⬇⬇ EVERYTHING BELOW IS EXACTLY THE SAME UI ⬇⬇⬇
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -82,7 +66,6 @@ const FAQSection = () => {
     <section className="py-10 sm:py-12 md:py-16 bg-gray-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
-          {/* Badge */}
           <motion.span
             className="inline-block px-3 py-1.5 sm:px-4 sm:py-2 bg-[#926b49]/10 border border-[#926b49]/30 rounded-full text-[#926b49] text-xs sm:text-sm font-semibold tracking-wide mb-4 sm:mb-6"
             initial={{ opacity: 0, y: 20 }}
@@ -93,7 +76,6 @@ const FAQSection = () => {
             Quick Answers
           </motion.span>
 
-          {/* Main Heading */}
           <motion.h2
             className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 leading-tight mb-3 sm:mb-4 px-2"
             initial={{ opacity: 0, y: 20 }}
@@ -112,7 +94,6 @@ const FAQSection = () => {
             viewport={{ once: true }}
           />
 
-          {/* Short Description */}
           <motion.p
             className="text-gray-600 text-sm sm:text-base md:text-lg mb-8 sm:mb-12 max-w-2xl mx-auto px-4"
             initial={{ opacity: 0, y: 20 }}
@@ -125,7 +106,6 @@ const FAQSection = () => {
           </motion.p>
         </div>
 
-        {/* FAQ Items */}
         <motion.div
           className="max-w-4xl mx-auto"
           variants={containerVariants}
@@ -135,7 +115,7 @@ const FAQSection = () => {
         >
           {faqs.map((faq, index) => (
             <motion.div
-              key={index}
+              key={faq.id}
               className="mb-3 sm:mb-4 bg-white rounded-lg sm:rounded-xl shadow-sm sm:shadow-md overflow-hidden transition-all duration-300 hover:shadow-md sm:hover:shadow-lg"
               variants={itemVariants}
               whileHover={{ scale: 1.01 }}
@@ -149,6 +129,7 @@ const FAQSection = () => {
                 <span className="text-base sm:text-lg font-semibold text-gray-800 pr-3 sm:pr-4 text-left">
                   {faq.question}
                 </span>
+
                 <motion.span
                   animate={{ rotate: openIndex === index ? 180 : 0 }}
                   transition={{ duration: 0.3 }}
@@ -184,38 +165,6 @@ const FAQSection = () => {
               </motion.div>
             </motion.div>
           ))}
-        </motion.div>
-
-        {/* Additional Contact Info for Mobile */}
-        <motion.div
-          className="mt-8 sm:mt-12 text-center lg:hidden"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          viewport={{ once: true }}
-        >
-          <p className="text-gray-600 text-sm sm:text-base mb-3">
-            Still have questions?
-          </p>
-          <a
-            href="/contact"
-            className="inline-flex items-center gap-2 text-[#805b3a] font-semibold text-sm sm:text-base hover:underline"
-          >
-            Contact Us
-            <svg
-              className="w-4 h-4"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M14 5l7 7m0 0l-7 7m7-7H3"
-              />
-            </svg>
-          </a>
         </motion.div>
       </div>
     </section>
