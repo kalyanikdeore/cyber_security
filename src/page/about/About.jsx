@@ -14,13 +14,13 @@ function About() {
       <Aboutus />
       {/* <Ourstory /> */}
       <Visionmission />
+      <CTAabout />
       <Values />
       <Whychoose />
       {/* <Impact /> */}
       <Communitydevelopment />
 
       {/* <Testimonial /> */}
-      <CTAabout />
     </div>
   );
 }

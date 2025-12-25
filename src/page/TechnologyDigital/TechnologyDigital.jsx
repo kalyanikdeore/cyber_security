@@ -9,145 +9,184 @@ import {
   Accessibility,
   BatteryCharging,
 } from "lucide-react";
-
-import {
-  cyber_safety_awarness,
-  DigitalWorkshops,
-  tech1,
-  digitaldetox,
-  assistiveadaptive,
-  digitalliteracyworkshops,
-  techforseniors,
-  cybersafety,
-  cybersafteyawarness,
-  devicedonation,
-  cybersafteyawrness2,
-  digital_financial_awareness,
-  tech_for_seniors,
-  tech_seniors,
-  assistivetechnology2,
-  assitivetechnology3,
-  digital_financial_aw,
-  tech_forseniors2,
-  donation,
-  donation2,
-  cyber_safetyAwareness1,
-  cyber_safetyAwareness2,
-  cyber_safetyAwareness3,
-  Seniors101,
-  digitaldetox1,
-  digitaldetox22,
-  techs1,
-  techs2,
-} from "../../assets";
+import axiosInstance from "../../services/api";
 
 export default function TechnologyDigitalPrograms({ onCTAClick }) {
   const [isLoaded, setIsLoaded] = useState(false);
+  const [programs, setPrograms] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    // Set loaded state after component mounts
     setIsLoaded(true);
-
-    // Force a reflow to trigger animations
-    setTimeout(() => {
-      document.body.clientWidth;
-    }, 100);
+    fetchAllData();
   }, []);
 
-  const initiatives = [
-    {
-      id: 1,
-      title: "Digital Literacy Workshops",
-      subtitle: "Basic → Advanced modules",
-      icon: BookOpen,
-      description:
-        "We offer tiered modules from 'Digital Basics' (email, search) to 'Advanced Tools' (cloud computing, collaboration software). Our methodology is highly practical, employing a 1:1 mentor ratio where possible, focusing on confidence-building and real-world application, not just theory.",
-      images: [tech1, DigitalWorkshops, digitalliteracyworkshops],
-      imagePosition: "left",
-      layoutType: "grid-3-even",
-      stats: ["500+", "Workshops", "98%", "Satisfaction Rate"],
-    },
-    {
-      id: 7,
-      title: "Digital Detox",
-      subtitle: "Balancing digital life",
-      icon: BatteryCharging,
-      description:
-        "A guided initiative encouraging healthy and mindful technology usage by helping students, youth, and community members balance their digital habits. The program focuses on reducing screen dependency, promoting real-world interactions, and building awareness about safe, productive, and responsible use of technology for a healthier digital lifestyle.",
-      images: [digitaldetox1, digitaldetox22, digitaldetox],
-      imagePosition: "right",
-      layoutType: "vertical-stack",
-      stats: ["2K+", "Participants", "40%", "Screen Time Reduction"],
-    },
-    {
-      id: 2,
-      title: "Cyber Safety Awareness Programs",
-      subtitle: "Protecting people online",
-      icon: ShieldCheck,
-      description:
-        "Our Cyber Safety Awareness Programs are designed to educate and protect individuals, communities, and organizations from rapidly growing online threats. The sessions cover essential topics such as identifying phishing and scam attempts, creating strong and secure passwords, managing privacy settings on social media and digital devices, and ensuring safe financial transactions through UPI, mobile banking, and online payments.",
-      images: [
-        cyber_safetyAwareness1,
-        cyber_safetyAwareness2,
-        cyber_safetyAwareness3,
-      ],
-      imagePosition: "left",
-      layoutType: "featured-large",
-      stats: ["200+", "Sessions", "95%", "Security Awareness"],
-    },
-    {
-      id: 3,
-      title: "Device Donation & Digital Access Support",
-      subtitle: "Bridging the access gap",
-      icon: Smartphone,
-      description:
-        "We collect, refurbish, and distribute essential digital devices (laptops, tablets) to students and community centers. Furthermore, we support the establishment of Community Digital Hubs—shared access points with reliable internet and technical support, turning public spaces into centers of digital learning.",
-      images: [devicedonation, donation, donation2],
-      imagePosition: "right",
-      layoutType: "masonry",
-      stats: ["1K+", "Devices Donated", "15+", "Community Partners"],
-    },
-    {
-      id: 4,
-      title: "Tech for Seniors Initiative",
-      subtitle: "Simple, patient-led learning",
-      icon: UserCheck,
-      description:
-        "Dedicated sessions crafted to simplify technology adoption for older community members, focusing on communication (video calls with family), access to government services, and online health resources, combating social isolation.",
-      images: [techs1, techs2, Seniors101],
-      imagePosition: "left",
-      layoutType: "horizontal-stack",
-      stats: ["300+", "Seniors Trained", "100%", "Personalized Sessions"],
-    },
-    {
-      id: 5,
-      title: "Digital Financial Awareness & Cyber Safety Program",
-      subtitle: "Safe digital transactions",
-      icon: CreditCard,
-      description:
-        "Workshops on UPI, payments, budgeting apps & spotting financial scams for all ages.",
-      images: [digital_financial_awareness, cybersafety, digital_financial_aw],
-      imagePosition: "right",
-      layoutType: "diagonal",
-      stats: ["150+", "Financial Workshops", "₹50K+", "Scams Prevented"],
-    },
-    {
-      id: 6,
-      title: "Assistive Technology for Inclusion Program",
-      subtitle: "Accessibility-first tools",
-      icon: Accessibility,
-      description:
-        "True transformation means leaving no one behind. We identify individuals with disabilities and provide specialized assistive technology (e.g., screen readers, adaptive devices) and customized training to enable them to engage fully in education and livelihood opportunities.",
-      images: [assistiveadaptive, assistivetechnology2, assitivetechnology3],
-      imagePosition: "left",
-      layoutType: "pyramid",
-      stats: ["50+", "Assistive Devices", "100%", "Accessibility Focus"],
-    },
-  ];
+  // Fetch all data using axios
+  const fetchAllData = async () => {
+    try {
+      setLoading(true);
+      setError(null);
+
+      // Use axios instance to fetch programs
+      const initiativesResponse = await axiosInstance.get(
+        "/technology-programs"
+      );
+
+      // Check if response has data and it's an array
+      if (initiativesResponse.data && Array.isArray(initiativesResponse.data)) {
+        // If the response is directly an array
+        setPrograms(initiativesResponse.data);
+      } else if (
+        initiativesResponse.data &&
+        initiativesResponse.data.programs &&
+        Array.isArray(initiativesResponse.data.programs)
+      ) {
+        // If the response has a 'programs' property that is an array
+        setPrograms(initiativesResponse.data.programs);
+      } else if (
+        initiativesResponse.data &&
+        initiativesResponse.data.data &&
+        Array.isArray(initiativesResponse.data.data)
+      ) {
+        // If the response has a 'data' property (common Laravel pattern)
+        setPrograms(initiativesResponse.data.data);
+      } else {
+        // If no valid array found, use fallback
+        console.warn(
+          "No valid programs array found in response, using fallback"
+        );
+        setPrograms(getStaticPrograms());
+      }
+    } catch (error) {
+      console.error("Error fetching data:", error);
+      setError("Failed to load programs. Please try again later.");
+      // Fallback to static data if API fails
+      setPrograms(getStaticPrograms());
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // Static fallback data
+  const getStaticPrograms = () => {
+    return [
+      {
+        id: 1,
+        title: "Digital Literacy Workshops",
+        subtitle: "Basic → Advanced modules",
+        icon: "BookOpen",
+        description:
+          "We offer tiered modules from 'Digital Basics' (email, search) to 'Advanced Tools' (cloud computing, collaboration software).",
+        images: ["/images/tech1.jpg", "/images/digital-workshops.jpg"],
+        image_position: "left",
+        layout_type: "grid-3-even",
+        stats: [
+          { value: "500+", label: "Workshops" },
+          { value: "98%", label: "Satisfaction Rate" },
+        ],
+        program_highlights: [
+          "Empowering all ages to harness technology for learning, communication, essential services",
+        ],
+      },
+      {
+        id: 2,
+        title: "Cybersecurity Awareness",
+        subtitle: "Protect your digital identity",
+        icon: "ShieldCheck",
+        description:
+          "Training on recognizing phishing attempts, securing personal data, and safe online practices.",
+        images: ["/images/cybersecurity1.jpg", "/images/cybersecurity2.jpg"],
+        image_position: "right",
+        layout_type: "vertical-stack",
+        stats: [
+          { value: "2000+", label: "Participants" },
+          { value: "95%", label: "Risk Reduction" },
+        ],
+        program_highlights: [
+          "Practical simulations of common cyber threats",
+          "Personal data protection strategies",
+        ],
+      },
+      {
+        id: 3,
+        title: "Mobile Banking & Digital Payments",
+        subtitle: "Financial inclusion through tech",
+        icon: "Smartphone",
+        description:
+          "Hands-on training for using mobile banking apps, digital wallets, and secure online transactions.",
+        images: ["/images/mobile-banking1.jpg", "/images/mobile-banking2.jpg"],
+        image_position: "left",
+        layout_type: "featured-large",
+        stats: [
+          { value: "1500+", label: "Users Trained" },
+          { value: "₹50L+", label: "Digital Transactions" },
+        ],
+        program_highlights: [
+          "Step-by-step guidance on popular payment apps",
+          "Fraud prevention and transaction security",
+        ],
+      },
+      {
+        id: 4,
+        title: "Digital Identity & Documentation",
+        subtitle: "Secure your digital presence",
+        icon: "UserCheck",
+        description:
+          "Assistance with creating and managing digital identities, e-KYC, and important documentation.",
+        images: ["/images/digital-id1.jpg", "/images/digital-id2.jpg"],
+        image_position: "right",
+        layout_type: "masonry",
+        stats: [
+          { value: "3000+", label: "IDs Created" },
+          { value: "99%", label: "Success Rate" },
+        ],
+        program_highlights: [
+          "Aadhaar and PAN linking assistance",
+          "Digital locker setup and management",
+        ],
+      },
+    ];
+  };
+
+  // Function to get Icon component from string
+  const getIconComponent = (iconName) => {
+    const iconMap = {
+      BookOpen: BookOpen,
+      ShieldCheck: ShieldCheck,
+      Smartphone: Smartphone,
+      UserCheck: UserCheck,
+      CreditCard: CreditCard,
+      Accessibility: Accessibility,
+      BatteryCharging: BatteryCharging,
+    };
+    return iconMap[iconName] || BookOpen;
+  };
 
   // Function to render different image layouts with mobile responsiveness
-  const renderImageLayout = (initiative) => {
-    const { images, layoutType } = initiative;
+  const renderImageLayout = (program) => {
+    const { images, layout_type: layoutType } = program;
+
+    if (!images || images.length === 0) {
+      // Fallback image if no images provided
+      return (
+        <div className="relative rounded-lg sm:rounded-xl overflow-hidden group h-40 sm:h-48 md:h-56 lg:h-64 xl:h-72 bg-gradient-to-br from-[#805B3A]/20 to-[#A1887F]/20 flex items-center justify-center">
+          <BookOpen className="w-16 h-16 text-[#805B3A]/40" />
+          <span className="absolute bottom-4 text-sm text-[#805B3A]/60 font-medium">
+            {program.title}
+          </span>
+        </div>
+      );
+    }
+
+    // Helper function to ensure image URLs are properly formatted
+    const getImageUrl = (img) => {
+      if (img.startsWith("http") || img.startsWith("/")) {
+        return img;
+      }
+      // If images are stored locally or in uploads folder
+      return `/uploads/${img}`;
+    };
 
     switch (layoutType) {
       case "grid-3-even":
@@ -160,14 +199,17 @@ export default function TechnologyDigitalPrograms({ onCTAClick }) {
               className="relative rounded-lg sm:rounded-xl overflow-hidden group h-40 sm:h-48 md:h-56 lg:h-64 xl:h-72"
             >
               <img
-                src={images[0]}
-                alt={`${initiative.title} 1`}
+                src={getImageUrl(images[0])}
+                alt={`${program.title} 1`}
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                onError={(e) => {
+                  e.target.src = "/images/placeholder-tech.jpg";
+                }}
               />
             </motion.div>
 
             <div className="grid grid-cols-2 gap-2 sm:gap-3 md:gap-4">
-              {images.slice(1).map((img, index) => (
+              {images.slice(1, 3).map((img, index) => (
                 <motion.div
                   key={index + 1}
                   initial={{ opacity: 0, y: 20 }}
@@ -176,9 +218,12 @@ export default function TechnologyDigitalPrograms({ onCTAClick }) {
                   className="relative rounded-lg sm:rounded-xl overflow-hidden group h-32 sm:h-40 md:h-48 lg:h-56"
                 >
                   <img
-                    src={img}
-                    alt={`${initiative.title} ${index + 2}`}
+                    src={getImageUrl(img)}
+                    alt={`${program.title} ${index + 2}`}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    onError={(e) => {
+                      e.target.src = "/images/placeholder-tech.jpg";
+                    }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </motion.div>
@@ -190,7 +235,7 @@ export default function TechnologyDigitalPrograms({ onCTAClick }) {
       case "vertical-stack":
         return (
           <div className="relative w-full min-h-[180px] sm:min-h-[220px] md:min-h-[260px] lg:min-h-[300px]">
-            {images.map((img, index) => (
+            {images.slice(0, 3).map((img, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 30 }}
@@ -212,9 +257,12 @@ export default function TechnologyDigitalPrograms({ onCTAClick }) {
                 `}
               >
                 <img
-                  src={img}
-                  alt={`${initiative.title} ${index + 1}`}
+                  src={getImageUrl(img)}
+                  alt={`${program.title} ${index + 1}`}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  onError={(e) => {
+                    e.target.src = "/images/placeholder-tech.jpg";
+                  }}
                 />
                 <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </motion.div>
@@ -225,7 +273,7 @@ export default function TechnologyDigitalPrograms({ onCTAClick }) {
       case "featured-large":
         return (
           <div className="space-y-2 sm:space-y-3 md:space-y-4">
-            {images.map((img, index) => (
+            {images.slice(0, 3).map((img, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
@@ -234,9 +282,12 @@ export default function TechnologyDigitalPrograms({ onCTAClick }) {
                 className="relative rounded-lg sm:rounded-xl overflow-hidden group w-full"
               >
                 <img
-                  src={img}
-                  alt={`${initiative.title} ${index + 1}`}
+                  src={getImageUrl(img)}
+                  alt={`${program.title} ${index + 1}`}
                   className="h-32 sm:h-36 md:h-40 lg:h-44 w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  onError={(e) => {
+                    e.target.src = "/images/placeholder-tech.jpg";
+                  }}
                 />
                 {index === 0 && (
                   <div className="absolute top-1 sm:top-2 right-1 sm:right-2 bg-black/60 text-white text-xs px-1.5 sm:px-2 py-0.5 rounded-full">
@@ -258,13 +309,16 @@ export default function TechnologyDigitalPrograms({ onCTAClick }) {
               className="col-span-2 relative rounded-lg sm:rounded-xl overflow-hidden bg-center group h-40 sm:h-48 md:h-56 lg:h-64"
             >
               <img
-                src={images[0]}
-                alt={`${initiative.title} 1`}
+                src={getImageUrl(images[0])}
+                alt={`${program.title} 1`}
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                onError={(e) => {
+                  e.target.src = "/images/placeholder-tech.jpg";
+                }}
               />
             </motion.div>
             <div className="flex flex-col gap-2 sm:gap-3 md:gap-4">
-              {images.slice(1).map((img, index) => (
+              {images.slice(1, 3).map((img, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
@@ -273,91 +327,12 @@ export default function TechnologyDigitalPrograms({ onCTAClick }) {
                   className="relative rounded-lg sm:rounded-xl overflow-hidden group h-20 sm:h-24 md:h-28 lg:h-32"
                 >
                   <img
-                    src={img}
-                    alt={`${initiative.title} ${index + 2}`}
+                    src={getImageUrl(img)}
+                    alt={`${program.title} ${index + 2}`}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        );
-
-      case "diagonal":
-        return (
-          <div className="w-full py-2 sm:py-3 md:py-4 lg:py-6">
-            <div className="flex justify-center gap-2 sm:gap-3 md:gap-4 lg:gap-6 mb-2 sm:mb-3 md:mb-4 lg:mb-6 relative h-32 sm:h-40 md:h-48 lg:h-56 xl:h-64">
-              {images.slice(0, 2).map((img, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 40 }}
-                  animate={isLoaded ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.6, delay: index * 0.2 }}
-                  className={`w-1/2 h-32 sm:h-40 md:h-48 lg:h-56 xl:h-64 rounded-lg sm:rounded-xl overflow-hidden border-2 border-white
-                    group hover:-translate-y-2 transition-transform duration-500 absolute
-                    ${
-                      index === 0
-                        ? "rotate-[-4deg] -translate-x-8 sm:-translate-x-12 md:-translate-x-16 lg:-translate-x-20 xl:-translate-x-24 z-20"
-                        : "rotate-[4deg] translate-x-8 sm:translate-x-12 md:translate-x-16 lg:translate-x-20 xl:translate-x-24 z-10"
-                    }`}
-                >
-                  <img
-                    src={img}
-                    alt={`img-${index}`}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  />
-                </motion.div>
-              ))}
-            </div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              animate={isLoaded ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6 }}
-              className="w-full flex justify-center"
-            >
-              <div className="w-4/5 sm:w-3/4 md:w-2/3 h-32 sm:h-40 md:h-48 lg:h-56 xl:h-64 rounded-lg sm:rounded-xl overflow-hidden border-2 border-white group hover:-translate-y-2 transition-transform duration-500 rotate-[-2deg]">
-                <img
-                  src={images[2]}
-                  alt="single-image"
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                />
-              </div>
-            </motion.div>
-          </div>
-        );
-
-      case "pyramid":
-        return (
-          <div className="w-full py-1 sm:py-2 md:py-3 lg:py-4">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={isLoaded ? { opacity: 1, scale: 1 } : {}}
-              transition={{ duration: 0.5 }}
-              className="w-full flex justify-center mb-2 sm:mb-3 md:mb-4 lg:mb-6"
-            >
-              <div className="w-full h-32 sm:h-40 md:h-48 lg:h-56 rounded-lg sm:rounded-xl overflow-hidden group border-2 border-white">
-                <img
-                  src={images[0]}
-                  alt={`${initiative.title} 1`}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-              </div>
-            </motion.div>
-
-            <div className="grid grid-cols-2 gap-2 sm:gap-3 md:gap-4 lg:gap-6 justify-items-center">
-              {images.slice(1).map((img, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={isLoaded ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.5, delay: index * 0.2 }}
-                  className="w-full h-24 sm:h-32 md:h-40 lg:h-48 rounded-lg sm:rounded-xl overflow-hidden group border-2 border-white"
-                >
-                  <img
-                    src={img}
-                    alt={`${initiative.title} ${index + 2}`}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    onError={(e) => {
+                      e.target.src = "/images/placeholder-tech.jpg";
+                    }}
                   />
                 </motion.div>
               ))}
@@ -366,17 +341,21 @@ export default function TechnologyDigitalPrograms({ onCTAClick }) {
         );
 
       default:
+        // Default grid layout
         return (
           <div className="grid grid-cols-3 gap-2 sm:gap-3 md:gap-4">
-            {images.map((img, index) => (
+            {images.slice(0, 3).map((img, index) => (
               <div
                 key={index}
                 className="relative rounded-md sm:rounded-lg overflow-hidden h-24 sm:h-32 md:h-40 lg:h-48"
               >
                 <img
-                  src={img}
-                  alt={`${initiative.title} ${index + 1}`}
+                  src={getImageUrl(img)}
+                  alt={`${program.title} ${index + 1}`}
                   className="w-full h-full object-cover"
+                  onError={(e) => {
+                    e.target.src = "/images/placeholder-tech.jpg";
+                  }}
                 />
               </div>
             ))}
@@ -394,9 +373,14 @@ export default function TechnologyDigitalPrograms({ onCTAClick }) {
     window.location.href = "/about";
   };
 
+  // Function to handle retry fetching data
+  const handleRetry = () => {
+    fetchAllData();
+  };
+
   return (
-    <section className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-29 sm:py-29 md:py-26 lg:py-20">
-      {/* HERO SECTION */}
+    <section className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-12 sm:py-16 md:py-20 lg:py-24">
+      {/* STATIC HERO SECTION */}
       <motion.div
         initial={{ opacity: 0, y: -40, scale: 0.95 }}
         animate={isLoaded ? { opacity: 1, y: 0, scale: 1 } : {}}
@@ -476,7 +460,7 @@ export default function TechnologyDigitalPrograms({ onCTAClick }) {
         </div>
       </motion.div>
 
-      {/* KEY DIGITAL INITIATIVES WITH IMAGES */}
+      {/* DYNAMIC KEY DIGITAL INITIATIVES WITH IMAGES */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         animate={isLoaded ? { opacity: 1, y: 0 } : {}}
@@ -513,109 +497,171 @@ export default function TechnologyDigitalPrograms({ onCTAClick }) {
           </p>
         </motion.div>
 
-        {/* Initiatives List with Images */}
-        <div className="space-y-12 sm:space-y-16 md:space-y-20 px-2">
-          {initiatives.map((initiative, index) => {
-            const Icon = initiative.icon;
-            const isImageLeft = initiative.imagePosition === "left";
+        {/* Error Display */}
+        {error && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            className="text-center py-8 bg-red-50 rounded-lg mb-8"
+          >
+            <p className="text-red-600 mb-4">{error}</p>
+            <button
+              onClick={handleRetry}
+              className="px-4 py-2 bg-[#805B3A] text-white rounded-lg hover:bg-[#6e4d30] transition-colors"
+            >
+              Retry Loading
+            </button>
+          </motion.div>
+        )}
 
-            return (
-              <motion.div
-                key={initiative.id}
-                initial={{ opacity: 0, y: 40 }}
-                animate={isLoaded ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.7, delay: index * 0.1 }}
-                className={`grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center ${
-                  isImageLeft ? "" : "lg:grid-flow-dense"
-                }`}
-              >
-                {/* Image Container */}
-                <motion.div
-                  initial={{ opacity: 0, x: isImageLeft ? -40 : 40 }}
-                  animate={isLoaded ? { opacity: 1, x: 0 } : {}}
-                  transition={{ duration: 0.7, delay: index * 0.1 + 0.2 }}
-                  className={`relative ${isImageLeft ? "" : "lg:col-start-2"}`}
-                >
-                  <div className="relative p-2 sm:p-3 bg-gradient-to-br from-slate-50 to-white rounded-lg sm:rounded-xl shadow-md sm:shadow-lg">
-                    {renderImageLayout(initiative)}
-                  </div>
-                </motion.div>
+        {/* Dynamic Initiatives List with Images */}
+        {loading ? (
+          <div className="text-center py-12">
+            <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-[#805B3A]"></div>
+            <p className="mt-4 text-slate-600">Loading programs...</p>
+          </div>
+        ) : (
+          <div className="space-y-12 sm:space-y-16 md:space-y-20 px-2">
+            {programs.length > 0 ? (
+              programs.map((program, index) => {
+                const Icon = getIconComponent(program.icon);
+                const isImageLeft = program.image_position === "left";
 
-                {/* Content Container */}
-                <motion.div
-                  initial={{ opacity: 0, x: isImageLeft ? 40 : -40 }}
-                  animate={isLoaded ? { opacity: 1, x: 0 } : {}}
-                  transition={{ duration: 0.7, delay: index * 0.1 + 0.3 }}
-                  className={`${
-                    isImageLeft ? "" : "lg:col-start-1"
-                  } space-y-3 sm:space-y-4 md:space-y-6`}
-                >
-                  {/* Initiative Header */}
-                  <div className="flex items-start gap-2 sm:gap-3 md:gap-4">
-                    <div className="flex-shrink-0 h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12 flex items-center justify-center rounded-md sm:rounded-lg bg-gradient-to-br from-[#805B3A] to-[#A1887F] text-white shadow-sm sm:shadow-md">
-                      <Icon className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />
-                    </div>
-
-                    <div>
-                      <div className="flex items-center gap-1 sm:gap-2 mb-1">
-                        <span className="text-xs font-medium text-[#805B3A] bg-[#805B3A]/10 px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full">
-                          {initiative.subtitle}
-                        </span>
+                return (
+                  <motion.div
+                    key={program.id || index}
+                    initial={{ opacity: 0, y: 40 }}
+                    animate={isLoaded ? { opacity: 1, y: 0 } : {}}
+                    transition={{ duration: 0.7, delay: index * 0.1 }}
+                    className={`grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center ${
+                      isImageLeft ? "" : "lg:grid-flow-dense"
+                    }`}
+                  >
+                    {/* Image Container */}
+                    <motion.div
+                      initial={{ opacity: 0, x: isImageLeft ? -40 : 40 }}
+                      animate={isLoaded ? { opacity: 1, x: 0 } : {}}
+                      transition={{ duration: 0.7, delay: index * 0.1 + 0.2 }}
+                      className={`relative ${
+                        isImageLeft ? "" : "lg:col-start-2"
+                      }`}
+                    >
+                      <div className="relative p-2 sm:p-3 bg-gradient-to-br from-slate-50 to-white rounded-lg sm:rounded-xl shadow-md sm:shadow-lg">
+                        {renderImageLayout(program)}
                       </div>
-                      <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-slate-900">
-                        {initiative.title}
-                      </h3>
-                    </div>
-                  </div>
+                    </motion.div>
 
-                  {/* Description */}
-                  <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-                    {initiative.description}
-                  </p>
+                    {/* Content Container */}
+                    <motion.div
+                      initial={{ opacity: 0, x: isImageLeft ? 40 : -40 }}
+                      animate={isLoaded ? { opacity: 1, x: 0 } : {}}
+                      transition={{ duration: 0.7, delay: index * 0.1 + 0.3 }}
+                      className={`${
+                        isImageLeft ? "" : "lg:col-start-1"
+                      } space-y-3 sm:space-y-4 md:space-y-6`}
+                    >
+                      {/* Initiative Header */}
+                      <div className="flex items-start gap-2 sm:gap-3 md:gap-4">
+                        <div className="flex-shrink-0 h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12 flex items-center justify-center rounded-md sm:rounded-lg bg-gradient-to-br from-[#805B3A] to-[#A1887F] text-white shadow-sm sm:shadow-md">
+                          <Icon className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />
+                        </div>
 
-                  {/* Key Features */}
-                  <div className="pt-1 sm:pt-2 md:pt-3">
-                    <h4 className="text-sm sm:text-base font-semibold text-slate-800 mb-1 sm:mb-2 flex items-center gap-1 sm:gap-2">
-                      <div className="w-1.5 h-1.5 bg-[#805B3A] rounded-full"></div>
-                      Program Highlights
-                    </h4>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-1 sm:gap-2">
-                      {getProgramHighlights(initiative.id).map(
-                        (feature, featureIndex) => (
-                          <div
-                            key={featureIndex}
-                            className="flex items-center gap-1 sm:gap-2"
-                          >
-                            <div className="w-1.5 h-1.5 bg-[#805B3A] rounded-full flex-shrink-0"></div>
-                            <span className="text-slate-700 text-xs sm:text-sm">
-                              {feature}
+                        <div>
+                          <div className="flex items-center gap-1 sm:gap-2 mb-1">
+                            <span className="text-xs font-medium text-[#805B3A] bg-[#805B3A]/10 px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full">
+                              {program.subtitle}
                             </span>
                           </div>
-                        )
-                      )}
-                    </div>
-                  </div>
+                          <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-slate-900">
+                            {program.title}
+                          </h3>
+                        </div>
+                      </div>
 
-                  {/* Button for each initiative */}
-                  <div className="pt-3 sm:pt-4">
-                    <button
-                      onClick={redirectToContact}
-                      className="group inline-flex items-center gap-1 sm:gap-2 px-3 sm:px-4 md:px-6 py-1.5 sm:py-2 bg-gradient-to-r from-[#805B3A] to-[#A1887F] text-white font-semibold rounded-md sm:rounded-lg hover:from-[#6e4d30] hover:to-[#8d756c] transition-all duration-300 hover:scale-105 hover:shadow-md text-xs sm:text-sm md:text-base"
-                    >
-                      <span>Get In Touch</span>
-                      <span className="group-hover:translate-x-1 transition-transform">
-                        →
-                      </span>
-                    </button>
-                  </div>
-                </motion.div>
-              </motion.div>
-            );
-          })}
-        </div>
+                      {/* Description */}
+                      <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+                        {program.description}
+                      </p>
+
+                      {/* Stats */}
+                      {program.stats && program.stats.length > 0 && (
+                        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3 md:gap-4 pt-2 sm:pt-3">
+                          {program.stats.map((stat, statIndex) => (
+                            <div
+                              key={statIndex}
+                              className="bg-gradient-to-br from-slate-50 to-white rounded-lg sm:rounded-xl p-2 sm:p-3 text-center border border-slate-100"
+                            >
+                              <div className="text-lg sm:text-xl md:text-2xl font-bold text-[#805B3A]">
+                                {stat.value}
+                              </div>
+                              <div className="text-xs sm:text-sm text-slate-600">
+                                {stat.label}
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      )}
+
+                      {/* Program Highlights */}
+                      {program.program_highlights &&
+                        program.program_highlights.length > 0 && (
+                          <div className="pt-1 sm:pt-2 md:pt-3">
+                            <h4 className="text-sm sm:text-base font-semibold text-slate-800 mb-1 sm:mb-2 flex items-center gap-1 sm:gap-2">
+                              <div className="w-1.5 h-1.5 bg-[#805B3A] rounded-full"></div>
+                              Program Highlights
+                            </h4>
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-1 sm:gap-2">
+                              {program.program_highlights.map(
+                                (highlight, featureIndex) => (
+                                  <div
+                                    key={featureIndex}
+                                    className="flex items-center gap-1 sm:gap-2"
+                                  >
+                                    <div className="w-1.5 h-1.5 bg-[#805B3A] rounded-full flex-shrink-0"></div>
+                                    <span className="text-slate-700 text-xs sm:text-sm">
+                                      {highlight}
+                                    </span>
+                                  </div>
+                                )
+                              )}
+                            </div>
+                          </div>
+                        )}
+
+                      {/* Button for each initiative */}
+                      <div className="pt-3 sm:pt-4">
+                        <button
+                          onClick={redirectToContact}
+                          className="group inline-flex items-center gap-1 sm:gap-2 px-3 sm:px-4 md:px-6 py-1.5 sm:py-2 bg-gradient-to-r from-[#805B3A] to-[#A1887F] text-white font-semibold rounded-md sm:rounded-lg hover:from-[#6e4d30] hover:to-[#8d756c] transition-all duration-300 hover:scale-105 hover:shadow-md text-xs sm:text-sm md:text-base"
+                        >
+                          <span>Get In Touch</span>
+                          <span className="group-hover:translate-x-1 transition-transform">
+                            →
+                          </span>
+                        </button>
+                      </div>
+                    </motion.div>
+                  </motion.div>
+                );
+              })
+            ) : (
+              <div className="text-center py-12">
+                <p className="text-slate-600">
+                  No programs available at the moment.
+                </p>
+                <button
+                  onClick={handleRetry}
+                  className="mt-4 px-4 py-2 bg-[#805B3A] text-white rounded-lg hover:bg-[#6e4d30] transition-colors"
+                >
+                  Refresh
+                </button>
+              </div>
+            )}
+          </div>
+        )}
       </motion.div>
 
-      {/* CTA SECTION */}
+      {/* STATIC CTA SECTION */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={isLoaded ? { opacity: 1, y: 0 } : {}}
@@ -651,7 +697,7 @@ export default function TechnologyDigitalPrograms({ onCTAClick }) {
 
               <button
                 onClick={redirectToAbout}
-                className="bg-transparent border border-white text-white px-4 sm:px-6 md:px-8 py-1.5 sm:py-2 md:py-3 rounded-md sm:rounded-lg font-semibold text-xs sm:text-sm md:text-base hover:bg-white/10 transition-all"
+                className="bg-transparent border border-white text-white px-4 sm:px-6 md:px-8 py-1-1.5 sm:py-2 md:py-3 rounded-md sm:rounded-lg font-semibold text-xs sm:text-sm md:text-base hover:bg-white/10 transition-all"
               >
                 Explore All Programs
               </button>
@@ -661,44 +707,4 @@ export default function TechnologyDigitalPrograms({ onCTAClick }) {
       </motion.div>
     </section>
   );
-}
-
-// Helper function to get program highlights based on initiative ID
-function getProgramHighlights(initiativeId) {
-  const highlights = {
-    1: [
-      "Empowering all ages to harness technology for learning, communication, essential services",
-    ],
-    2: [
-      "Phishing & online scam identification",
-      "Online privacy and data protection",
-      "Cyber hygiene & device safety practices",
-    ],
-    3: [
-      "Overcoming hardware and connectivity poverty to ensure equitable access.",
-    ],
-    4: [
-      "Patient-led Learning Approach",
-      "Simple Interface Training",
-      "Video Call Assistance",
-      "Essential Apps Guidance",
-    ],
-    5: [
-      "UPI Payment Security",
-      "Financial Scam Prevention",
-      "Budgeting Tool Training",
-      "Safe Transaction Practices",
-    ],
-    6: [
-      "Ensuring equitable digital participation for every member of the community",
-    ],
-    7: [
-      "Screen Time Management",
-      "Digital Wellness Sessions",
-      "Real-world Activity Planning",
-      "Mindful Tech Usage",
-    ],
-  };
-
-  return highlights[initiativeId] || [];
 }

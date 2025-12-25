@@ -48,7 +48,25 @@ export default function AboutCyberSecurity() {
       icon: <FiClock className="w-5 h-5" />,
       title: "Youth Empowerment",
     },
+    {
+      id: 4,
+      icon: <FiClock className="w-5 h-5" />,
+      title: "Youth Empowerment",
+    },
   ];
+
+  // Function to get proper image URL
+  const getImageUrl = (imagePath) => {
+    if (!imagePath) return "";
+
+    // If image path already starts with /uploads or http, return as is
+    if (imagePath.startsWith("/uploads/") || imagePath.startsWith("http")) {
+      return imagePath;
+    }
+
+    // Otherwise, prepend /uploads/ to the path
+    return `/uploads/${imagePath}`;
+  };
 
   // If no data or loading, show loading state
   if (loading) {
@@ -137,30 +155,24 @@ export default function AboutCyberSecurity() {
           >
             {section.main_image && (
               <motion.img
-                src={section.main_image}
+                src={getImageUrl(section.main_image)}
                 alt="About Navanvesha Foundation"
                 className="w-full h-64 object-cover rounded-2xl shadow-[0_0_15px_#c6af93]"
-                animate={{ y: [0, -8, 0] }}
-                transition={{ repeat: Infinity, duration: 4 }}
               />
             )}
             <div className="grid grid-cols-2 gap-4">
               {section.secondary_image1 && (
                 <motion.img
-                  src={section.secondary_image1}
-                  alt="Scholarship program"
-                  className="w-full h-48 object-cover rounded-xl shadow-[0_0_10px_#c6af93]"
-                  animate={{ y: [0, -6, 0] }}
-                  transition={{ repeat: Infinity, duration: 3.5 }}
+                  src={getImageUrl(section.secondary_image1)}
+                  alt="Secondary image 1"
+                  className="w-full h-48 object-cover rounded-xl"
                 />
               )}
               {section.secondary_image2 && (
                 <motion.img
-                  src={section.secondary_image2}
-                  alt="Innovation showcase"
-                  className="w-full h-48 object-cover rounded-xl shadow-[0_0_10px_#c6af93]"
-                  animate={{ y: [0, -7, 0] }}
-                  transition={{ repeat: Infinity, duration: 3.8 }}
+                  src={getImageUrl(section.secondary_image2)}
+                  alt="Secondary image 2"
+                  className="w-full h-48 object-cover rounded-xl"
                 />
               )}
             </div>
@@ -332,7 +344,8 @@ export default function AboutCyberSecurity() {
             <div className="flex flex-col gap-4">
               {section.secondary_image1 && (
                 <motion.img
-                  src={section.secondary_image1}
+                  src={getImageUrl(section.secondary_image1)}
+                  alt="About us image 1"
                   className="w-full h-56 object-cover rounded-2xl shadow-[0_0_25px_#c6af93] hover:scale-105 transition-all duration-500"
                   animate={{ y: [0, -10, 0] }}
                   transition={{ repeat: Infinity, duration: 4 }}
@@ -340,7 +353,8 @@ export default function AboutCyberSecurity() {
               )}
               {section.secondary_image2 && (
                 <motion.img
-                  src={section.secondary_image2}
+                  src={getImageUrl(section.secondary_image2)}
+                  alt="About us image 2"
                   className="w-full h-56 object-cover rounded-2xl shadow-[0_0_25px_#c6af93] hover:scale-105 transition-all duration-500"
                   animate={{ y: [0, -12, 0] }}
                   transition={{ repeat: Infinity, duration: 4 }}
@@ -350,7 +364,8 @@ export default function AboutCyberSecurity() {
 
             {section.main_image && (
               <motion.img
-                src={section.main_image}
+                src={getImageUrl(section.main_image)}
+                alt="About Navanvesha Foundation"
                 className="w-full h-[460px] object-cover rounded-3xl shadow-[0_0_35px_#c6af93] hover:scale-105 transition-all duration-500"
                 animate={{ y: [0, -15, 0] }}
                 transition={{ repeat: Infinity, duration: 4.5 }}
@@ -365,8 +380,6 @@ export default function AboutCyberSecurity() {
 
 // Default/fallback content function
 function renderDefaultContent() {
-  // This is your original hardcoded content
-  // You can keep it as fallback or remove it
   return (
     <section className="py-30 md:py-20 px-4 md:px-6 md:pt-30">
       <div className="max-w-7xl mx-auto">

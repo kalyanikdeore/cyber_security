@@ -50,24 +50,21 @@ const HeroSection = () => {
     try {
       setLoading(true);
       const response = await axiosInstance.get("/hero-slides");
-      console.log("Backend response:", response.data);
 
-      // Use raw array response directly
+      // Handle response structure
       const apiSlides = Array.isArray(response.data)
         ? response.data
         : response.data.data || [];
 
-      apiSlides.forEach((slide, index) =>
-        console.log(`Slide ${index}:`, slide)
-      );
+      // Filter active slides
+      const activeSlides = apiSlides.filter((slide) => slide.is_active);
 
-      // Sort if needed
-      apiSlides.sort((a, b) => (a.slide_order || 0) - (b.slide_order || 0));
+      // Sort by slide_order
+      activeSlides.sort((a, b) => (a.slide_order || 0) - (b.slide_order || 0));
 
-      setSlides(apiSlides);
+      setSlides(activeSlides);
       setError(null);
     } catch (err) {
-      console.error("Error fetching slides:", err);
       setError(err.message || "Failed to load slides");
       setSlides([]);
     } finally {
@@ -138,7 +135,7 @@ const HeroSection = () => {
           className="absolute inset-0"
         >
           <img
-            src={currentSlideData.image_url || currentSlideData.image_path}
+            src={currentSlideData.image_url}
             alt={currentSlideData.title}
             className="w-full h-full object-cover"
           />
@@ -158,7 +155,7 @@ const HeroSection = () => {
                   {currentSlideData.subtitle}
                 </span>
               </h1>
-              <p className="text-base lg:text-lg mb-6">
+              <p className="text-base lg:text-lg mb-6 whitespace-pre-line">
                 {currentSlideData.description}
               </p>
               <div className="flex gap-4 flex-wrap">

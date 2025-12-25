@@ -44,16 +44,36 @@ const WhyChooseUs = () => {
     <section className="py-20 bg-gradient-to-br from-[#F6F7F4] to-white">
       <div className="max-w-7xl mx-auto px-4">
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-14 md:mb-16 lg:mb-20"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl font-bold">
-            Why <span className="text-[#926b49]">Choose Us</span>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6 }}
+            className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-[#926b49]/10 border border-[#926b49]/20 mb-4 sm:mb-5 md:mb-6"
+          >
+            <div className="h-3 w-3 sm:h-4 sm:w-4 text-[#926b49]" />
+            <span className="text-xs sm:text-sm font-semibold text-[#926b49] tracking-wide">
+              WHY CHOOSE US
+            </span>
+          </motion.div>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#1E1E1E] mb-4 sm:mb-5 md:mb-6 px-2">
+            Secure Your Digital <span className="text-[#926b49]">Future</span>
           </h2>
-          <p className="mt-4 text-gray-600 max-w-3xl mx-auto">
+
+          <motion.div
+            className="h-0.5 sm:h-1 w-12 sm:w-16 md:w-20 bg-gradient-to-r from-[#af8054] to-[#af8056] mx-auto mb-4 sm:mb-5 md:mb-6"
+            initial={{ width: 0 }}
+            whileInView={{ width: "3rem" }}
+            transition={{ delay: 0.3, duration: 0.5 }}
+            viewport={{ once: true }}
+          />
+
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-[#4A4A4A] max-w-3xl mx-auto leading-relaxed px-2 sm:px-4">
             We are a mission-driven partner, dedicated to building a digitally
             empowered and secure society.
           </p>

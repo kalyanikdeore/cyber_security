@@ -65,8 +65,9 @@ export default function HolisticApproach() {
         </h2>
 
         <p className="text-gray-600 max-w-2xl mx-auto mb-12">
-          Navanvesha integrates interconnected solutions across key pillars to
-          ensure sustainable and holistic development.
+          Navanvesha's methodology is unique because we recognize that social
+          problems are interconnected. We integrate solutions across key pillars
+          to ensure development is holistic and lasting.
         </p>
 
         {/* Mobile */}

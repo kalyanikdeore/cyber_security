@@ -100,10 +100,6 @@ const RecentEvents = () => {
                     src={item.image}
                     alt={item.title}
                     className="w-full h-52 object-cover"
-                    onError={(e) =>
-                      (e.target.src =
-                        "https://via.placeholder.com/800x450?text=Event+Image")
-                    }
                   />
                 ) : (
                   <div className="h-52 bg-gray-200 flex items-center justify-center text-gray-500">

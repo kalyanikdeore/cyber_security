@@ -9,7 +9,7 @@ import {
   FaHeart,
 } from "react-icons/fa";
 import CTA from "../cta/CTA";
-import axiosInstance, { fileBaseURL } from "../../services/api";
+import axiosInstance from "../../services/api";
 
 /* ICON MAP */
 const iconMap = {
@@ -46,10 +46,21 @@ const AboutSection = () => {
             {aboutData.badge_title}
           </motion.span>
 
-          <motion.h2 className="text-2xl md:text-4xl font-bold mb-4">
-            {aboutData.main_heading}{" "}
-            <span className="text-[#926b49]">{aboutData.highlight_text}</span>
-          </motion.h2>
+          <div className="mb-6">
+            <motion.h2 className="text-2xl md:text-4xl font-bold mb-2">
+              {aboutData.main_heading}{" "}
+              <span className="text-[#926b49]">{aboutData.highlight_text}</span>
+            </motion.h2>
+
+            {/* Short border line */}
+            <motion.div
+              className="h-1 bg-gradient-to-r from-[#926b49] to-[#82613e] mx-auto mb-4 md:mb-6"
+              initial={{ width: 0 }}
+              whileInView={{ width: "5rem" }} // mobile
+              transition={{ delay: 0.2, duration: 0.5 }}
+              viewport={{ once: true }}
+            />
+          </div>
 
           <motion.p className="text-gray-600 max-w-2xl mx-auto mb-12">
             {aboutData.short_description}
@@ -63,8 +74,8 @@ const AboutSection = () => {
             <p className="text-[#805b3a] mb-8">{aboutData.description_two}</p>
 
             {/* FOCUS AREAS */}
-            <div className="grid sm:grid-cols-2 gap-4 mb-8">
-              {aboutData.focus_areas.map((item, index) => {
+            {/* <div className="grid sm:grid-cols-2 gap-4 mb-8">
+              {aboutData.focus_areas?.map((item, index) => {
                 const Icon = iconMap[item.icon];
                 return (
                   <div
@@ -76,11 +87,36 @@ const AboutSection = () => {
                   </div>
                 );
               })}
+            </div> */}
+            {/* FOCUS AREAS */}
+            <div className="mb-10">
+              {/* Heading */}
+              <h3 className="text-2xl font-semibold mb-4 text-gray-800">
+                Our Core Focus Areas
+              </h3>
+
+              {/* Focus Area Grid */}
+              <div className="grid sm:grid-cols-2 gap-4">
+                {aboutData.focus_areas?.map((item, index) => {
+                  const Icon = iconMap[item.icon];
+                  return (
+                    <div
+                      key={index}
+                      className="flex items-center gap-3 p-3  border border-[#e4ba94]  rounded-lg hover:shadow-md transition"
+                    >
+                      {Icon && <Icon className="text-[#805b3a]" size={20} />}
+                      <span className="font-medium text-gray-700">
+                        {item.text}
+                      </span>
+                    </div>
+                  );
+                })}
+              </div>
             </div>
 
             {/* STATS */}
-            <div className="grid grid-cols-3 gap-4">
-              {aboutData.stats.map((stat, index) => (
+            {/* <div className="grid grid-cols-3 gap-4">
+              {aboutData.stats?.map((stat, index) => (
                 <div key={index} className="text-center p-4 border rounded-xl">
                   <div className="text-2xl font-bold text-[#805b3a]">
                     {stat.number}
@@ -88,28 +124,31 @@ const AboutSection = () => {
                   <div className="text-sm">{stat.label}</div>
                 </div>
               ))}
-            </div>
+            </div> */}
           </div>
 
           {/* RIGHT IMAGES */}
           <div className="grid grid-cols-2 gap-4 h-[500px]">
             <img
-              src={`${fileBaseURL}${aboutData.image_one}`}
+              src={aboutData.image_one}
+              alt="About top"
               className="col-span-2 h-full object-cover rounded-xl"
             />
             <img
-              src={`${fileBaseURL}${aboutData.image_two}`}
+              src={aboutData.image_two}
+              alt="About bottom left"
               className="h-full object-cover rounded-xl"
             />
             <img
-              src={`${fileBaseURL}${aboutData.image_three}`}
+              src={aboutData.image_three}
+              alt="About bottom right"
               className="h-full object-cover rounded-xl"
             />
           </div>
         </div>
 
         {/* CTA */}
-        <div className="mt-16">
+        <div className="mt-46">
           <CTA />
         </div>
       </div>

@@ -1,27 +1,58 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import axiosInstance from "../../services/api";
+
 const FuturePlans = () => {
-  // 1. State to hold the API data
   const [goals, setGoals] = useState([]);
-  // 2. State to manage loading and error states
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // 3. Fetch data on component mount
   useEffect(() => {
     const fetchGoals = async () => {
       try {
         setLoading(true);
-        // ✅ This calls your Laravel route: /api/future-plans
         const response = await axiosInstance.get("/future-plans");
-        // ✅ This sets your API data to the 'goals' state
-        setGoals(response.data);
+
+        // Log the response to debug the structure
+        console.log("API Response:", response.data);
+        console.log("First goal stats type:", typeof response.data[0]?.stats);
+        console.log("First goal stats:", response.data[0]?.stats);
+
+        // Process the stats field - handle both string and object cases
+        const processedGoals = response.data.map((goal) => {
+          let processedStats = [];
+
+          try {
+            if (typeof goal.stats === "string") {
+              // If stats is a string, try to parse it
+              processedStats = JSON.parse(goal.stats);
+            } else if (typeof goal.stats === "object" && goal.stats !== null) {
+              // If stats is already an object, use it directly
+              processedStats = Array.isArray(goal.stats)
+                ? goal.stats
+                : [goal.stats];
+            }
+          } catch (parseError) {
+            console.error(
+              "Error processing stats for goal",
+              goal.id,
+              ":",
+              parseError
+            );
+            processedStats = [];
+          }
+
+          return {
+            ...goal,
+            processedStats, // Add processed stats to the goal object
+          };
+        });
+
+        setGoals(processedGoals);
         setError(null);
       } catch (err) {
         console.error("Error fetching future plans:", err);
         setError("Failed to load data. Please try again later.");
-        // Optionally, keep an empty array for 'goals' on error
         setGoals([]);
       } finally {
         setLoading(false);
@@ -29,9 +60,9 @@ const FuturePlans = () => {
     };
 
     fetchGoals();
-  }, []); // Empty dependency array ensures this runs once
+  }, []);
 
-  // Show a loading message
+  // Show loading state
   if (loading) {
     return (
       <section className="py-16 px-4 sm:px-6 md:px-8 bg-gradient-to-b from-white to-amber-50">
@@ -43,7 +74,7 @@ const FuturePlans = () => {
     );
   }
 
-  // Show an error message
+  // Show error state
   if (error) {
     return (
       <section className="py-16 px-4 sm:px-6 md:px-8 bg-gradient-to-b from-white to-amber-50">
@@ -61,7 +92,7 @@ const FuturePlans = () => {
     );
   }
 
-  // Show this if the API call succeeds but returns no data
+  // Show empty state
   if (goals.length === 0) {
     return (
       <section className="py-16 px-4 sm:px-6 md:px-8 bg-gradient-to-b from-white to-amber-50">
@@ -72,11 +103,10 @@ const FuturePlans = () => {
     );
   }
 
-  // Main render with dynamic data
   return (
     <section className="py-10 sm:py-12 md:py-16 px-4 sm:px-6 md:px-8 bg-gradient-to-b from-white to-amber-50">
       <div className="max-w-7xl mx-auto">
-        {/* Header (This remains the same as your original code) */}
+        {/* Header */}
         <motion.div
           className="text-center mb-10 sm:mb-12 md:mb-16"
           initial={{ opacity: 0, y: 40 }}
@@ -110,7 +140,7 @@ const FuturePlans = () => {
           </motion.p>
         </motion.div>
 
-        {/* Goals Grid - Now renders data from the 'goals' state */}
+        {/* Goals Grid */}
         <motion.div
           className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6 md:gap-8"
           initial="hidden"
@@ -150,12 +180,14 @@ const FuturePlans = () => {
                     </span>
                   </div>
                 </motion.div>
+
                 <motion.div
                   className="mb-4 sm:mb-6 pt-2 sm:pt-4 flex justify-end text-xl sm:text-2xl opacity-20"
                   whileHover={{ rotate: 12, opacity: 0.3 }}
                 >
                   {goal.icon || "📋"}
                 </motion.div>
+
                 <motion.h3
                   className={`text-xl sm:text-2xl font-bold mb-3 sm:mb-4 leading-tight ${goal.text_color}`}
                   initial={{ opacity: 0, y: 20 }}
@@ -164,6 +196,7 @@ const FuturePlans = () => {
                 >
                   {goal.title}
                 </motion.h3>
+
                 <motion.p
                   className="text-gray-700 text-sm sm:text-base mb-6 sm:mb-8 leading-relaxed"
                   initial={{ opacity: 0 }}
@@ -172,35 +205,43 @@ const FuturePlans = () => {
                 >
                   {goal.description}
                 </motion.p>
-                {/* Stats */}
+
+                {/* Stats - Use processedStats instead of parsing */}
                 <div className="grid grid-cols-1 gap-3 sm:gap-4">
-                  {JSON.parse(goal.stats).map((stat, index) => (
-                    <motion.div
-                      key={index}
-                      className="flex items-center gap-3 p-2 sm:p-3 bg-white/50 backdrop-blur-sm rounded-lg sm:rounded-xl border border-white/80"
-                      whileHover={{ scale: 1.03 }}
-                      transition={{ type: "spring", stiffness: 200 }}
-                    >
-                      <div className="text-xl sm:text-2xl flex-shrink-0">
-                        {stat.icon || "📊"}
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <div className="text-xs sm:text-sm text-gray-500 truncate">
-                          {stat.label}
+                  {goal.processedStats && goal.processedStats.length > 0 ? (
+                    goal.processedStats.map((stat, index) => (
+                      <motion.div
+                        key={index}
+                        className="flex items-center gap-3 p-2 sm:p-3 bg-white/50 backdrop-blur-sm rounded-lg sm:rounded-xl border border-white/80"
+                        whileHover={{ scale: 1.03 }}
+                        transition={{ type: "spring", stiffness: 200 }}
+                      >
+                        <div className="text-xl sm:text-2xl flex-shrink-0">
+                          {stat.icon || "📊"}
                         </div>
-                        <div
-                          className={`font-bold text-sm sm:text-base truncate ${goal.text_color}`}
-                        >
-                          {stat.value}
+                        <div className="flex-1 min-w-0">
+                          <div className="text-xs sm:text-sm text-gray-500 truncate">
+                            {stat.label || "Stat Label"}
+                          </div>
+                          <div
+                            className={`font-bold text-sm sm:text-base truncate ${goal.text_color}`}
+                          >
+                            {stat.value || "N/A"}
+                          </div>
                         </div>
-                      </div>
-                    </motion.div>
-                  ))}
+                      </motion.div>
+                    ))
+                  ) : (
+                    <div className="text-center py-4 text-gray-500 text-sm">
+                      No stats available
+                    </div>
+                  )}
                 </div>
               </motion.div>
             </motion.div>
           ))}
         </motion.div>
+
         {/* Mobile Call to Action */}
         <motion.div
           className="mt-10 sm:mt-12 md:hidden text-center"

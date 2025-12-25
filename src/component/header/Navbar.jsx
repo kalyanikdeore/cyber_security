@@ -88,10 +88,10 @@ const Navbar = () => {
             <div className="flex flex-col md:flex-row justify-between md:items-center gap-2 md:gap-0">
               {/* Contact */}
               <div className="flex flex-col md:flex-row items-center justify-center md:justify-start text-sm gap-1 md:gap-6">
-                <div className="flex items-center gap-2">
+                {/* <div className="flex items-center gap-2">
                   <FaPhone className="w-3 h-3" />
                   <span>+91 9600129660</span>
-                </div>
+                </div> */}
                 <div className="flex items-center gap-2">
                   <FaEnvelope className="w-3 h-3" />
                   <span>navanveshafoundation@gmail.com</span>
